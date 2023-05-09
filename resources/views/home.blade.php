@@ -276,43 +276,43 @@
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Nombre</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Correo</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Acsiones</th>
-                      
+
                     </tr>
                   </thead>
                   @foreach ($users as $user)
                   <tbody>
                     <tr>
-                      <td>    
+                      <td>
                         <div class="d-flex px-2 py-1">
 
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">{{$user->id}}</h6>
-                            
+
                           </div>
                         </div>
                       </td>
-                      <td>    
+                      <td>
                         <div class="d-flex px-2 py-4">
 
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">{{$user->name}}</h6>
-                            
+
                           </div>
                         </div>
                       </td>
-                      <td>    
+                      <td>
                         <div class="d-flex px-4 py-2">
 
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">{{$user->email}}</h6>
-                            
+
                           </div>
                         </div>
                       </td>
- 
 
-                      
-                      <td>    
+
+
+                      <td>
                         <div class="d-flex px-4 py-2">
                            <div class="d-flex flex-column justify-content-cente">
                           <form action="{{route('users.destroy',$user)}}" method="POST">
@@ -320,12 +320,12 @@
                           @csrf
                           <input type="submit" class="btn btn-danger" value="Eliminar">
                           </form>
-                           </div> 
+                           </div>
                           </div>
                         </div>
                       </td>
-                      
-                     
+
+
                     </tr>
                   </tbody>
                   @endforeach
