@@ -5,7 +5,7 @@ var simplemaps_countrymap_mapdata={
     background_color: "#FFFFFF",
     background_transparent: "yes",
     border_color: "#ffffff",
-    
+
     //State defaults
     state_description: "State description",
     state_color: "#88A4BC",
@@ -14,7 +14,7 @@ var simplemaps_countrymap_mapdata={
     border_size: 1.5,
     all_states_inactive: "no",
     all_states_zoomable: "yes",
-    
+
     //Location defaults
     location_description: "Location description",
     location_url: "",
@@ -29,7 +29,7 @@ var simplemaps_countrymap_mapdata={
     location_hover_border: 2.5,
     all_locations_inactive: "no",
     all_locations_hidden: "no",
-    
+
     //Label defaults
     label_color: "#d5ddec",
     label_hover_color: "#d5ddec",
@@ -37,7 +37,7 @@ var simplemaps_countrymap_mapdata={
     label_font: "Arial",
     hide_labels: "no",
     hide_eastern_labels: "no",
-   
+
     //Zoom settings
     zoom: "yes",
     manual_zoom: "yes",
@@ -50,7 +50,7 @@ var simplemaps_countrymap_mapdata={
     zoom_out_incrementally: "yes",
     zoom_percentage: 0.99,
     zoom_time: 0.5,
-    
+
     //Popup settings
     popup_color: "white",
     popup_opacity: 0.9,
@@ -58,7 +58,7 @@ var simplemaps_countrymap_mapdata={
     popup_corners: 5,
     popup_font: "12px/1.5 Verdana, Arial, Helvetica, sans-serif",
     popup_nocss: "no",
-    
+
     //Advanced settings
     div: "map",
     auto_load: "yes",
@@ -98,8 +98,8 @@ var simplemaps_countrymap_mapdata={
       description: "",
       color:"#A569BD",
       url:"./regiones/regionAndina.html"
-      
-      
+
+
     },
     COL1318: {
       name: "La Guajira",
@@ -110,7 +110,7 @@ var simplemaps_countrymap_mapdata={
       name: "San Andrés y Providencia",
       description: "",
       color:"#81C784"
-      
+
     },
     COL1397: {
       name: "Caldas",
@@ -126,7 +126,7 @@ var simplemaps_countrymap_mapdata={
       name: "Bogota",
       description: "",
       color:"#A68D8D"
-      
+
     },
     COL1400: {
       name: "Quindío",
@@ -152,7 +152,7 @@ var simplemaps_countrymap_mapdata={
       name: "Cauca",
       description: "",
       color:"#FEE902"
-     
+
     },
     COL1405: {
       name: "Huila",
@@ -162,51 +162,51 @@ var simplemaps_countrymap_mapdata={
     COL1406: {
       name: "Nariño",
       description: "",
-      
+
       color:"#FE6B02"
-      
+
     },
     COL1407: {
       name: "Putumayo",
       description: "",
       color:"#81C784"
-      
+
     },
     COL1408: {
       name: "Valle del Cauca",
       description: "",
       color:"#FEE902"
-      
+
     },
     COL1412: {
       name: "Atlántico",
       description: "",
       color:"#F1D5C7"
-      
+
     },
     COL1413: {
       name: "Bolívar",
       description: "",
       color:"#F1D5C7"
-      
+
     },
     COL1414: {
       name: "Cesar",
       description: "",
       color:"#F1D5C7"
-      
+
     },
     COL1415: {
       name: "Chocó",
       description: "",
       color:"#FE6B02"
-      
+
     },
     COL1416: {
       name: "Magdalena",
       description: "",
       color:"#F1D5C7"
-      
+
     },
     COL1417: {
       name: "Sucre",
@@ -263,8 +263,8 @@ var simplemaps_countrymap_mapdata={
       type: "image",
       description: "<img src=\"/img/escudo_nacional.png\" style=\"width: 200px\" />",
       image_url: "/img/escudo_nacional.png"
-      
-      
+
+
     },
 
     "1": {
@@ -309,7 +309,7 @@ var simplemaps_countrymap_mapdata={
       name: "Región Suroccidental",
       type: "image",
       image_url: "/img/icon.png",
-      description: "<img src=\"/img/9.png\" style=\"width: 150px\" />"
+      description: "<img src=\"/img/5.png\" style=\"width: 150px\" />"
     },
 
     "6": {
@@ -338,7 +338,7 @@ var simplemaps_countrymap_mapdata={
       image_url: "/img/icon.png",
       description: "<img src=\"/img/10.png\" style=\"width: 150px\" />"
     },
-     
+
     "9": {
       lat: "-1.10",
       lng: "-71.400827",
