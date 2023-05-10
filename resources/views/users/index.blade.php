@@ -1,3 +1,4 @@
+
 <!--
 =========================================================
 * Material Dashboard 2 - v3.1.0
@@ -272,14 +273,23 @@
 
 
 
-                                        <td>
+                                        <td class="btn btn-group">
                                             <div class="d-flex px-4 py-2">
-                                                <div class="d-flex flex-column justify-content-cente">
+
+                                                <div class="d-flex justify-content-cente">
+                                                 
+
+                                                    
                                                     <form action="{{route('users.destroy',$user)}}" method="POST">
                                                         @method('DELETE')
                                                         @csrf
                                                         <input type="submit" class="btn btn-danger" value="Eliminar">
+                                                        
                                                     </form>
+                                                    <a type="submit" class="btn btn-primary mx-2" value="editar" href="{{route('users.edit',$user)}}">Editar</a>
+                                                    
+                                               
+                                                 
                                                 </div>
                                             </div>
                         </div>
