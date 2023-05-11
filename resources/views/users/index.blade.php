@@ -1,4 +1,4 @@
-@extends('layouts.plantilla')
+@extends('layouts.dashboard')
 @section('navbar')
 <div class="container-fluid py-4">
     <div class="row">
