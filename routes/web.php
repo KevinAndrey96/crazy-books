@@ -1,10 +1,12 @@
 <?php
 
-use App\Http\Controllers\HomeController;
+
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RegionController;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\HomeController;
 
 
 /*
@@ -25,3 +27,4 @@ Auth::routes();
 Route::resource('home',HomeController::class)->names('home');
 Route::resource('users',UserController::class)->names('users');
 Route::resource('regions',RegionController::class)->names('regions');
+Route::resource('books',BookController::class)->names('books');

@@ -15,7 +15,7 @@ class RegionController extends Controller
     public function index()
     {
         
-        $regions = Region::all();
+        
 
         return view('regions.index',compact('regions'));
     }
@@ -40,7 +40,9 @@ class RegionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $region = Region::create($request->all());
+        return redirect()->route('regions.index');
+
     }
 
     /**
@@ -49,7 +51,7 @@ class RegionController extends Controller
      * @param  \App\Models\region  $region
      * @return \Illuminate\Http\Response
      */
-    public function show(region $region)
+    public function show(Region $region)
     {
         //
     }
@@ -60,9 +62,10 @@ class RegionController extends Controller
      * @param  \App\Models\region  $region
      * @return \Illuminate\Http\Response
      */
-    public function edit(region $region)
+    public function edit(Region $region)
     {
-        //
+        return view('regions.edit',compact('region'));
+        
     }
 
     /**
@@ -72,10 +75,15 @@ class RegionController extends Controller
      * @param  \App\Models\region  $region
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, region $region)
-    {
-        //
+    public function update(Request $request, Region $region){
+        
+
+
+        $region->update($request->all());
+
+        return redirect()->route('regions.index');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -83,8 +91,9 @@ class RegionController extends Controller
      * @param  \App\Models\region  $region
      * @return \Illuminate\Http\Response
      */
-    public function destroy(region $region)
+    public function destroy(Region $region)
     {
-        //
+        $region->delete();
+        return redirect()->route('regions.index');
     }
 }

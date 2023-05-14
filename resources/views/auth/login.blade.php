@@ -21,7 +21,7 @@
 			<button type="submit" id="login-button">Iniciar sesión</button>
 		</form>
 	</div>
-	
+
 	<ul class="bg-bubbles">
 		<li></li>
 		<li></li>
@@ -36,7 +36,28 @@
 	</ul>
 </div>
 <!-- partial -->
-  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="/public/js/script.js"></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script>
+document.querySelector('form').addEventListener('submit', function(event) {
+  // Previene el envío del formulario para que puedas ver la información en la consola
+  event.preventDefault();
+  
+  // Obtiene los valores de los campos del formulario
+ 
+  const email = document.querySelector('input[name="email"]').value;
+  const password = document.querySelector('input[name="password"]').value;
 
+  // Imprime los valores en la consola del navegador
+
+  console.log(`Email: ${email}`);
+  console.log(`Contraseña: ${password}`);
+ 
+  
+  // Envía el formulario
+  this.submit();
+});
+  </script>
+
+ 
 </body>
 </html>

@@ -19,18 +19,21 @@
             </div>
           </div>
           <div class="card-body">
-            <form role="form" class="text-start">
+            
+              <form class="form" class="text-start" action="{{ route('regions.update',$region)}}" method="POST">
+                @csrf
+                @method('PUT')
               <div class="input-group input-group-outline my-3">
-                <label class="form-label">Nombre</label>
-                <input type="text" class="form-control">
+                <label class="form-label"></label >
+                <input type="text" class="form-control" name="name" value="{{$region->name}}" autocomplete="name" autofocus>
               </div>
               <div class="input-group input-group-outline mb-3">
-                <label class="form-label">Blog</label>
-                <input type="text" class="form-control">
+                <label class="form-label"></label>
+                <input type="text" class="form-control" name="blog_url" value="{{$region->blog_url}}" autocomplete="blog_url" autofocus>
               </div>
 
               <div class="text-center">
-                <button type="button" class="btn bg-gradient-success w-100 my-4 mb-2">Editar</button>
+                <button type="submit" class="btn bg-gradient-success w-100 my-4 mb-2">Editar</button>
               </div>
               <p class="mt-4 text-sm text-center">
                 
