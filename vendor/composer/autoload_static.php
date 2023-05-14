@@ -528,6 +528,7 @@ class ComposerStaticInit70e34b959aef40fd155bc8de65d84b61
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\EvidenceController' => __DIR__ . '/../..' . '/app/Http/Controllers/EvidenceController.php',
         'App\\Http\\Controllers\\ExperienceController' => __DIR__ . '/../..' . '/app/Http/Controllers/ExperienceController.php',
+        'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\RegionController' => __DIR__ . '/../..' . '/app/Http/Controllers/RegionController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
