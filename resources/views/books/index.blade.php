@@ -10,7 +10,7 @@
 <body>
     <a href="">
     <div style="text-align: center;">
-        <h1 style="color: aliceblue;">Alto magdalena</h1>
+        <h1 style="color: aliceblue;"> Alto Magdalena </h1>
     </div>
     </a>
     <div class="container">
