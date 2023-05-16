@@ -19,15 +19,6 @@
                                 <tr>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Region</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">circle_audio</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">triangle_text</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">triangle_audio</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">start_media_1</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">start_media_2</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">square_media_1</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">square_media_2</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">rectangle_text</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">rectangle_audio</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Acciones</th>
     
                                 </tr>
@@ -53,97 +44,7 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td>
-                                          <div class="d-flex px-2 py-4">
-  
-                                              <div class="d-flex flex-column justify-content-center">
-                                                  <h6 class="mb-0 text-sm">{{$book->name}}</h6>
-  
-                                              </div>
-                                          </div>
-                                      </td>
-                                        <td>
-                                            <div class="d-flex px-4 py-2">
-    
-                                                <div class="d-flex flex-column justify-content-center">
-                                                    <h6 class="mb-0 text-sm">{{$book->circle_audio}}</h6>
-    
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                          <div class="d-flex px-2 py-1">
-  
-                                              <div class="d-flex flex-column justify-content-center">
-                                                  <h6 class="mb-0 text-sm">{{$book->triangle_text}}</h6>
-  
-                                              </div>
-                                          </div>
-                                      </td>
-                                      <td>
-                                        <div class="d-flex px-2 py-1">
-
-                                            <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm">{{$book->triangle_audio}}</h6>
-
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                      <div class="d-flex px-2 py-1">
-
-                                          <div class="d-flex flex-column justify-content-center">
-                                              <h6 class="mb-0 text-sm">{{$book->start_media_1}}</h6>
-
-                                          </div>
-                                      </div>
-                                  </td>
-                                  <td>
-                                    <div class="d-flex px-2 py-1">
-
-                                        <div class="d-flex flex-column justify-content-center">
-                                            <h6 class="mb-0 text-sm">{{$book->start_media_2}}</h6>
-
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                  <div class="d-flex px-2 py-1">
-
-                                      <div class="d-flex flex-column justify-content-center">
-                                          <h6 class="mb-0 text-sm">{{$book->square_media_1}}</h6>
-
-                                      </div>
-                                  </div>
-                              </td>
-                              <td>
-                                <div class="d-flex px-2 py-1">
-
-                                    <div class="d-flex flex-column justify-content-center">
-                                        <h6 class="mb-0 text-sm">{{$book->square_media_2}}</h6>
-
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                              <div class="d-flex px-2 py-1">
-
-                                  <div class="d-flex flex-column justify-content-center">
-                                      <h6 class="mb-0 text-sm">{{$book->rectangle_text}}</h6>
-
-                                  </div>
-                              </div>
-                          </td>
-                          <td>
-                            <div class="d-flex px-2 py-1">
-
-                                <div class="d-flex flex-column justify-content-center">
-                                    <h6 class="mb-0 text-sm">{{$book->rectangle_audio}}</h6>
-
-                                </div>
-                            </div>
-                        </td>
-                        <td>
+                                      
     
     
     
@@ -161,6 +62,7 @@
                                                         
                                                     </form>
                                                     <a type="submit" class="btn btn-primary mx-2" value="editar" href="{{route('books.edit',$book)}}">Editar</a>
+                                                    <a type="submit" class="btn btn-primary mx-2" value="editar" href="{{route('books.edit',$book)}}">Libros</a>
                                                     
                                                
                                                  
