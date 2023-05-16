@@ -48,8 +48,8 @@
 
                                             <div class="d-flex flex-column justify-content-center">
 
-                                                <a type="submit" class="btn btn-warning mx-2" value="editar" href="{{$region->blog_url}}">Ir A LA REGIÓN {{$region->name}}</a>
-
+                                                <a type="submit"  style="font-size: 16px; padding: 5px 25px;" class="btn btn-warning mx-2" value="editar" href="{{$region->blog_url}}">VER REGIÓN</a>
+                                               
                                             </div>
                                         </div>
                                     </td>
@@ -66,7 +66,7 @@
                                                 <form action="{{route('regions.destroy',$region)}}" method="POST">
                                                     @method('DELETE')
                                                     @csrf
-                                                    <input type="submit" class="btn btn-danger" value="Eliminar">
+                                                    
                                                     
                                                 </form>
                                                 <a type="submit" class="btn btn-primary mx-2" value="editar" href="{{route('regions.edit',$region)}}">Editar</a>

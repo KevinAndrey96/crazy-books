@@ -35,7 +35,6 @@
                     <select name="region_id" id="">
                         <option value="region_id">{{$book->regions->name}}</option>
                     </select>
-                
                 </div>
                 
               <div class="input-group input-group-outline my-3">
