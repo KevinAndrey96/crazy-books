@@ -65,7 +65,7 @@ var simplemaps_countrymap_mapdata={
     url_new_tab: "no",
     images_directory: "default",
     fade_time: 0.1,
-    link_text: "View Website",
+    link_text: "VER LIBROS",
     popups: "detect",
     state_image_url: "",
     state_image_position: "",
@@ -300,7 +300,9 @@ var simplemaps_countrymap_mapdata={
       name: "Alto Magdalena",
       type: "image",
       image_url: "/img/icon.png",
-      description: "<img src=\"/img/2.png\" style=\"width: 150px\" />"
+      description: "<img src=\"/img/2.png\" style=\"width: 150px\" />",
+      url:"https://crazybooks.com.co/books/create"
+      
     },
 
     "5": {

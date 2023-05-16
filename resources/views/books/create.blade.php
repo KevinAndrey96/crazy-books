@@ -1,94 +1,174 @@
-@extends('layouts.dashboard')
-@section('navbar')
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/style2.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    <a href="">
+    <div style="text-align: center;">
+        <h1 style="color: aliceblue;"> Alto Magdalena </h1>
+    </div>
+    </a>
+    <div class="container">
 
-    
+        <div class="div1">
+          <div class="img_book">
 
-<div class="container my-auto">
-    <div class="row">
-      <div class="col-lg-4 col-md-8 col-12 mx-auto">
-        <div class="card z-index-0 fadeIn3 fadeInBottom">
-          <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-            <div class="bg-gradient-success shadow-success border-radius-lg py-3 pe-1">
-              <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Editar Libro</h4>
-              <div class="row mt-3">
+            <img src="https://cdn.domestika.org/c_limit,dpr_auto,f_auto,q_auto,w_820/v1565307075/content-items/003/183/485/1473dd46729191.5865ba3588ee9-original.png?1565307075" alt="libro-infantil">
 
-            </div>
-          </div>
-          <div class="card-body">
-           
-              <form class="form" class="text-start" action="{{ route('books.update',$book)}}" method="POST">
-                @csrf
-                @method('PUT')
-              <div class="input-group input-group-outline my-3">
-                <label class="form-label"></label >
-                <input type="text" class="form-control" name="name" value="{{$book->name}}" autocomplete="name" autofocus>
-              </div>
-              <div class="input-group input-group-outline mb-3">
-                <label class="form-label"></label>
-                <input type="text" class="form-control" name="front_page" value="{{$book->front_page}}" autocomplete="front_page" autofocus>
-              </div>
-              <div class="input-group input-group-outline my-3">
-                <label class="form-label"></label >
-                <input type="text" class="form-control" name="circle_audio" value="{{$book->circle_audio}}" autocomplete="circle_audio" autofocus>
-              </div>
-              <div class="input-group input-group-outline mb-3">
-                <label class="form-label"></label>
-                <input type="text" class="form-control" name="triangle_text" value="{{$book->triangle_text}}" autocomplete="triangle_text" autofocus>
-              </div>
-              <div class="input-group input-group-outline my-3">
-                <label class="form-label"></label >
-                <input type="text" class="form-control" name="triangle_audio" value="{{$book->triangle_audio}}" autocomplete="triangle_audio" autofocus>
-              </div>
-              <div class="input-group input-group-outline mb-3">
-                <label class="form-label"></label>
-                <input type="text" class="form-control" name="triangle_text" value="{{$book->triangle_text}}" autocomplete="triangle_text" autofocus>
-              </div>
-              <div class="input-group input-group-outline my-3">
-                <label class="form-label"></label >
-                <input type="text" class="form-control" name="start_media_1" value="{{$book->start_media_1}}" autocomplete="start_media_1" autofocus>
-              </div>
-              <div class="input-group input-group-outline mb-3">
-                <label class="form-label"></label>
-                <input type="text" class="form-control" name="start_media_2" value="{{$book->start_media_2}}" autocomplete="start_media_2" autofocus>
-              </div>
-              <div class="input-group input-group-outline my-3">
-                <label class="form-label"></label >
-                <input type="text" class="form-control" name="start_media_2" value="{{$book->square_media_1}}" autocomplete="start_media_2" autofocus>
-              </div>
-              <div class="input-group input-group-outline mb-3">
-                <label class="form-label"></label>
-                <input type="text" class="form-control" name="square_media_2" value="{{$book->square_media_2}}" autocomplete="square_media_2" autofocus>
-              </div>
-              <div class="input-group input-group-outline my-3">
-                <label class="form-label"></label >
-                <input type="text" class="form-control" name="rectangle_text" value="{{$book->rectangle_text}}" autocomplete="rectangle_text" autofocus>
-              </div>
-              <div class="input-group input-group-outline my-3">
-                <label class="form-label"></label >
-                <input type="text" class="form-control" name="rectangle_audio" value="{{$book->rectangle_audio}}" autocomplete="rectangle_audio" autofocus>
-              </div>
-
-
-              <div class="text-center">
-                <button type="submit" class="btn bg-gradient-success w-100 my-4 mb-2">Editar</button>
-              </div>
-              <p class="mt-4 text-sm text-center">
-            </form>
           </div>
         </div>
-      </div>
+
+
+        <div class="div2">
+            <h1></h1>
+
+            
+            <div class="starts">
+               <div class="start">
+                1
+               </div>
+               <div class="start">
+                1
+               </div>
+               <div class="start">
+               1
+               </div>
+               <div class="start">
+                1
+               </div>
+            </div>
+
+            <div class="starts">
+                <div class="start2">
+                 2
+                </div>
+                <div class="start2">
+                 2
+                </div>
+            </div>
+            <div class="starts">
+                <div class="start3">
+                 2
+                </div>
+            </div>
+
+            
+
+            
+
+
+        </div>
+
     </div>
-  </div>
-  <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-@endsection
+    <div class="container">
+
+        <div class="div1">
+          <div class="img_book">
+
+            <img src="https://cdn.domestika.org/c_limit,dpr_auto,f_auto,q_auto,w_820/v1565307075/content-items/003/183/485/1473dd46729191.5865ba3588ee9-original.png?1565307075" alt="libro-infantil">
+
+          </div>
+        </div>
+
+
+        <div class="div2">
+            <h1></h1>
+
+            
+            <div class="starts">
+               <div class="start">
+                1
+               </div>
+               <div class="start">
+                1
+               </div>
+               <div class="start">
+               1
+               </div>
+               <div class="start">
+                1
+               </div>
+            </div>
+
+            <div class="starts">
+                <div class="start2">
+                 2
+                </div>
+                <div class="start2">
+                 2
+                </div>
+            </div>
+            <div class="starts">
+                <div class="start3">
+                 2
+                </div>
+            </div>
+
+            
+
+            
+
+
+        </div>
+
+    </div>
+    <div class="container">
+
+        <div class="div1">
+          <div class="img_book">
+
+            <img src="https://cdn.domestika.org/c_limit,dpr_auto,f_auto,q_auto,w_820/v1565307075/content-items/003/183/485/1473dd46729191.5865ba3588ee9-original.png?1565307075" alt="libro-infantil">
+
+          </div>
+        </div>
+
+
+        <div class="div2">
+            <h1></h1>
+
+            
+            <div class="starts">
+               <div class="start">
+                1
+               </div>
+               <div class="start">
+                1
+               </div>
+               <div class="start">
+               1
+               </div>
+               <div class="start">
+                1
+               </div>
+            </div>
+
+            <div class="starts">
+                <div class="start2">
+                 2
+                </div>
+                <div class="start2">
+                 2
+                </div>
+            </div>
+
+            <div class="starts">
+                <div class="start3">
+                 2
+                </div>
+            </div>
+
+            
+
+            
+
+
+        </div>
+
+    </div>
+</body>
+</html>
