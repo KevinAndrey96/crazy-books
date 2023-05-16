@@ -33,11 +33,16 @@ body{
 .starts{
     display: flex;
     float: right;
+
 }
 .start{
     width: 30px;
     background-color: yellow;
     margin: 5px;
+    background-image: url("/public/img/descarga.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .img_book{
