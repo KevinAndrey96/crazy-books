@@ -2,7 +2,6 @@
 @section('navbar')
 
 <div class="container-fluid py-4">
-    <a class="btn btn-primary" href="{{route('regions.create')}}">AGREGAR NUEVA REGIÓN</a>
     <div class="row">
         <div class="col-12">
             <div class="card my-4">
@@ -48,7 +47,8 @@
                                         <div class="d-flex px-4 py-2">
 
                                             <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm">{{$region->blog_url}}</h6>
+
+                                                <a type="submit" class="btn btn-warning mx-2" value="editar" href="{{$region->blog_url}}">Ir A LA REGIÓN {{$region->name}}</a>
 
                                             </div>
                                         </div>

@@ -1,174 +1,187 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/style2.css')}}">
-    <title>Document</title>
-</head>
+@extends('layouts.dashboard')
+@section('navbar')
 <body>
-    <a href="">
-    <div style="text-align: center;">
-        <h1 style="color: aliceblue;"> Alto Magdalena </h1>
+    <table class="table">
+
+      <div class="container-fluid py-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="card my-4">
+                    <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                        <div class="bg-gradient-success shadow-success border-radius-lg pt-4 pb-3">
+                            <h6 class="text-white text-capitalize ps-3">Regiones</h6>
+                        </div>
+                    </div>
+                    <div class="card-body px-0 pb-2">
+                        <div class="table-responsive p-0">
+                            <table class="table align-items-center mb-0">
+                                <thead>
+                                <tr>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Region</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">circle_audio</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">triangle_text</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">triangle_audio</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">start_media_1</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">start_media_2</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">square_media_1</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">square_media_2</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">rectangle_text</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">rectangle_audio</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Acciones</th>
+    
+                                </tr>
+                                </thead>
+                                @foreach ($books as $book)
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex px-2 py-1">
+    
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm">{{$book->id}}</h6>
+    
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex px-2 py-4">
+    
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm">{{$book->regions->name}}</h6>
+    
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                          <div class="d-flex px-2 py-4">
+  
+                                              <div class="d-flex flex-column justify-content-center">
+                                                  <h6 class="mb-0 text-sm">{{$book->name}}</h6>
+  
+                                              </div>
+                                          </div>
+                                      </td>
+                                        <td>
+                                            <div class="d-flex px-4 py-2">
+    
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm">{{$book->circle_audio}}</h6>
+    
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                          <div class="d-flex px-2 py-1">
+  
+                                              <div class="d-flex flex-column justify-content-center">
+                                                  <h6 class="mb-0 text-sm">{{$book->triangle_text}}</h6>
+  
+                                              </div>
+                                          </div>
+                                      </td>
+                                      <td>
+                                        <div class="d-flex px-2 py-1">
+
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h6 class="mb-0 text-sm">{{$book->triangle_audio}}</h6>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                      <div class="d-flex px-2 py-1">
+
+                                          <div class="d-flex flex-column justify-content-center">
+                                              <h6 class="mb-0 text-sm">{{$book->start_media_1}}</h6>
+
+                                          </div>
+                                      </div>
+                                  </td>
+                                  <td>
+                                    <div class="d-flex px-2 py-1">
+
+                                        <div class="d-flex flex-column justify-content-center">
+                                            <h6 class="mb-0 text-sm">{{$book->start_media_2}}</h6>
+
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                  <div class="d-flex px-2 py-1">
+
+                                      <div class="d-flex flex-column justify-content-center">
+                                          <h6 class="mb-0 text-sm">{{$book->square_media_1}}</h6>
+
+                                      </div>
+                                  </div>
+                              </td>
+                              <td>
+                                <div class="d-flex px-2 py-1">
+
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <h6 class="mb-0 text-sm">{{$book->square_media_2}}</h6>
+
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                              <div class="d-flex px-2 py-1">
+
+                                  <div class="d-flex flex-column justify-content-center">
+                                      <h6 class="mb-0 text-sm">{{$book->rectangle_text}}</h6>
+
+                                  </div>
+                              </div>
+                          </td>
+                          <td>
+                            <div class="d-flex px-2 py-1">
+
+                                <div class="d-flex flex-column justify-content-center">
+                                    <h6 class="mb-0 text-sm">{{$book->rectangle_audio}}</h6>
+
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+    
+    
+    
+                                        <td class="btn btn-group">
+                                            <div class="d-flex px-4 py-2">
+    
+                                                <div class="d-flex justify-content-cente">
+                                                 
+    
+                                                    
+                                                    <form action="{{route('books.destroy',$book)}}" method="POST">
+                                                        @method('DELETE')
+                                                        @csrf
+                                                        <input type="submit" class="btn btn-danger" value="Eliminar">
+                                                        
+                                                    </form>
+                                                    <a type="submit" class="btn btn-primary mx-2" value="editar" href="{{route('books.edit',$book)}}">Editar</a>
+                                                    
+                                               
+                                                 
+                                                </div>
+                                            </div>
+                        </div>
+                        </td>
+    
+    
+                        </tr>
+                        </tbody>
+                        @endforeach
+                        </table>
+    
+                        <table class="table align-items-center justify-content-center mb-0">
+    
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    </a>
-    <div class="container">
-
-        <div class="div1">
-          <div class="img_book">
-
-            <img src="https://cdn.domestika.org/c_limit,dpr_auto,f_auto,q_auto,w_820/v1565307075/content-items/003/183/485/1473dd46729191.5865ba3588ee9-original.png?1565307075" alt="libro-infantil">
-
-          </div>
-        </div>
-
-
-        <div class="div2">
-            <h1></h1>
-
-            
-            <div class="starts">
-               <div class="start">
-                1
-               </div>
-               <div class="start">
-                1
-               </div>
-               <div class="start">
-               1
-               </div>
-               <div class="start">
-                1
-               </div>
-            </div>
-
-            <div class="starts">
-                <div class="start2">
-                 2
-                </div>
-                <div class="start2">
-                 2
-                </div>
-            </div>
-            <div class="starts">
-                <div class="start3">
-                 2
-                </div>
-            </div>
-
-            
-
-            
-
-
-        </div>
-
-    </div>
-    <div class="container">
-
-        <div class="div1">
-          <div class="img_book">
-
-            <img src="https://cdn.domestika.org/c_limit,dpr_auto,f_auto,q_auto,w_820/v1565307075/content-items/003/183/485/1473dd46729191.5865ba3588ee9-original.png?1565307075" alt="libro-infantil">
-
-          </div>
-        </div>
-
-
-        <div class="div2">
-            <h1></h1>
-
-            
-            <div class="starts">
-               <div class="start">
-                1
-               </div>
-               <div class="start">
-                1
-               </div>
-               <div class="start">
-               1
-               </div>
-               <div class="start">
-                1
-               </div>
-            </div>
-
-            <div class="starts">
-                <div class="start2">
-                 2
-                </div>
-                <div class="start2">
-                 2
-                </div>
-            </div>
-            <div class="starts">
-                <div class="start3">
-                 2
-                </div>
-            </div>
-
-            
-
-            
-
-
-        </div>
-
-    </div>
-    <div class="container">
-
-        <div class="div1">
-          <div class="img_book">
-
-            <img src="https://cdn.domestika.org/c_limit,dpr_auto,f_auto,q_auto,w_820/v1565307075/content-items/003/183/485/1473dd46729191.5865ba3588ee9-original.png?1565307075" alt="libro-infantil">
-
-          </div>
-        </div>
-
-
-        <div class="div2">
-            <h1></h1>
-
-            
-            <div class="starts">
-               <div class="start">
-                1
-               </div>
-               <div class="start">
-                1
-               </div>
-               <div class="start">
-               1
-               </div>
-               <div class="start">
-                1
-               </div>
-            </div>
-
-            <div class="starts">
-                <div class="start2">
-                 2
-                </div>
-                <div class="start2">
-                 2
-                </div>
-            </div>
-
-            <div class="starts">
-                <div class="start3">
-                 2
-                </div>
-            </div>
-
-            
-
-            
-
-
-        </div>
-
-    </div>
-</body>
-</html>
+    @endsection
+    

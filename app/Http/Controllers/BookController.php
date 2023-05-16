@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Region;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -14,7 +15,11 @@ class BookController extends Controller
      */
     public function index()
     {
+
+
         $books = Book::all();
+        return view('books.index',compact('books')); 
+        $regions = Region::all();
         return view('books.index',compact('books'));
     }
 
@@ -25,7 +30,9 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        $books = Book::all();
+
+        return view('books.create',compact('books'));
     }
 
     /**
@@ -58,7 +65,8 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        //
+        $books = Book::all();
+        return view('books.edit',compact('book'));
     }
 
     /**
@@ -69,8 +77,11 @@ class BookController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Book $book)
-    {
-        //
+    { 
+        $book->update($request->all());
+        $books = Book::all();
+
+        return redirect()->route('books.index');
     }
 
     /**
