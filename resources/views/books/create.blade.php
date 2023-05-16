@@ -30,32 +30,34 @@
             
             <div class="starts">
                <div class="start">
-                1
+                
                </div>
                <div class="start">
-                1
+                
                </div>
                <div class="start">
-               1
+               
                </div>
                <div class="start">
-                1
+                
                </div>
             </div>
 
             <div class="starts">
                 <div class="start2">
-                 2
+                 
                 </div>
                 <div class="start2">
-                 2
+                 
                 </div>
             </div>
-            <div class="starts">
-                <div class="start3">
-                 2
+            <a href="https://m.youtube.com/watch?v=SrvKADxxsqg&pp=ygUaaGltbm8gbmFjaW9uYWwgZGUgY29sb21iaWE%3D">
+                <div class="starts">
+                    <div class="start3">
+                     
+                    </div>
                 </div>
-            </div>
+            </a>
 
             
 
@@ -82,32 +84,34 @@
             
             <div class="starts">
                <div class="start">
-                1
+                
                </div>
                <div class="start">
-                1
+                
                </div>
                <div class="start">
-               1
+               
                </div>
                <div class="start">
-                1
+                
                </div>
             </div>
 
             <div class="starts">
                 <div class="start2">
-                 2
+                 
                 </div>
                 <div class="start2">
-                 2
+                 
                 </div>
             </div>
+            <a href="https://m.youtube.com/watch?v=SrvKADxxsqg&pp=ygUaaGltbm8gbmFjaW9uYWwgZGUgY29sb21iaWE%3D">
             <div class="starts">
                 <div class="start3">
-                 2
+                 
                 </div>
             </div>
+            </a>
 
             
 
@@ -134,16 +138,16 @@
             
             <div class="starts">
                <div class="start">
-                1
+
                </div>
                <div class="start">
-                1
+                
                </div>
                <div class="start">
-               1
+               
                </div>
                <div class="start">
-                1
+                
                </div>
             </div>
 
@@ -156,11 +160,13 @@
                 </div>
             </div>
 
-            <div class="starts">
-                <div class="start3">
-                 2
+            <a href="https://m.youtube.com/watch?v=SrvKADxxsqg&pp=ygUaaGltbm8gbmFjaW9uYWwgZGUgY29sb21iaWE%3D">
+                <div class="starts">
+                    <div class="start3">
+                     
+                    </div>
                 </div>
-            </div>
+            </a>
 
             
 
