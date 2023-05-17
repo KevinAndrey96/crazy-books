@@ -125,11 +125,7 @@
     </div>
 </body>
 
-<a href="" class="btn btn-primary">Hola</a>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Video
-</button>
   
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -154,9 +150,7 @@
 
 
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleText">
-    modal
-</button>
+
   
 <div class="modal fade" id="#exampleText" tabindex="-1" role="dialog" aria-labelledby="#exampleTextLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
