@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use App\Models\Region;
 use Illuminate\Http\Request;
 
@@ -51,9 +52,14 @@ class RegionController extends Controller
      * @param  \App\Models\region  $region
      * @return \Illuminate\Http\Response
      */
-    public function show(Region $region)
+    public function show( $regionId)
     {
-        //
+
+        $region = Region::findOrFail($regionId);
+        $books = $region->books;
+
+        return view('regions.show', compact('region', 'books'));
+    
     }
 
     /**

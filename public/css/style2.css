@@ -17,7 +17,7 @@ body{
     margin: 5px;
     width: 50%;
     height: auto;
-    background-color: aqua;
+    
     border-radius: 100%;
 }
 
@@ -35,7 +35,7 @@ body{
 
 }
 .start{
-    width: 30px;
+    width: 37px;
     height: 40px;
     
     margin: 5px;
@@ -52,7 +52,8 @@ body{
 .img_book img{
     max-width: 100%;
     height: auto;
-    border-radius: 100%;
+    margin-right: 10px;
+    
 }
 
 .img_start{

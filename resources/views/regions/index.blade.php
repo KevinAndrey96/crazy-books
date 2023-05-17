@@ -70,7 +70,7 @@
                                                     
                                                 </form>
                                                 <a type="submit" class="btn btn-primary mx-2" value="editar" href="{{route('regions.edit',$region)}}">Editar</a>
-                                                
+                                                <a type="submit" class="btn btn-primary mx-2" value="ver" href="{{route('regions.show',$region)}}">Vel libros</a>
                                            
                                              
                                             </div>
