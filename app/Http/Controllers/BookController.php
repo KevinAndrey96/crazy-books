@@ -52,10 +52,13 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function show(Book $book)
+    public function show($id)
     {
-        return view('books.show',compact('books'));
+        $book = Book::findOrFail($id);
+        $experiences = $book->experiences;
+        return view('books.show', compact('book', 'experiences'));
     }
+    
 
     /**
      * Show the form for editing the specified resource.

@@ -2,84 +2,92 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\experience;
 use Illuminate\Http\Request;
+use App\Models\Experience;
+use App\Models\User;
+use App\Models\Book;
+use Illuminate\Support\Facades\Auth;
 
 class ExperienceController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
-        //
+        $experiences = Experience::with('book', 'user')->get();
+        $users = User::all();
+        $books = Book::all();  // Recupera todos los usuarios
+        return view('experiences.index', compact('experiences', 'users','books'));
+    
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        $users = User::all();
+        $books = Book::all();
+        return view('experiences.create', compact('users', 'books'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'content' => 'required',
+            'book_id' => 'required|exists:books,id',
+        ]);
+
+        $experience = new Experience();
+        $experience->content = $request->input('content');
+        $experience->user_id = auth()->user()->id;
+        $experience->book_id = $request->input('book_id');
+        $experience->save();
+
+        return redirect()->route('experiences.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\experience  $experience
-     * @return \Illuminate\Http\Response
-     */
-    public function show(experience $experience)
+    public function edit(Experience $experience)
     {
-        //
+        // Verifica que el usuario logado sea el propietario de la experiencia
+        if (auth()->user()->id !== $experience->user_id) {
+            abort(403); // Acceso no autorizado
+        }
+
+        $users = User::all();
+        $books = Book::all();
+        return view('experiences.edit', compact('experience', 'users', 'books'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\experience  $experience
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(experience $experience)
+    public function update(Request $request, Experience $experience)
     {
-        //
+        // Verifica que el usuario logado sea el propietario de la experiencia
+        if (auth()->user()->id !== $experience->user_id) {
+            abort(403); // Acceso no autorizado
+        }
+
+        $request->validate([
+            'content' => 'required',
+            'user_id' => 'required|exists:users,id',
+            'book_id' => 'required|exists:books,id',
+        ]);
+
+        $experience->content = $request->input('content');
+        $experience->user_id = $request->input('user_id');
+        $experience->book_id = $request->input('book_id');
+        $experience->save();
+
+        return redirect()->route('experiences.index');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\experience  $experience
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, experience $experience)
+    public function destroy(Experience $experience)
     {
-        //
-    }
+        // Verifica que el usuario logado sea el propietario de la experiencia
+        if (auth()->user()->id !== $experience->user_id) {
+            abort(403); // Acceso no autorizado
+        }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\experience  $experience
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(experience $experience)
-    {
-        //
+        $experience->delete();
+        return redirect()->route('experiences.index');
     }
 }

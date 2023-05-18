@@ -62,6 +62,7 @@
                                                         
                                                     </form>
                                                     <a type="submit" class="btn btn-primary mx-2" value="editar" href="{{route('books.edit',$book)}}">Editar</a>
+                                                    <a href="{{ route('books.show', $book->id) }}" class="btn btn-primary">Ver Foro</a>
                                                     <a type="submit" class="btn btn-primary mx-2" value="editar" href="{{route('books.create',$book)}}">Libros</a>
                                                     
                                                

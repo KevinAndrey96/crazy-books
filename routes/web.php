@@ -6,7 +6,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RegionController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\HomeController;
+
 
 
 /*
@@ -20,11 +22,23 @@ use App\Http\Controllers\HomeController;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::middleware('auth')->group(function () {
+    // Rutas protegidas aquí
+    Route::get('/experiences', 'ExperienceController@index')->name('experiences.index');
+    // ...
+});
+
 Auth::routes();
 Route::resource('home',HomeController::class)->names('home');
-Route::resource('users',UserController::class)->names('users');
-Route::resource('regions',RegionController::class)->names('regions');
-Route::resource('books',BookController::class)->names('books');
+Route::resource('users',UserController::class)->names('users')->middleware('auth'); 
+Route::resource('regions',RegionController::class)->names('regions')->middleware('auth');
+Route::resource('books',BookController::class)->names('books')->middleware('auth');
+Route::resource('experiences',ExperienceController::class)->names('experiences')->middleware('auth');
+
+
+
