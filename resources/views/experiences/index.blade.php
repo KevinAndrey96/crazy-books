@@ -3,8 +3,8 @@
 <body>
     <!-- Vista "create.blade.php" -->
 <div class="card mb-3 text-darck bg-light m-2 " style="width: 70% margin:2%;">
-    
-<form action="{{ route('experiences.store') }}" method="POST">
+
+<form action="{{ route('experiences.store') }}" method="POST" >
     @csrf
 
     <h1 class="m-2"> <label for="user_id"> Crea un comentario </label> </h1>
@@ -19,10 +19,11 @@
     <br>
     <h4 class="m-2"><label for="content">Comentario:</label></h4>
     <br>
-    <textarea class="form-control" style="max-width: 80%; border: 2px solid blue;" name="content" id="content" rows="4"></textarea>
+    
+    <textarea class="form-control " style=" max-width: 80%; margin-left:30%; border: 2px solid blue;" name="content" id="content" rows="4"></textarea>
 
     <br>
-    <button class="btn btn-warning m-2" type="submit">Crear Comentario</button>
+    <button class="btn btn-warning m-4" type="submit">Crear Comentario</button>
 </form>
 
 </div>
