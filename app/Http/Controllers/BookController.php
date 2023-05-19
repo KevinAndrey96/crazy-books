@@ -32,7 +32,9 @@ class BookController extends Controller
     {
         $books = Book::all();
 
-        return view('books.create',compact('books'));
+        $regions = Region::all();
+        return view('books.create', compact('regions'));
+
     }
 
     /**
@@ -43,21 +45,33 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            
+            'region_id' => 'required',
+            'front_page' => 'required',
+            'name' => 'required',
+            'circle_audio' => 'required',
+            'triangle_text' => 'required',
+            'triangle_audio' => 'required',
+            'start_media_1' => 'required',
+            'start_media_2' => 'required',
+            'square_media_1' => 'required',
+            'square_media_2' => 'required',
+            'rectangle_text' => 'required',
+            'rectangle_audio' => 'required',
+        ]);
+    
+        // Crea un nuevo libro con los datos del formulario
+        $book = Book::create($data);
+    
+        // Redirecciona a la página de visualización del libro recién creado
+        return redirect()->route('books.index', $book->id);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Book  $book
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $book = Book::findOrFail($id);
-        $experiences = $book->experiences;
-        return view('books.show', compact('book', 'experiences'));
-    }
+    public function show(Book $book)
+{
+    return view('books.show', compact('book'));
+}
     
 
     /**
@@ -80,12 +94,28 @@ class BookController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Book $book)
-    { 
-        $book->update($request->all());
-        $books = Book::all();
-
+    {
+        $data = $request->validate([
+            'region_id' => 'required',
+            'front_page' => 'required',
+            'name' => 'required',
+            'circle_audio' => 'required',
+            'triangle_text' => 'required',
+            'triangle_audio' => 'required',
+            'start_media_1' => 'required',
+            'start_media_2' => 'required',
+            'square_media_1' => 'required',
+            'square_media_2' => 'required',
+            'rectangle_text' => 'required',
+            'rectangle_audio' => 'required',
+        ]);
+    
+        // Actualiza los datos del libro con los valores validados
+        $book->update($data);
+    
         return redirect()->route('books.index');
     }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -93,9 +123,16 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Book $book)
+    public function destroy($id)
     {
+        $book = Book::findOrFail($id);
+
+        // Eliminar las experiencias relacionadas
+        $book->experiences()->delete();
+
+        // Eliminar el libro
         $book->delete();
+
         return redirect()->route('books.index');
     }
 }

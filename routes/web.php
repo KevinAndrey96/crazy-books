@@ -39,6 +39,8 @@ Route::resource('users',UserController::class)->names('users')->middleware('auth
 Route::resource('regions',RegionController::class)->names('regions')->middleware('auth');
 Route::resource('books',BookController::class)->names('books')->middleware('auth');
 Route::resource('experiences',ExperienceController::class)->names('experiences')->middleware('auth');
+Route::get('/experience/{id}', [ExperienceController::class, 'show'])->name('experience.show');
+
 
 
 

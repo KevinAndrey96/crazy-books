@@ -25,6 +25,8 @@ class Book extends Model
 
 
     protected $fillable = [
+        
+        'region_id',
         'front_page',
         'name',
         'circle_audio',
@@ -37,8 +39,10 @@ class Book extends Model
         'square_media_2',
         'rectangle_text',
         'rectangle_audio',
-        'name'
+        
 
         
     ];
+
+
 }

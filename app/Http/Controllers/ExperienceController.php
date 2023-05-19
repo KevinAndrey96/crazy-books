@@ -11,10 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class ExperienceController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+
     public function index()
     {
         $experiences = Experience::with('book', 'user')->get();
@@ -89,5 +86,18 @@ class ExperienceController extends Controller
 
         $experience->delete();
         return redirect()->route('experiences.index');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Book  $book
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $book = Book::findOrFail($id);
+        $experiences = $book->experiences;
+        return view('experiences.show', compact('book', 'experiences'));
     }
 }

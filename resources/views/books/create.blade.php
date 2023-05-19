@@ -1,180 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/style2.css')}}">
-    <title>Document</title>
-</head>
-<body>
-    <a href="">
-    <div style="text-align: center;">
-        <h1 style="color: aliceblue;"> Alto Magdalena </h1>
-    </div>
-    </a>
-    <div class="container">
+@extends('layouts.dashboard')
+@section('navbar')
+<br>
+<br>
 
-        <div class="div1">
-          <div class="img_book">
+<div class="container my-auto">
+    <div class="row">
+      <div class="col-lg-4 col-md-8 col-12 mx-auto">
+        <div class="card z-index-0 fadeIn3 fadeInBottom">
+          <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+            <div class="bg-gradient-success shadow-success border-radius-lg py-3 pe-1">
+              <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Crear libro</h4>
+              <div class="row mt-3">
 
-            <img src="https://cdn.domestika.org/c_limit,dpr_auto,f_auto,q_auto,w_820/v1565307075/content-items/003/183/485/1473dd46729191.5865ba3588ee9-original.png?1565307075" alt="libro-infantil">
+            </div>
+          </div>
+          <div class="card-body">
+            <form class="form" action="{{ route('books.store') }}" method="POST">
+              @csrf
 
+
+              <label for="region_id">Región:</label>
+              <div>
+                
+                
+                <select name="region_id" id="region_id">
+                    @foreach ($regions as $region)
+                        <option value="{{ $region->id }}">{{ $region->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <label class="form-label" for="front_page">Portada:</label>
+              <div class="input-group input-group-outline my-3">
+                
+                <label class="form-label"></label>
+                <input type="text" class="form-control" name="front_page" id="front_page"  autocomplete="name" autofocus>
+              </div>
+              <label class="form-label" for="name">Nombre:</label>
+              <div class="input-group input-group-outline mb-3">
+                <label class="form-label"></label>
+                <input type="text" class="form-control" name="name" id="name"  autocomplete="email" autofocus>
+              </div>
+              <label class="form-label" for="circle_audio">Audio del círculo:</label>
+              <div class="input-group input-group-outline my-3">
+                <label class="form-label"></label>
+                <input type="text" class="form-control" name="circle_audio" id="circle_audio"  autocomplete="role" autofocus>
+              </div>
+              <label class="form-label" for="triangle_text">Texto del triángulo:</label>
+              <div class="input-group input-group-outline my-3">
+                <label class="form-label"></label>
+                <input type="text" class="form-control" name="triangle_text" id="triangle_text"  autocomplete="role" autofocus>
+              </div>
+              <label class="form-label" for="triangle_audio">Audio del triángulo:</label>
+              <div class="input-group input-group-outline my-3">
+                <label class="form-label"></label>
+                <input type="text" class="form-control" name="triangle_audio" id="triangle_audio"  autocomplete="role" autofocus>
+              </div>
+              <label  class="form-label"for="start_media_1">Medio de la estrella 1:</label>
+              <div class="input-group input-group-outline my-3">
+                <label class="form-label"></label>
+                <input type="text" class="form-control" name="start_media_1" id="start_media_1" autocomplete="role" autofocus>
+              </div>
+              <label  class="form-label"for="start_media_1">Medio de la estrella 2:</label>
+              <div class="input-group input-group-outline my-3">
+                <label class="form-label"></label>
+                <input type="text" class="form-control" name="start_media_2" id="start_media_2" autocomplete="role" autofocus>
+              </div>
+              <label class="form-label" for="square_media_1">Medio del cuadrado 1:</label>
+              <div class="input-group input-group-outline my-3">
+                <label class="form-label"></label>
+                <input type="text" class="form-control" name="square_media_1" id="square_media_1"o"  autocomplete="role" autofocus>
+              </div>
+              <label class="form-label" for="square_media_1">Medio del cuadrado 2:</label>
+              <div class="input-group input-group-outline my-3">
+                <label class="form-label"></label>
+                <input type="text" class="form-control" name="square_media_2" id="square_media_2"  autocomplete="role" autofocus>
+              </div>
+              <label class="form-label" for="rectangle_text">Texto del rectángulo:</label>
+              <div class="input-group input-group-outline my-3">
+                <label class="form-label"></label>
+                <input type="text" class="form-control"  name="rectangle_text" id="rectangle_text"  autocomplete="role" autofocus>
+              </div>
+              <label class="form-label" for="rectangle_audio">Audio del rectángulo:</label>
+              <div class="input-group input-group-outline my-3">
+                <label class="form-label"></label>
+                <input type="text" class="form-control" name="rectangle_audio" id="rectangle_audio" autocomplete="role" autofocus>
+              </div>
+              
+
+
+              <div class="text-center">
+                <button class="btn bg-gradient-success w-100 my-4 mb-2" type="submit">Guardar</button>
+              </div>
+            </form>
           </div>
         </div>
-
-
-        <div class="div2">
-            <h1></h1>
-
-            
-            <div class="starts">
-               <div class="start">
-                
-               </div>
-               <div class="start">
-                
-               </div>
-               <div class="start">
-               
-               </div>
-               <div class="start">
-                
-               </div>
-            </div>
-
-            <div class="starts">
-                <div class="start2">
-                 
-                </div>
-                <div class="start2">
-                 
-                </div>
-            </div>
-            <a href="https://m.youtube.com/watch?v=SrvKADxxsqg&pp=ygUaaGltbm8gbmFjaW9uYWwgZGUgY29sb21iaWE%3D">
-                <div class="starts">
-                    <div class="start3">
-                     
-                    </div>
-                </div>
-            </a>
-
-            
-
-            
-
-
-        </div>
-
+      </div>
     </div>
-    <div class="container">
-
-        <div class="div1">
-          <div class="img_book">
-
-            <img src="https://cdn.domestika.org/c_limit,dpr_auto,f_auto,q_auto,w_820/v1565307075/content-items/003/183/485/1473dd46729191.5865ba3588ee9-original.png?1565307075" alt="libro-infantil">
-
-          </div>
-        </div>
-
-
-        <div class="div2">
-            <h1></h1>
-
-            
-            <div class="starts">
-               <div class="start">
-                
-               </div>
-               <div class="start">
-                
-               </div>
-               <div class="start">
-               
-               </div>
-               <div class="start">
-                
-               </div>
-            </div>
-
-            <div class="starts">
-                <div class="start2">
-                 
-                </div>
-                <div class="start2">
-                 
-                </div>
-            </div>
-            <a href="https://m.youtube.com/watch?v=SrvKADxxsqg&pp=ygUaaGltbm8gbmFjaW9uYWwgZGUgY29sb21iaWE%3D">
-            <div class="starts">
-                <div class="start3">
-                 
-                </div>
-            </div>
-            </a>
-
-            
-
-            
-
-
-        </div>
-
-    </div>
-    <div class="container">
-
-        <div class="div1">
-          <div class="img_book">
-
-            <img src="https://cdn.domestika.org/c_limit,dpr_auto,f_auto,q_auto,w_820/v1565307075/content-items/003/183/485/1473dd46729191.5865ba3588ee9-original.png?1565307075" alt="libro-infantil">
-
-          </div>
-        </div>
-
-
-        <div class="div2">
-            <h1></h1>
-
-            
-            <div class="starts">
-               <div class="start">
-
-               </div>
-               <div class="start">
-                
-               </div>
-               <div class="start">
-               
-               </div>
-               <div class="start">
-                
-               </div>
-            </div>
-
-            <div class="starts">
-                <div class="start2">
-                 2
-                </div>
-                <div class="start2">
-                 2
-                </div>
-            </div>
-
-            <a href="https://m.youtube.com/watch?v=SrvKADxxsqg&pp=ygUaaGltbm8gbmFjaW9uYWwgZGUgY29sb21iaWE%3D">
-                <div class="starts">
-                    <div class="start3">
-                     
-                    </div>
-                </div>
-            </a>
-
-            
-
-            
-
-
-        </div>
-
-    </div>
-</body>
-</html>
+  </div>
+  <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+@endsection
