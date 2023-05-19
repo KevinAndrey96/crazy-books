@@ -30,7 +30,6 @@
                                 </tr>
                                 </thead>
                                 @foreach ($books as $book)
-                                {{$book->regions->name}}
                                     <tbody>
                                     <tr>
                                         <td>
