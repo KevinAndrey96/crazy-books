@@ -35,11 +35,21 @@ Route::middleware('auth')->group(function () {
 
 Auth::routes();
 Route::resource('home',HomeController::class)->names('home');
-Route::resource('users',UserController::class)->names('users')->middleware('auth'); 
+Route::resource('users',UserController::class)->names('users')->middleware('auth');
 Route::resource('regions',RegionController::class)->names('regions')->middleware('auth');
-Route::resource('books',BookController::class)->names('books')->middleware('auth');
+Route::get('/books', [BookController::class, 'index'])->name('books.index')->middleware('auth');
+Route::get('/books/region/{regionID}', [BookController::class, 'booksByRegionID'])
+    ->middleware('auth');
+Route::get('/books/create', [BookController::class, 'create'])->name('books.create')->middleware('auth');
+Route::post('/books', [BookController::class, 'store'])->name('books.store')->middleware('auth');
+Route::get('/books/{book}/edit', [BookController::class, 'edit'])->name('books.edit')->middleware('auth');
+Route::put('/books/{book}', [BookController::class, 'update'])->name('books.update')->middleware('auth');
+Route::delete('/books/{book}', [BookController::class, 'destroy'])->name('books.destroy')->middleware('auth');
+
+
 Route::resource('experiences',ExperienceController::class)->names('experiences')->middleware('auth');
-Route::get('/experience/{id}', [ExperienceController::class, 'show'])->name('experience.show');
+//Route::get('/regions/{id}', 'RegionController@show')->name('regions.show');
+
 
 
 

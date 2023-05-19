@@ -39,7 +39,7 @@ body{
     height: 40px;
     
     margin: 5px;
-    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/009/380/214/small/mobile-game-golden-star-clipart-design-illustration-free-png.png");
+   
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -70,7 +70,7 @@ body{
 .start2{
     width: 70px;
     height: 70px;
-    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/009/380/214/small/mobile-game-golden-star-clipart-design-illustration-free-png.png");
+   
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -80,9 +80,9 @@ body{
 .start3{
     width: 150px;
     height: 50px;
-    background-color: yellow;
+    
     margin: 5px;
-    background-image: url("https://www.shutterstock.com/image-vector/colombia-flag-isolated-on-png-260nw-2141663555.jpg");
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

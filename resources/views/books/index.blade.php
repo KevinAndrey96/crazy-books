@@ -19,18 +19,18 @@
                     <div class="card-body px-0 pb-2">
                         <div class="table-responsive p-0">
 
-                            <a type="submit" class="btn btn-primary m-4" value="create" href="{{route('books.create')}}">CREAR LIBRO</a>
+                           
                             <table class="table align-items-center mb-0">
                                 <thead>
                                 <tr>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Region</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Libro</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Acciones</th>
     
                                 </tr>
                                 </thead>
                                 @foreach ($books as $book)
+                                {{$book->regions->name}}
                                     <tbody>
                                     <tr>
                                         <td>
@@ -42,15 +42,7 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td>
-                                            <div class="d-flex px-2 py-4">
     
-                                                <div class="d-flex flex-column justify-content-center">
-                                                    <h6 class="mb-0 text-sm">{{$book->regions->name}}</h6>
-    
-                                                </div>
-                                            </div>
-                                        </td>
                                         <td>
                                             <div class="d-flex px-2 py-4">
     
@@ -75,7 +67,8 @@
                                                         
                                                     </form>
                                                     <a type="submit" class="btn btn-primary mx-2" value="editar" href="{{route('books.edit',$book)}}">Editar</a>
-                                                    <a href="{{ route('experiences.show', $book->id) }}" class="btn btn-primary">Ver Foro</a>
+                                                    <a href="{{ route('experiences.show', $book->region_id) }}" class="btn btn-primary">Ver Foro</a>
+                                                    
                                                     
                                                     
                                                

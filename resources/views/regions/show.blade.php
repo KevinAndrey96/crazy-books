@@ -13,6 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{asset('css/style2.css')}}">
+    <link rel="icon" type="image/png" href="{{asset('img/LOGO.png')}}">
     
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -32,6 +33,11 @@
     </div>
     </a>
     @foreach ($books as $book)
+    <div class="img_book" style="width: 80px; margin-left:30%;">
+
+        <img style="width: 80px " height="80px" src="/img/multimedia.png" data-toggle="modal" data-target="#exampleModal">
+
+      </div>
     <div class="container">
 
         <div class="div1">
@@ -49,14 +55,10 @@
             
             <div class="starts">
                <div class="start">
-                <div class="img_book">
 
-                  <img style="width: 40px" height="40px" src="https://w7.pngwing.com/pngs/576/689/png-transparent-computer-icons-scalable-graphics-music-media-player-music-player-sign-media-player-sound.png" alt="Descripción de la imagen" data-toggle="modal" data-target="#exampleModal">
-      
-                </div>
                </div>
                <div class="start">
-                <img style="width: 40px" height="40px" src="https://e7.pngegg.com/pngimages/234/543/png-clipart-pencil-drawing-a-of-a-pencil-angle-pencil.png" alt="Descripción de la imagen" data-toggle="modal" data-target="#exampleText">
+                <img style="width: 40px" height="40px" src="/img/pencil.png" alt="Descripci贸n de la imagen" data-toggle="modal" data-target="#exampleText">
               </div>
               
               <!-- Modal -->
@@ -80,28 +82,26 @@
               </div>
                <div class="start">
                 
-                <img style="width: 40px" height="40px" src="https://depor.com/resizer/zOBaUfkuWvg2PYWsF6NP7oEJdr8=/1200x900/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/SUURJEP6QBEYNNKLOFCRVK3LXQ.jpg" alt="Descripción de la imagen" data-toggle="modal" data-target="#exampleModal">
+                <img style="width: 40px" height="40px" src="/img/map.png" alt="Descripci贸n de la imagen" data-toggle="modal" data-target="#exampleModal">
                </div>
                <div class="start">
-                <img style="width: 40px" height="40px" src="https://w7.pngwing.com/pngs/576/689/png-transparent-computer-icons-scalable-graphics-music-media-player-music-player-sign-media-player-sound.png" alt="Descripción de la imagen" data-toggle="modal" data-target="#exampleModal">
+                <img style="width: 40px" height="40px" src="/img/happy.png" alt="Descripci贸n de la imagen" data-toggle="modal" data-target="#exampleModal">
                </div>
             </div>
 
-            <div class="starts">
+            <div class="starts" style=">
                 <div class="start2">
+
+                    <img style="width: auto;" height="aito" src="/img/Eye.png" alt="Descripci贸n de la imagen" data-toggle="modal" data-target="#exampleModal">
                  
                 </div>
                 <div class="start2">
-                 
+                    <img style="width: auto;" height="auto" src="/img/Videomedia.png" alt="Descripci贸n de la imagen" data-toggle="modal" data-target="#exampleModal">
                 </div>
             </div>
-            <a href="https://m.youtube.com/watch?v=SrvKADxxsqg&pp=ygUaaGltbm8gbmFjaW9uYWwgZGUgY29sb21iaWE%3D">
-                <div class="starts">
-                    <div class="start3">
-                     
-                    </div>
-                </div>
-            </a>
+
+
+            
 
             
 
@@ -110,11 +110,26 @@
 
         </div>
 
+        <div class="" style="display: flex;  ">
+            <div class="start3" style="margin-left: 20%">
+
+                <div class="start2" style="">
+                    <img style="width: auto;" height="auto" src="/img/diamante.png" alt="Descripci贸n de la imagen" data-toggle="modal" data-target="#exampleModal">
+                </div>
+
+            </div>
+            <div style="margin-left: 15%" class="start3">
+                <img style="width: auto;" height="auto" src="/img/globo_de_texto.png" alt="Descripci贸n de la imagen" data-toggle="modal" data-target="#exampleModal">
+            </div>
+        </div>
+    
+
+
     </div>
     <div class="container">
 
      
-
+        
             
 
             

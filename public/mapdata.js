@@ -301,8 +301,8 @@ var simplemaps_countrymap_mapdata={
       type: "image",
       image_url: "/img/icon.png",
       description: "<img src=\"/img/2.png\" style=\"width: 150px\" />",
-      url:"https://crazybooks.com.co/books/create"
-      
+      url:"/books/create"
+
     },
 
     "5": {

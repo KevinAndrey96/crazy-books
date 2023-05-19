@@ -15,10 +15,8 @@ class BookController extends Controller
      */
     public function index()
     {
-
-
         $books = Book::all();
-        return view('books.index',compact('books')); 
+        return view('books.index',compact('books'));
         $regions = Region::all();
         return view('books.index',compact('books'));
     }
@@ -46,7 +44,7 @@ class BookController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            
+
             'region_id' => 'required',
             'front_page' => 'required',
             'name' => 'required',
@@ -60,19 +58,25 @@ class BookController extends Controller
             'rectangle_text' => 'required',
             'rectangle_audio' => 'required',
         ]);
-    
+
         // Crea un nuevo libro con los datos del formulario
         $book = Book::create($data);
-    
+
         // Redirecciona a la página de visualización del libro recién creado
         return redirect()->route('books.index', $book->id);
     }
 
     public function show(Book $book)
-{
-    return view('books.show', compact('book'));
-}
-    
+    {
+        return view('books.show', compact('book'));
+    }
+
+    public function booksByRegionID($regionID)
+    {
+        $books = Book::where("region_id", $regionID)->get();
+        $region = Region::find($regionID);
+        return view('books.index', compact('books', 'region'));
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -109,13 +113,13 @@ class BookController extends Controller
             'rectangle_text' => 'required',
             'rectangle_audio' => 'required',
         ]);
-    
+
         // Actualiza los datos del libro con los valores validados
         $book->update($data);
-    
+
         return redirect()->route('books.index');
     }
-    
+
 
     /**
      * Remove the specified resource from storage.

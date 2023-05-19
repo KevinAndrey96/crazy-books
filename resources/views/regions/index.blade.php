@@ -49,7 +49,7 @@
                                             <div class="d-flex flex-column justify-content-center">
 
                                                 <a type="submit"  style="font-size: 16px; padding: 5px 25px;" class="btn btn-warning mx-2" value="editar" href="{{$region->blog_url}}">VER REGIÓN</a>
-                                               
+
                                             </div>
                                         </div>
                                     </td>
@@ -60,18 +60,20 @@
                                         <div class="d-flex px-4 py-2">
 
                                             <div class="d-flex justify-content-cente">
-                                             
 
-                                                
+
+
                                                 <form action="{{route('regions.destroy',$region)}}" method="POST">
                                                     @method('DELETE')
                                                     @csrf
-                                                    
-                                                    
+
+
                                                 </form>
                                                 <a type="submit" class="btn btn-primary mx-2" value="editar" href="{{route('regions.edit',$region)}}">Editar</a>
-                                                <a type="submit" class="btn btn-primary mx-2" value="ver" href="{{route('books.index')}}">Ver libros</a>
-                                        
+                                                <a type="submit" class="btn btn-primary mx-2" value="ver" href="/books/region/{{$region->id}}">Ver libros</a>
+
+
+
                                             </div>
                                         </div>
                     </div>

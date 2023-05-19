@@ -32,9 +32,9 @@
         @foreach ($experience->book->experiences as $comment)
 
             <div class="card mb-3 text-dark bg-light" style="max-width: 80%; margin: 2%;">
-                <div class="card-header">Libro: {{ $experience->book->name }}</div>
+                <div class="card-header"></div>
                 <div class="row g-0">
-                    <div class="col-md-4">
+                    <div class="col-md-4" style="max-width: 10%">
                         <img src="{{ asset('img/LOGO.png') }}" class="img-fluid rounded-start" alt="...">
                     </div>
                     <div class="col-md-8">
@@ -51,11 +51,11 @@
                 </div>
                 @if ($comment->user_id === Auth::id())
                     <!-- Botones de editar y eliminar solo para el usuario actual -->
-                    <div style="display: flex;">
+                    <div style="display: flex;" >
                         <form action="{{ route('experiences.destroy', $experience->id) }}" method="POST">
                             @method('DELETE')
                             @csrf
-                            <input style="margin:5px;" type="submit" width="100%" class="btn btn-danger" value="Eliminar">
+                            <input  style="margin:5px " type="submit" width="100%" class="btn btn-danger" value="Eliminar">
                         </form>
                     </div>
                 @endif

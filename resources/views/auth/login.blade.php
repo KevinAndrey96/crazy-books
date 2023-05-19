@@ -2,9 +2,9 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Calm breeze login screen</title>
+  <title>Crazy Books</title>
   <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
-
+  <link rel="icon" type="image/png" href="{{asset('img/LOGO.png')}}">
 
 </head>
 <body>
@@ -13,7 +13,7 @@
 <div class="wrapper">
 	<div class="container">
 		<h1>Crazy Books</h1>
-		
+
 		<form class="form" method="POST" action="{{ route('login')}} ">
 			@csrf
 			<input type="text" placeholder="Ingresa tu correo" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -41,9 +41,9 @@
 document.querySelector('form').addEventListener('submit', function(event) {
   // Previene el envío del formulario para que puedas ver la información en la consola
   event.preventDefault();
-  
+
   // Obtiene los valores de los campos del formulario
- 
+
   const email = document.querySelector('input[name="email"]').value;
   const password = document.querySelector('input[name="password"]').value;
 
@@ -51,13 +51,13 @@ document.querySelector('form').addEventListener('submit', function(event) {
 
   console.log(`Email: ${email}`);
   console.log(`Contraseña: ${password}`);
- 
-  
+
+
   // Envía el formulario
   this.submit();
 });
   </script>
 
- 
+
 </body>
 </html>

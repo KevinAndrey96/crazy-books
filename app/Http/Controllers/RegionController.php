@@ -56,15 +56,16 @@ class RegionController extends Controller
      * @param  \App\Models\region  $region
      * @return \Illuminate\Http\Response
      */
-    public function show( $regionId)
+
+
+    public function show($id)
     {
-
-        $region = Region::findOrFail($regionId);
+        $region = Region::findOrFail($id);
         $books = $region->books;
-
-        return view('regions.show', compact('region', 'books'));
     
+        return view('regions.show', compact('region', 'books'));
     }
+    
 
     /**
      * Show the form for editing the specified resource.
