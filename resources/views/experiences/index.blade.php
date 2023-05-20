@@ -2,11 +2,13 @@
 <br>
 <br>
 @section('content')
-
+@foreach ($experiences as $experience)
+@endforeach
     <div style="margin-left: 20%">
         
     <div class="card mb-3 text-dark bg-light m-2" style="width: 90%; margin: 2%;">
         
+        <h1 class="m-5">Foro para el libro : {{ $experience->book->name }}</h1>
         <form action="{{ route('experiences.store') }}" method="POST">
             @csrf
             
@@ -18,7 +20,7 @@
             <br>
             <textarea class="form-control " style=" max-width: 70%; margin-left:5%; border: 2px solid blue;" name="content" id="content" rows="4"></textarea>
             <br>
-            <button class="btn btn-warning m-2" type="submit">Crear Comentario</button>
+            <button class="btn btn-warning m-5" type="submit">Crear Comentario</button>
         </form>
 
     </div>

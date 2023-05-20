@@ -18,7 +18,7 @@
             <br>
             <textarea class="form-control " style=" max-width: 70%; margin-left:5%; border: 2px solid blue;" name="content" id="content" rows="4"></textarea>
             <br>
-            <button class="btn btn-warning m-2" type="submit">Crear Comentario</button>
+            <button class="btn btn-warning m-5" type="submit">Crear Comentario</button>
         </form>
 
     </div>
