@@ -96,6 +96,9 @@ class ExperienceController extends Controller
      */
     public function show($id)
     {
+        $experiences = Experience::with('book', 'user')->get();
+        $users = User::all();
+        $books = Book::all(); 
         $book = Book::findOrFail($id);
         $experiences = $book->experiences;
         return view('experiences.show', compact('book', 'experiences'));
