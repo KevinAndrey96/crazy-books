@@ -10,6 +10,7 @@
     <title>
         Crazy Books
     </title>
+    
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
     <!-- Nucleo Icons -->
@@ -78,12 +79,17 @@
             <li class="nav-item">
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white " href="../pages/sign-in.html">
-                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                    @csrf
+                <a class="nav-link text-white " href="/welcome">
+                    <div class="text-white text-center d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">login</i>
                     </div>
-                    <span class="nav-link-text ms-1">Salir</span>
+                    <button type="submit" class="btn mt-3 text-white">Salir</button>
                 </a>
+                </form>
+                
+            </li>    
         </ul>
     </div>
     <div class="sidenav-footer position-absolute w-100 bottom-0 ">

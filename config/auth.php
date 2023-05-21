@@ -95,6 +95,12 @@ return [
         ],
     ],
 
+    'logout' => [
+        'method' => 'POST',
+        'uri' => 'logout',
+        'action' => 'App\Http\Controllers\Auth\LoginController@logout',
+    ],
+    
     /*
     |--------------------------------------------------------------------------
     | Password Confirmation Timeout

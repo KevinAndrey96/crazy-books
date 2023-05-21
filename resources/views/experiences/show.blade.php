@@ -6,7 +6,7 @@
     <div style="margin-left: 20%">
         
     <div class="card mb-3 text-dark bg-light m-2" style="width: 90%; margin: 2%;">
-        <h1 class="m-2">Foro para el libro : {{ $book->name }}</h1>
+        <h1 class="m-5">Foro para el libro : {{ $book->name }}</h1>
         <form action="{{ route('experiences.store') }}" method="POST">
             @csrf
             
