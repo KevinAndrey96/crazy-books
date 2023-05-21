@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Models\Experience;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -17,7 +17,7 @@ class UserController extends Controller
     {
         $users = User::all();
 
-        return view('users.index',compact('users'));
+        return view('users.index', compact('users'));
     }
 
     /**
@@ -27,7 +27,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $users = User::all();
+        return view('users.create');
     }
 
     /**
@@ -38,7 +39,16 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+        User::create($request->only('name', 'user', 'email', 'role')
+        +[
+            'password' => bcrypt($request->input('password')),
+        ]);
+
+        // Resto de la lógica...
+
+        return redirect()->route('users.index');
     }
 
     /**
@@ -49,7 +59,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        return view('users.show', compact('user'));
     }
 
     /**
@@ -60,9 +70,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-       
-      return view('users.edit',compact('user'));
-       
+        return view('users.edit', compact('user'));
     }
 
     /**
@@ -74,19 +82,28 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        $user->update($request->all());
-        return redirect()->route('users.index');
+        $data = $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email|unique:users,email,' . $user->id,
+            // Agrega aquí los campos adicionales que deseas validar y actualizar
+            'field1' => 'required',
+            'field2' => 'required',
+        ]);
+
+        $user->update($data);
+
+        // Redireccionar a la página de inicio o a la página de detalles del usuario actualizado
+        return redirect()->route('users.show', $user->id);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(User $user)
-    {
-        $user->delete();
-        return redirect()->route('users.index');
-    }
+{
+    // Eliminar las experiencias relacionadas
+    $user->experiences()->delete();
+
+    // Eliminar al usuario
+    $user->delete();
+
+    return redirect()->route('users.index');
+}
 }
