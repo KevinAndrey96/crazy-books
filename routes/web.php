@@ -28,7 +28,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [HomeController::class, 'show'])->name('welcome');
 
 
-Route::middleware('auth', 'admin')->group(function () {
+Route::middleware('auth')->group(function () {
     // Rutas protegidas aquí
     Route::get('/experiences', 'ExperienceController@index')->name('experiences.index');
     
