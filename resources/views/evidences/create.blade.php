@@ -38,7 +38,7 @@
               <select class="form-select" aria-label="Default select example" name="user_id" id="user_id" class="form-control">
                 <option value="">Selecciona un usuario</option>
                 @foreach($users as $user)
-                    <option value="{{ $user->id }}">{{ $user->name  }},{{ $user->id }}</option>
+                    <option value="{{ $user->id }}">{{ $user->name  }}</option>
                 @endforeach
             </select>
 
@@ -57,7 +57,7 @@
             </div>
 
             <div class="text-center">
-              <button type="submit" class="btn bg-gradient-success w-100 my-4 mb-2">Eviar tarea</button>
+              <button type="submit" class="btn bg-gradient-success w-100 my-4 mb-2">Enviar tarea</button>
             </div>
           </form>
         </div>
