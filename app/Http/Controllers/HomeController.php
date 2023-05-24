@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
+use App\Models\Region;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -26,5 +28,10 @@ class HomeController extends Controller
     {
         $users = User::all();
         return view('users.index',compact('users'));
+    }
+    public function show()
+    {
+        $region = Region::all();
+        return view('welcome', compact('region'));
     }
 }

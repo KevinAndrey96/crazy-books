@@ -15,7 +15,7 @@ class EvidenceController extends Controller
 
     public function create()
     {
-        
+
         return view('evidences.create');
     }
 
@@ -29,19 +29,18 @@ class EvidenceController extends Controller
         ]);
 
         $attachmentPath = $request->file('attachment_media')->store('public/attachments');
-        $attachmentUrl = asset('storage/' . $attachmentPath);
+        $attachment_media = asset('storage/' . $attachmentPath);
 
-        $evidence =  Evidence::create([
+     /*   $evidence =  Evidence::create([
             'attachment_media_url' => $attachmentUrl,
-            'user_id' => $request->user_id,
+            'user_id' => $request->id,
             'student_name' => $request->student_name,
             'class_room' => $request->class_room,
-        ]);
+        ]);*/
 
-        
+        Evidence::created($request->all());
 
-        return redirect()->route('evidences.index')
-            ->with('success', 'Evidence created successfully.');
+        return redirect()->route('evidences.index')->with('success', 'Evidence created successfully.');
     }
 
     public function show(Evidence $evidence)

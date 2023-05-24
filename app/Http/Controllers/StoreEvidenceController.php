@@ -11,13 +11,16 @@ class StoreEvidenceController extends Controller
 {
    public function store(Request $request){
       $evidence = new Evidence();
-      $evidence->user_id = 1;
+      $evidence->user_id = $request->user_id;
       $evidence->student_name = $request->input('student_name');
       $evidence->class_room = $request->input('class_room');
       $evidence->attachment_media_url = '';
       $evidence->save();
 
-      $attachment = $request->file('attachment_media');
+      $attachment = $request->file('attachment_media');      
+      
+
+      /*Evidence::created($request->all());*/
 
       if (isset($attachment))
       {

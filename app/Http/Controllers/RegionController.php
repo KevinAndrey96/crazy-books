@@ -16,10 +16,10 @@ class RegionController extends Controller
 
     public function index()
     {
-        
-        $regions = Region::all();
 
-        return view('regions.index',compact('regions'));
+        $regions = Region::all();
+        $books = Book::all();
+        return view('regions.index',compact('regions', 'books'));
     }
 
     /**
@@ -55,14 +55,22 @@ class RegionController extends Controller
      */
 
 
-    public function show($id)
+   /* public function show($id)
     {
         $region = Region::findOrFail($id);
         $books = $region->books;
-    
+
         return view('regions.show', compact('region', 'books'));
+
+        
+    }*/
+    public function show($regionID)
+    {
+        $books = Book::where("region_id", $regionID)->get();
+        $region = Region::find($regionID);
+        return view('regions.show', compact('books', 'region'));
     }
-    
+
 
     /**
      * Show the form for editing the specified resource.
@@ -73,7 +81,7 @@ class RegionController extends Controller
     public function edit(Region $region)
     {
         return view('regions.edit',compact('region'));
-        
+
     }
 
     /**
@@ -84,7 +92,7 @@ class RegionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Region $region){
-        
+
 
 
         $region->update($request->all());

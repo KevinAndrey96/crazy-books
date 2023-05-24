@@ -38,7 +38,7 @@
               <select class="form-select" aria-label="Default select example" name="user_id" id="user_id" class="form-control">
                 <option value="">Selecciona un usuario</option>
                 @foreach($users as $user)
-                    <option value="{{ $user->id }}">{{ $user->name  }}</option>
+                    <option value="{{ $user->id }}">{{ $user->name  }},{{ $user->id }}</option>
                 @endforeach
             </select>
 
