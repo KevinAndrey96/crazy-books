@@ -1,6 +1,4 @@
-@extends('layouts.dashboard')
 
-@section('navbar')
 <br>
 <br>
 <br>
@@ -73,4 +71,4 @@
 <br>
 <br>
 
-@endsection
+
