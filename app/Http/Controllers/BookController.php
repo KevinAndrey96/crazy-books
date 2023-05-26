@@ -57,6 +57,8 @@ class BookController extends Controller
             'square_media_2' => 'required',
             'rectangle_text' => 'required',
             'rectangle_audio' => 'required',
+
+            
         ]);
 
         // Crea un nuevo libro con los datos del formulario
@@ -65,6 +67,8 @@ class BookController extends Controller
         // Redirecciona a la página de visualización del libro recién creado
         return redirect()->route('books.index', $book->id);
     }
+
+    
 
     public function show(Book $book)
     {

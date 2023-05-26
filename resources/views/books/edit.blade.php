@@ -32,7 +32,7 @@
                 
                 <div class="input-group input-group-outline my-3">
                     <label class="form-label"></label >
-                    <select name="region_id" id="">
+                    <select class="form-select" name="region_id" id="">
                         <option value="region_id">{{$book->regions->name}}</option>
                     </select>
                 </div>

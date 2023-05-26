@@ -6,7 +6,7 @@
 @endforeach
     <div style="margin-left: 20%">
         
-    <div class="card mb-3 text-dark bg-light m-2" style="width: 90%; margin: 2%;">
+    <div class="card mb-3 text-dark bg-white m-2" style="width: 90%; margin: 2%;">
         
         <h1 class="m-5">Foro para el libro : {{ $experience->book->name }}</h1>
         <form action="{{ route('experiences.store') }}" method="POST">
@@ -26,18 +26,19 @@
     </div>
 
 
-    <h1>Lista de comentarios</h1>
+    <h1 class="m-4">Lista de comentarios</h1>
+    <br>
+    
 
 
     @foreach ($experiences as $experience)
-<br><br>
-    <div class="card mt-4" style="max-width: 80%" >
+    <div class="card mt-2" style="max-width: 80%" >
         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
           <div class="bg-gradient-warning shadow-primary border-radius-lg pt-4 pb-3">
             <h6 class="text-white text-capitalize ps-3">{{ $experience->user->name }}</h6>
             <p class="mb-0 text-white ps-3">
                 
-                Libro: {{ $experience->book->name }}
+               
               
             </p>
           </div>

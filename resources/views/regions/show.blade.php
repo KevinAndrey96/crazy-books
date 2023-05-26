@@ -28,90 +28,47 @@
   </a>
 
   @foreach ($books as $book)
-  <div class="p-3">
-  <div class="img_book " style="width: 80px; margin-left:30%;">
-
-    <img style="width: 80px " height="80px" src="/img/multimedia.png" data-toggle="modal" data-target="#exampleModal">
-
-  </div>
-  <div class="container mt-2">
-
-    <div class="div1">
-      <div class="img_book">
-
-        <img src="{{$book->front_page}}" alt="libro-infantil">
-
-      </div>
+  <div class="p-3 m-4">
+    <div class="img_book " style="width: 50px; margin-left:30%;">
+      
+      <img style="width: 100%; height: 100%;"  src="/img/multimedia.png" data-toggle="modal" data-target="#exampleModal">
     </div>
+    <div class="container mt-2">
 
-
-    <div class="div2">
-      <h1></h1>
-
-
-      <div class="starts">
-        <div class="start">
-
+      <div class="div1">
+        <div class="img_book m-2" style="width: 120px; height: auto; margin-left:30%;">
+          <img style="width: 100%; height: 100%;" src="{{$book->front_page}}" alt="libro-infantil">
         </div>
-        <div class="start">
-          <img style="width: 40px" height="40px" src="/img/pencil.png" alt="Descripci贸n de la imagen"
-            data-toggle="modal" data-target="#exampleText">
-        </div>
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleText" tabindex="-1" role="dialog" aria-labelledby="exampleTextLabel"
-          aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleTextLabel">{{$book->regions->name}}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <p>{{$book->triangle_text}}</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              </div>
-            </div>
+      </div>
+      <div class="div2">
+        <div class="starts">
+          <div class="start">
+            <img style="width: 40px" height="40px" src="/img/pencil.png" alt="Descripci贸n de la imagen"
+              data-toggle="modal" data-target="#exampleText">
+          </div>
+          <div class="start">
+            <img style="width: 40px" height="40px" src="/img/map.png" alt="Descripci贸n de la imagen" data-toggle="modal"
+              data-target="#exampleModal">
+          </div>
+          <div class="start">
+            <img style="width: 40px" height="40px" src="/img/happy.png" alt="Descripci贸n de la imagen"
+              data-toggle="modal" data-target="#exampleModal">
           </div>
         </div>
-        <div class="start">
-
-          <img style="width: 40px" height="40px" src="/img/map.png" alt="Descripci贸n de la imagen" data-toggle="modal"
-            data-target="#exampleModal">
+        <div class="starts">
+          <div class=" start2">
+            <img style="width: auto;" height="aito" src="/img/Eye.png" alt="Descripci贸n de la imagen"
+              data-toggle="modal" data-target="#exampleModal">
+          </div>
+          <div class="start2">
+            <img style="width: auto;" height="auto" src="/img/Videomedia.png" alt="Descripci贸n de la imagen"
+              data-toggle="modal" data-target="#exampleModal">
+          </div>
         </div>
-        <div class="start">
-          <img style="width: 40px" height="40px" src="/img/happy.png" alt="Descripci贸n de la imagen" data-toggle="modal"
-            data-target="#exampleModal">
-        </div>
       </div>
 
-      <div class="starts" style=">
-                <div class=" start2">
-
-        <img style="width: auto;" height="aito" src="/img/Eye.png" alt="Descripci贸n de la imagen" data-toggle="modal"
-          data-target="#exampleModal">
-
-      </div>
-      <div class="start2">
-        <img style="width: auto;" height="auto" src="/img/Videomedia.png" alt="Descripci贸n de la imagen"
-          data-toggle="modal" data-target="#exampleModal">
-      </div>
     </div>
-
-
-
-
-
-
-
-
-
   </div>
-
   <div class="" style="display: flex;  ">
     <div class="start3" style="margin-left: 20%">
 
@@ -122,28 +79,11 @@
 
     </div>
     <div style="margin-left: 15%" class="start3">
-      <img style="width: auto;" height="auto" src="/img/globo_de_texto.png" alt="Descripci贸n de la imagen"
-        data-toggle="modal" data-target="#exampleModal">
+      <img style="width: auto;" height="auto" src="/img/globo_de_texto.png" alt="Descripci贸n de la imagen">
     </div>
   </div>
-
-
-
-  </div>
-  <div class="container">
-
-
-
-
-
-
-
-
   </div>
 
-  </div>
-</div>
-</body>
 
 
 
@@ -152,28 +92,40 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{$book->name}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-
-        <iframe width="auto" height="auto" src="{{$book->start_media_1}}" title="YouTube video player" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
+      <div class="modal-body mx-auto">
+        <iframe class="mx-auto" width="auto" height="auto" src="{{$book->start_media_1}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>
 </div>
 
-
-
-
+<div class="modal fade" id="exampleText" tabindex="-1" role="dialog" aria-labelledby="exampleTextLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleTextLabel">{{$book->regions->name}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>{{$book->triangle_text}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="modal fade" id="#exampleText" tabindex="-1" role="dialog" aria-labelledby="#exampleTextLabel"
   aria-hidden="true">
@@ -196,6 +148,7 @@
   </div>
 </div>
 @endforeach
+</body>
 
 <script>
   $('##exampleText').on('show.bs.modal', function () {
