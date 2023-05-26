@@ -84,7 +84,7 @@
             </div>
 
             <div class="text-center">
-              <button type="submit" class="btn bg-gradient-success w-100 my-4 mb-2">Enviar tarea</button>
+              <button type="submit" class="btn bg-gradient-success w-100 my-4 mb-2">Enviar evidencia</button>
             </div>
           </form>
         </div>

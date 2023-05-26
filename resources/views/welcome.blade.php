@@ -25,11 +25,7 @@
 
 <body class="antialiased">
 
-    <a type="submit" style="font-size: 16px; padding: 5px 25px;"
-    class="btn btn-warning mx-2" value="editar"
-    href="/evidences/create">
-    SUBIR EVIDENCIAS DE LA CLASE
-</a>
+
     <div
         class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
 
