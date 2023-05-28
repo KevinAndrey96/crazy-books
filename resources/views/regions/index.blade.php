@@ -2,6 +2,7 @@
 @section('navbar')
 
 <div class="container-fluid py-4">
+    <div class="content-container overflow-x-auto">
     <div class="row">
         <div class="col-12">
             <div class="card my-4">
@@ -66,14 +67,9 @@
                                                 <form action="{{route('regions.destroy',$region)}}" method="POST">
                                                     @method('DELETE')
                                                     @csrf
-
-
                                                 </form>
                                                 <a type="submit" class="btn btn-primary mx-2" value="editar" href="{{route('regions.edit',$region)}}">Editar</a>
-                                                <a type="submit" class="btn btn-primary mx-2" value="ver" href="/books/region/{{$region->id}}">Ver libros</a>
-
-
-
+                                                <a type="submit" class="btn btn-primary mx-2" value="ver" href="/books/region/{{$region->id}}">Libros</a>
                                             </div>
                                         </div>
                     </div>
@@ -91,6 +87,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </div>
 @endsection

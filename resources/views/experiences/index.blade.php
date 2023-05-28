@@ -4,32 +4,21 @@
 @section('content')
 @foreach ($experiences as $experience)
 @endforeach
-    <div style="margin-left: 20%">
+    <div style="margin-left: 30%">
         
     <div class="card mb-3 text-dark bg-white m-2" style="width: 90%; margin: 2%;">
         
-        <h1 class="m-5">Foro para el libro : {{ $experience->book->name }}</h1>
+        <h3 class="mx-5" style="margin-top: 10px;"">Foro - {{ $experience->book->name }}</h3>
+        <p class="mx-5" style="align: justify;">¡Bienvenido al fascinante mundo de los libros regionales de Colombia! Este espacio está diseñado para que profesores como tú compartan sus conocimientos y experiencias sobre la riqueza literaria de nuestras diferentes regiones.</p>
         <form action="{{ route('experiences.store') }}" method="POST">
             @csrf
-            
-            <br>
-            
-            
-            <br>
-           
-            <br>
-            <textarea class="form-control " style=" max-width: 70%; margin-left:5%; border: 2px solid blue;" name="content" id="content" rows="4"></textarea>
-            <br>
-            <button class="btn btn-warning m-5" type="submit">Crear Comentario</button>
+            <textarea class="form-control" placeholder=" ¡Exprésate y déjanos tu sabiduría en este foro de palabras que enriquecerá nuestras aulas y mentes con historias colombianas inolvidables!" style=" max-width: 70%; margin-left:5%; border: 2px solid blue;" name="content" id="content" rows="4"></textarea>
+            <button class="btn btn-warning m-5" type="submit">Comentar</button>
         </form>
-
     </div>
 
 
-    <h1 class="m-4">Lista de comentarios</h1>
-    <br>
-    
-
+    <h3 class="m-4">Comentarios de otros profes</h3>
 
     @foreach ($experiences as $experience)
     <div class="card mt-2" style="max-width: 80%" >
@@ -37,9 +26,6 @@
           <div class="bg-gradient-warning shadow-primary border-radius-lg pt-4 pb-3">
             <h6 class="text-white text-capitalize ps-3">{{ $experience->user->name }}</h6>
             <p class="mb-0 text-white ps-3">
-                
-               
-              
             </p>
           </div>
         </div>
@@ -62,5 +48,4 @@
        
 
     @endforeach
-    
 </div>

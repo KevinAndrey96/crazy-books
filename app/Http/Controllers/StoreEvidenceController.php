@@ -12,6 +12,7 @@ class StoreEvidenceController extends Controller
    public function store(Request $request){
       $evidence = new Evidence();
       $evidence->user_id = $request->user_id;
+      $evidence->book_id = $request->book_id;
       $evidence->student_name = $request->input('student_name');
       $evidence->class_room = $request->input('class_room');
       $evidence->attachment_media_url = '';

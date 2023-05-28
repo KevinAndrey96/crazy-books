@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Evidence;
 use App\Models\Region;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BookController extends Controller
 {
@@ -80,6 +82,12 @@ class BookController extends Controller
         $books = Book::where("region_id", $regionID)->get();
         $region = Region::find($regionID);
         return view('books.index', compact('books', 'region'));
+    }
+
+    public function evidencesByBookID($bookID)
+    {
+        $evidences = Evidence::where([["book_id", $bookID],["user_id", Auth::id()]])->get();
+        return view('evidences.byBooks', compact('evidences'));
     }
 
     /**

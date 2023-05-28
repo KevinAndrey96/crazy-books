@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="76x76" href="{{asset('img/apple-icon.png')}}">
     <link rel="icon" type="image/png" href="{{asset('img/LOGO.png')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.2/dist/css/bootstrap.min.css">
+
     <title>
         Crazy Books
     </title>
@@ -28,6 +30,8 @@
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
+    
+    
     <aside
         class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark"
         id="sidenav-main">
@@ -39,6 +43,7 @@
                 <span class="ms-1 font-weight-bold text-white">Crazy Books</span>
             </a>
         </div>
+        
         <hr class="horizontal light mt-0 mb-2">
         <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
             <ul class="navbar-nav">
@@ -112,9 +117,55 @@
                 
             </ul>
         </div>
+
+        
+        
     </aside>
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <!-- Navbar -->
+        
+<nav class="navbar navbar-expand-lg navbar-light bg-light d-lg-none">
+    <a class="navbar-brand" href="/">
+      
+      <span class="ms-1 font-weight-bold">Crazy Books</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <img width="80px" src="{{asset('img/LOGO.png')}}" class="navbar-brand-img h-100" alt="main_logo">
+      
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/users/create">Crear usuario</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/books/create">Crear libro</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/evidences">Evidencias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users">Profesores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/">Mapa Interactivo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/regions">Regiones</a>
+        </li>
+        <li class="nav-item">
+          <form id="logout-form" action="{{ route('logout') }}" method="POST">
+            @csrf
+            <a class="nav-link" href="{{ route('logout') }}">
+              <i class="material-icons opacity-10">login</i>
+              <button type="submit" class="btn mt-3">Salir</button>
+            </a>
+          </form>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
         <!-- End Navbar -->
         @yield('navbar')

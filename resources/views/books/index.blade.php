@@ -57,15 +57,11 @@
                                                 @method('DELETE')
                                                 @csrf
                                                 <input type="submit" class="btn btn-danger" value="Eliminar">
-                                                
+                                            
                                             </form>
                                             <a type="submit" class="btn btn-primary mx-2" value="editar" href="{{route('books.edit',$book)}}">Editar</a>
-                                            <a href="{{ route('experiences.show', $book->region_id) }}" class="btn btn-primary">Ver Foro</a>
-                                            
-                                            
-                                            
-                                       
-                                         
+                                            <a href="{{ route('experiences.show', $book->region_id) }}" class="btn btn-primary">Foro</a>
+                                            <a href="{{ route('evidences.show', $book->id) }}" class="btn btn-primary">Evidences</a>                                         
                                         </div>
                                     </div>
                 </div>

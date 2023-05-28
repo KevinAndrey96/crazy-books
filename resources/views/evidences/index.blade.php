@@ -1,46 +1,70 @@
 @extends('layouts.dashboard')
 @section('navbar')
-<table>
-  <thead>
-    <tr>
-      <th class="pt-5 pb-5 ps-4"><h3>Evidencias</h3></th>
-    </tr>
-  </thead>
-  <tbody>
-    @forelse ($evidences as $evidence)
-      <tr>
-        <td >
-          @if ($evidence->user_id === Auth::id())
-            @if (!is_null($evidence->attachment_media_url))
-            <div class=" card" style="max-width: 100%; min-width: 100%;">
-              <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                <div class="bg-gradient-warning shadow-primary border-radius-lg pt-4 pb-3">
-                  <h6 class="text-white text-capitalize ps-3"></h6>
-                  <p class="mb-0 text-white ps-3">
-                    <h4 style="text-align: center;">{{$evidence->user->name}}</h4>
-                  </p>
-                </div>
-                
-              
-                <img style="width: 50%; margin-top:2%; margin-left:25%;" class="img-flui" src="https://crazybooks.com.co{{$evidence->attachment_media_url}}">
-              
-              
+    <div class="container-fluid py-4">
+      <div class="content-container overflow-x-auto">
+      <div class="row">
+          <div class="col-12">
+              <div class="card my-4">
+                  <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                      <div class="bg-gradient-success shadow-success border-radius-lg pt-4 pb-3">
+                          <h6 class="text-white text-capitalize ps-3">evidencias</h6>
+                      </div>
+                  </div>
+                  <div class="card-body px-0 pb-2">
+                      <div class="table-responsive p-0">
+                          <table class="table align-items-center mb-0">
+                              <thead>
+                              <tr>
+                                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Libro</th>
 
+  
+                              </tr>
+                              </thead>
+                              @foreach ($books as $book)
+                                  <tbody>
+                                  <tr>
+                                      <td>
+                                          <div class="d-flex px-2 py-1">
+  
+                                              <div class="d-flex flex-column justify-content-center">
+                                                  <h6 class="mb-0 text-sm">{{$book->name}}</h6>
+  
+                                              </div>
+                                          </div>
+                                     </td>
+                                      <td>
+                                          <div class="d-flex px-2 py-4">
+  
+                                              <div class="d-flex flex-column justify-content-center">
+                                                  <h6 class="mb-0 text-sm"></h6>
+  
+                                              </div>
+                                          </div>
+                                      </td>
+                                      <td>
+                                          <div class="d-flex px-4 py-2">
+  
+                                              <div class="d-flex flex-column justify-content-center">
+  
+                                                  <a href="/books/evidences/{{$book->id}}  style="font-size: 16px; padding: 5px 25px;" class="btn btn-warning mx-2" value="editar" href="">Evidencias</a>
+  
+                                              </div>
+                                          </div>
+                                      </td>
+                      </tr>
+                      </tbody>
+                      @endforeach
+                      </table>
+  
+                      <table class="table align-items-center justify-content-center mb-0">
+  
+                      </table>
+                  </div>
               </div>
-              <div class="card-body p-3 mx-auto">
-                <h4>Estudiante: {{$evidence->student_name}}</h4>
-                <h4>Curso: {{$evidence->class_room}}</h4>
-                <!-- Botones de editar y eliminar solo para el usuario actual -->
-              </div>
-            </div>
-            <br><br>
-            @endif
-          @endif
-        </td>
-      </tr>
-    @empty
-        <p>No hay envidencia que mostar</p>
-    @endforelse
+          </div>
+      </div>
+      </div>
+  </div>
         
     
   </tbody>

@@ -58,7 +58,14 @@
               </div>
             </div>
         
-                
+            <div class="form-group mt-3">
+              <label for="user_id">Selecciona un profesor:</label>
+              <select class="form-select" aria-label="Default select example" name="book_id" id="book_id" class="form-control">
+                <option value="">Selecciona un libro:</option>
+                @foreach($books as $book)
+                    <option value="{{ $book->id }}">{{ $book->name  }}</option>
+                @endforeach
+            </select>                
           
             <div class="form-group mt-3">
               <label for="user_id">Selecciona un profesor:</label>

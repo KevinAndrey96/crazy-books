@@ -6,11 +6,11 @@
     <div style="margin-left: 20%">
         
       <div class="card mb-3 text-dark bg-white m-2" style="width: 90%; margin: 2%;">
-        <h1 class="m-5">Foro para el libro : {{ $book->name }}</h1>
+        <h1 class="m-5">Foro para el libro: {{ $book->name }}</h1>
         <form action="{{ route('experiences.store') }}" method="POST">
             @csrf
             
-            <br>
+            
             
             <input type="hidden" name="book_id" value="{{ $book->id }}">
             <br>

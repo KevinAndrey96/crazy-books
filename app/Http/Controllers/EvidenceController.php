@@ -81,7 +81,7 @@ class EvidenceController extends Controller
     {
         $evidence->delete();
 
-        return redirect()->route('evidences.index')
+        return redirect()->route('/')
             ->with('success', 'Evidence deleted successfully.');
     }
 }

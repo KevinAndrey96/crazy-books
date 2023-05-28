@@ -42,12 +42,14 @@ Route::resource('users',UserController::class)->names('users')->middleware('auth
 Route::resource('regions',RegionController::class)->names('regions')->middleware('auth');
 Route::get('/regions', [RegionController::class, 'index'])->name('regions.index')->middleware('auth');
 Route::get('/regions/create', [RegionController::class, 'create'])->name('regions.create')->middleware('auth');
-Route::get('/regions/edit', [RegionController::class, 'edit'])->name('regions.edit')->middleware('auth');
+Route::get('/regions/edit', [RegionController::class, 'edit'])->name('regions.edit2')->middleware('auth');
 
-Route::get('/regions/show/{regionID}', [RegionController::class, 'show'])->name('regions.show');
+Route::get('/regions/show/{regionID}', [RegionController::class, 'show'])->name('regions.show1');
 
 Route::get('/books', [BookController::class, 'index'])->name('books.index')->middleware('auth');
-Route::get('/books/region/{regionID}', [BookController::class, 'booksByRegionID'])->middleware('auth');
+Route::get('/books/region/{regionID}', [BookController::class, 'booksByRegionID'])->middleware('auth');// foro
+Route::get('/books/evidences/{bookID}', [BookController::class, 'evidencesByBookID'])->middleware('auth');// evidencias
+//tablas compuestas en laravel (llaves foraneas de una  muchos)
 Route::get('/books/create', [BookController::class, 'create'])->name('books.create')->middleware('auth');
 Route::post('/books', [BookController::class, 'store'])->name('books.store')->middleware('auth');
 
