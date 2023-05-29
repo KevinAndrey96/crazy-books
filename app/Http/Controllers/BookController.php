@@ -17,9 +17,10 @@ class BookController extends Controller
      */
     public function index()
     {
-        $books = Book::all();
-        return view('books.index',compact('books'));
         $regions = Region::all();
+        $books = Book::all();
+        return view('books.index',compact('books','regions'));
+        
         return view('books.index',compact('books'));
     }
 
@@ -31,7 +32,6 @@ class BookController extends Controller
     public function create()
     {
         $books = Book::all();
-
         $regions = Region::all();
         return view('books.create', compact('regions'));
 
@@ -111,23 +111,9 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        $data = $request->validate([
-            'region_id' => 'required',
-            'front_page' => 'required',
-            'name' => 'required',
-            'circle_audio' => 'required',
-            'triangle_text' => 'required',
-            'triangle_audio' => 'required',
-            'start_media_1' => 'required',
-            'start_media_2' => 'required',
-            'square_media_1' => 'required',
-            'square_media_2' => 'required',
-            'rectangle_text' => 'required',
-            'rectangle_audio' => 'required',
-        ]);
+        $book->update($request->all());
 
-        // Actualiza los datos del libro con los valores validados
-        $book->update($data);
+        
 
         return redirect()->route('books.index');
     }

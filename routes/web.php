@@ -62,7 +62,7 @@ Route::resource('experiences',ExperienceController::class)->names('experiences')
 //Route::get('/regions/{id}', 'RegionController@show')->name('regions.show');
 Route::post('/evidence-store', [StoreEvidenceController::class, 'store'])->name('evidence.store')->middleware('auth');
 
-
+Route::get('/evidences/{id}', [EvidencesController::class, 'show'])->name('evidences.show');
 Route::get('/evidences', [evidenceController::class, 'index'])->name('evidences.index')->middleware('auth');
 Route::get('/evidences/create', [App\Http\Controllers\CreateEvidenceController::class, 'create']);
 Route::get('/evidences/region/{regionID}', [evidenceController::class, 'evidencesByRegionID'])->middleware('auth');
@@ -77,6 +77,8 @@ Route::delete('/evidences/{evidence}', [evidenceController::class, 'destroy'])->
 Route::get('/evidence-create', [App\Http\Controllers\CreateEvidenceController::class, 'create'])->middleware('auth');
 
 Route::get('/evidences', [App\Http\Controllers\IndexEvidenceController::class, 'index'])->middleware('auth');
+
+
 
 
 

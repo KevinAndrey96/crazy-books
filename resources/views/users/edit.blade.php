@@ -23,20 +23,23 @@
               @csrf
               @method('PUT')
               <div class="input-group input-group-outline my-3">
-                <label class="form-label"></label>
-                <input type="text" class="form-control" name="name" value="{{$user->name}}"  autocomplete="name" autofocus>
-              </div>
-              <div class="input-group input-group-outline mb-3">
-                <label class="form-label"></label>
-                <input type="email" class="form-control" name="email" value="{{$user->email}}"  autocomplete="email" autofocus>
+                <label class="form-label"></label >
+                <input type="text" class="form-control" name="name" value="{{$user->name}}" autocomplete="name" autofocus>
               </div>
               <div class="input-group input-group-outline my-3">
-                <label class="form-label"></label>
-                <input type="text" class="form-control" name="role" value="{{$user->role}}"  autocomplete="role" autofocus>
+                <label class="form-label"></label >
+                <input type="text" class="form-control" name="email" value="{{$user->email}}" autocomplete="email" autofocus>
               </div>
-              <div class="input-group input-group-outline mb-3">
-                <label class="form-label"></label>
-              </div>
+
+              <div class="input-group input-group-outline my-3">
+                <label class="form-label"></label >
+                <select class="form-select" name="role" id="role" required>
+                    
+                    <option value="{{$user->role}}">{{$user->role}}</option>
+                   
+                </select>
+                </div>
+
 
               <div class="text-center">
                 <button type="submit" class="btn bg-gradient-success w-100 my-4 mb-2">Editar</button>

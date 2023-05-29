@@ -81,18 +81,9 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        $data = $request->validate([
-            'name' => 'required|string',
-            'email' => 'required|email|unique:users,email,' . $user->id,
-            // Agrega aquí los campos adicionales que deseas validar y actualizar
-            'field1' => 'required',
-            'field2' => 'required',
-        ]);
+        $user->update($request->all());
 
-        $user->update($data);
-
-        // Redireccionar a la página de inicio o a la página de detalles del usuario actualizado
-        return redirect()->route('users.show', $user->id);
+        return redirect()->route('users.index');
     }
 
     public function destroy(User $user)
