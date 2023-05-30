@@ -30,8 +30,52 @@
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
+    <div class="fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light d-lg-none d-flex align-items-start justify-content-start"">
+        
+        <a class="navbar-brand col-7" href="/">
+          
+          <span class="ms-1 font-weight-bold ">Crazy Books</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <img  width="80px" src="{{asset('img/LOGO.png')}}" class="navbar-brand-img h-100" alt="main_logo">
+          
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/users/create">Crear usuario</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/books/create">Crear libro</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/evidences">Evidencias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users">Profesores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/">Mapa Interactivo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/regions">Regiones</a>
+            </li>
+            <li class="nav-item">
+              <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                @csrf
+                <a class="nav-link" href="{{ route('logout') }}">
+                  <i class="material-icons opacity-10">login</i>
+                  <button type="submit" class="btn mt-3">Salir</button>
+                </a>
+              </form>
+            </li>
+          </ul>
+        </div>
     
-    
+      </nav>
+    </div>
     <aside
         class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark"
         id="sidenav-main">
@@ -50,7 +94,7 @@
                 <li class="nav-item">
                     <a class="nav-link text-white " href="/users/create">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">dashboard</i>
+                            <i class="material-icons opacity-10">person</i>
                         </div>
                         <span class="nav-link-text ms-1">Crear usuario</span>
                     </a>
@@ -61,14 +105,6 @@
                             <i class="material-icons opacity-10">dashboard</i>
                         </div>
                         <span class="nav-link-text ms-1">Crear libro</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white " href="/evidences">
-                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">view_in_ar</i>
-                        </div>
-                        <span class="nav-link-text ms-1">Evidencias</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -124,48 +160,7 @@
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <!-- Navbar -->
         
-<nav class="navbar navbar-expand-lg navbar-light bg-light d-lg-none">
-    <a class="navbar-brand" href="/">
-      
-      <span class="ms-1 font-weight-bold">Crazy Books</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <img width="80px" src="{{asset('img/LOGO.png')}}" class="navbar-brand-img h-100" alt="main_logo">
-      
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/users/create">Crear usuario</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/books/create">Crear libro</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/evidences">Evidencias</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/users">Profesores</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/">Mapa Interactivo</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/regions">Regiones</a>
-        </li>
-        <li class="nav-item">
-          <form id="logout-form" action="{{ route('logout') }}" method="POST">
-            @csrf
-            <a class="nav-link" href="{{ route('logout') }}">
-              <i class="material-icons opacity-10">login</i>
-              <button type="submit" class="btn mt-3">Salir</button>
-            </a>
-          </form>
-        </li>
-      </ul>
-    </div>
-  </nav>
+
 
         <!-- End Navbar -->
         @yield('navbar')

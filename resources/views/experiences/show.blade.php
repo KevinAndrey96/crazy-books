@@ -3,28 +3,22 @@
 <br>
 @section('content')
 
-    <div style="margin-left: 20%">
+<div style="margin-left: 30%">
         
-      <div class="card mb-3 text-dark bg-white m-2" style="width: 90%; margin: 2%;">
-        <h1 class="m-5">Foro para el libro: {{ $book->name }}</h1>
-        <form action="{{ route('experiences.store') }}" method="POST">
-            @csrf
-            
-            
-            
-            <input type="hidden" name="book_id" value="{{ $book->id }}">
-            <br>
-           
-            <br>
-            <textarea class="form-control m-5" style=" max-width: 70%; border: 2px solid blue;" name="content" id="content" rows="4"></textarea>
-            <br>
-            <button class="btn btn-warning m-5" type="submit">Crear Comentario</button>
-        </form>
-
-    </div>
+  <div class="card mb-3 text-dark bg-white m-2" style="width: 90%; margin: 2%;">
+      
+      <h3 class="mx-5" style="margin-top: 10px;"">Foro - {{ $book->name }}</h3>
+      <p class="mx-5" style="align: justify;">¡Bienvenido al fascinante mundo de los libros regionales de Colombia! Este espacio está diseñado para que profesores como tú compartan sus conocimientos y experiencias sobre la riqueza literaria de nuestras diferentes regiones.</p>
+      <form action="{{ route('experiences.store') }}" method="POST">
+          @csrf
+          <textarea class="form-control" placeholder=" ¡Exprésate y déjanos tu sabiduría en este foro de palabras que enriquecerá nuestras aulas y mentes con historias colombianas inolvidables!" style=" max-width: 70%; margin-left:5%; border: 2px solid blue;" name="content" id="content" rows="4"></textarea>
+          <button class="btn btn-warning m-5" type="submit">Comentar</button>
+      </form>
+  </div>
 
 
-    <h1 class="m-4">Lista de comentarios</h1>
+  <h3 class="m-4">Comentarios de otros profes</h3>
+
     <br>
     
 

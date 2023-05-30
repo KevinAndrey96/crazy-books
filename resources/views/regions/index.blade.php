@@ -49,7 +49,7 @@
 
                                             <div class="d-flex flex-column justify-content-center">
 
-                                                <a type="submit"  style="font-size: 16px; padding: 5px 25px;" class="btn btn-warning mx-2" value="editar" href="{{$region->blog_url}}">VER REGIÓN</a>
+                                                <a type="submit"  style="font-size: 16px; padding: 5px 25px;" class="btn btn-warning mx-2" value="editar" href="{{$region->blog_url}} " target="_blank">VER REGIÓN</a>
 
                                             </div>
                                         </div>
@@ -69,7 +69,7 @@
                                                     @csrf
                                                 </form>
                                                 <a type="submit" class="btn btn-primary mx-2" value="editar" href="{{route('regions.edit',$region)}}">Editar</a>
-                                                <a type="submit" class="btn btn-primary mx-2" value="ver" href="/books/region/{{$region->id}}">Libros</a>
+                                                <a type="submit" class="btn btn-primary mx-2" value="ver" href="/books/region/{{$region->id}}" >Libros</a>
                                             </div>
                                         </div>
                     </div>
