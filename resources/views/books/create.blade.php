@@ -31,7 +31,7 @@
             </div>
             <br>
            <label >Portada:</label>
-              <div class="input-group input-group-outline my-1>
+              <div class="input-group input-group-outline my-1">
                 
                 <label ></label>
                 <input type="text" class="form-control" name="front_page" id="front_page"  autocomplete="name" autofocus>
@@ -42,47 +42,47 @@
                 <input type="text" class="form-control" name="name" id="name"  autocomplete="name" autofocus>
               </div>
              <label >Lapiz:</label>
-              <div class="input-group input-group-outline my-1>
+              <div class="input-group input-group-outline my-1">
                 <label ></label>
                 <input type="text" class="form-control" name="circle_audio" id="circle_audio"  autocomplete="role" autofocus>
               </div>
              <label >Ojo:</label>
-              <div class="input-group input-group-outline my-1>
+              <div class="input-group input-group-outline my-1">
                 <label ></label>
                 <input type="text" class="form-control" name="triangle_text" id="triangle_text"  autocomplete="role" autofocus>
               </div>
              <label >Emoji de cara sonriente:</label>
-              <div class="input-group input-group-outline my-1>
+              <div class="input-group input-group-outline my-1">
                 <label ></label>
                 <input type="text" class="form-control" name="triangle_audio" id="triangle_audio"  autocomplete="role" autofocus>
               </div>
              <label >TV: </label>
-              <div class="input-group input-group-outline my-1>
+              <div class="input-group input-group-outline my-1">
                 <label ></label>
                 <input type="text" class="form-control" name="start_media_1" id="start_media_1" autocomplete="role" autofocus>
               </div>
              <label >Pendiente</label>
-              <div class="input-group input-group-outline my-1>
+              <div class="input-group input-group-outline my-1">
                 <label ></label>
                 <input type="text" class="form-control" name="start_media_2" id="start_media_2" autocomplete="start_media_2" autofocus>
               </div>
              <label >Diamante</label>
-              <div class="input-group input-group-outline my-1>
+              <div class="input-group input-group-outline my-1">
                 <label ></label>
                 <input type="text" class="form-control" name="square_media_1" id="square_media_1"o"  autocomplete="square_media_1" autofocus>
               </div>
              <label >Globo de texto: </label>
-              <div class="input-group input-group-outline my-1>
+              <div class="input-group input-group-outline my-1">
                 <label ></label>
                 <input type="text" class="form-control" name="square_media_2" id="square_media_2"  autocomplete="square_media_2" autofocus>
               </div>
              <label >Logo multimedia verde: </label>
-              <div class="input-group input-group-outline my-1>
+              <div class="input-group input-group-outline my-1">
                 <label ></label>
                 <input type="text" class="form-control"  name="rectangle_text" id="rectangle_text"  autocomplete="role" autofocus>
               </div>
              <label >Audio del rectángulo:</label>
-              <div class="input-group input-group-outline my-1">
+              <div class="input-group input-group-outline my-1"">
                 <label >Mapa:</label>
                 <input type="text" class="form-control" name="rectangle_audio" id="rectangle_audio" autocomplete="role" autofocus>
               </div>
