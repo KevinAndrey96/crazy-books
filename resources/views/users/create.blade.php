@@ -48,9 +48,8 @@
             <label for="rol">Selecciona un rol:</label>
             <label for="role">Selecciona un rol:</label>
             <select name="role" id="role" class="form-select">
-              <option value="">Selecciona un rol</option>
-              <option value="Teacher">teacher</option>
-              <option value="Admin">admin</option>
+              <option value="Profesor">Profesor</option>
+              <option value="Administrador">Administrador</option>
             </select>
               </div>
             <div class="text-center">

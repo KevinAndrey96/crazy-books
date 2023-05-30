@@ -31,7 +31,29 @@
   <div class="p-3 m-4">
     <div class="img_book " style="width: 50px; margin-left:30%;">
       
-      <img style="width: 100%; height: 100%;"  src="/img/multimedia.png" data-toggle="modal" data-target="#exampleModal">
+      <img style="width: 100%; height: 100%;"  src="/img/multimedia.png" data-toggle="modal" data-target="#exampleverde">
+      <div class="modal fade" id="exampleverde" tabindex="-1" role="dialog" aria-labelledby="exampleverdeLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleverdeLabel">{{$book->regions->name}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      
+        <iframe style="border-radius:12px" src="{{$book->rectangle_text}}" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+        </iframe>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
     </div>
     <div class="container mt-2">
 
@@ -44,7 +66,7 @@
         <div class="starts">
           <div class="start">
             <img style="width: 40px" height="40px" src="/img/pencil.png" alt="Descripci贸n de la imagen"
-              data-toggle="modal" data-target="#exampleText">
+              data-toggle="modal" data-target="#examplePencil">
           </div>
           <div class="start">
             <img style="width: 40px" height="40px" src="/img/map.png" alt="Descripci贸n de la imagen" data-toggle="modal"
@@ -160,7 +182,7 @@
         </button>
       </div>
       <div class="modal-body mx-auto">
-        <iframe class="mx-auto" width="auto" height="auto" src="{{$book->start_media_1}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <p > {{$book->circle_audio}}</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
@@ -209,6 +231,10 @@
     </div>
   </div>
 </div>
+
+
+
+
 
 <div class="modal fade" id="exampleMap" tabindex="-1" role="dialog" aria-labelledby="exampleMapLabel"
   aria-hidden="true">

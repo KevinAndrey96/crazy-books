@@ -35,7 +35,8 @@
                 <label class="form-label"></label >
                 <select class="form-select" name="role" id="role" required>
                     
-                    <option value="{{$user->role}}">{{$user->role}}</option>
+                    <option value="Profesor">Profesor</option>
+                    <option value="Administrador">Administrador</option>
                    
                 </select>
                 </div>

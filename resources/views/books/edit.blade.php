@@ -60,7 +60,7 @@
                
                 <input type="text" class="form-control" name="triangle_audio" value="{{$book->triangle_audio}}" autocomplete="triangle_audio" autofocus>
               </div>
-              <label >Ojo: </label >
+              <label >Lapiz: </label >
               <div class="input-group input-group-outline my-3">
                 
                 <input type="text" class="form-control" name="triangle_text" value="{{$book->triangle_text}}" autocomplete="triangle_text" autofocus>

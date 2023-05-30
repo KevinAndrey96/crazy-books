@@ -16,8 +16,7 @@
                               <thead>
                               <tr>
                                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Libro</th>
-
-  
+                                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Acciones</th>
                               </tr>
                               </thead>
                               @foreach ($books as $book)
