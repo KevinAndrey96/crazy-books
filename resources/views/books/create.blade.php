@@ -83,7 +83,6 @@
               </div>
              <label >Audio del rectángulo:</label>
               <div class="input-group input-group-outline my-1"">
-                <label >Mapa:</label>
                 <input type="text" class="form-control" name="rectangle_audio" id="rectangle_audio" autocomplete="role" autofocus>
               </div>
               
