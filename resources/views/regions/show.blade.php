@@ -103,7 +103,9 @@
     <div style="margin-left: 15%" class="start3">
       <img style="width: auto;" height="auto" src="/img/globo_de_texto.png" alt="Descripci贸n de la imagen">
     </div>
+    
   </div>
+  <a href="https://crazybooks.com.co/evidence-create" class="btn btn-primary m-2">Evidencia</a>
   </div>
 
 
@@ -363,6 +365,7 @@
     </div>
   </div>
 </div>
+
 @endforeach
 </body>
 

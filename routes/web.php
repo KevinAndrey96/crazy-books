@@ -64,7 +64,7 @@ Route::post('/evidence-store', [StoreEvidenceController::class, 'store'])->name(
 
 Route::get('/evidences/{id}', [EvidencesController::class, 'show'])->name('evidences.show');
 Route::get('/evidences', [evidenceController::class, 'index'])->name('evidences.index')->middleware('auth');
-Route::get('/evidences/create', [App\Http\Controllers\CreateEvidenceController::class, 'create']);
+Route::get('/evidences/create', [App\Http\Controllers\CreateEvidenceController::class, 'create'])->name('evidences.create');
 Route::get('/evidences/region/{regionID}', [evidenceController::class, 'evidencesByRegionID'])->middleware('auth');
 
 
@@ -74,7 +74,7 @@ Route::get('/evidences/{evidence}/edit', [evidenceController::class, 'edit'])->n
 Route::delete('/evidences/{evidence}', [evidenceController::class, 'destroy'])->name('evidences.destroy')->middleware('auth');
 
 
-Route::get('/evidence-create', [App\Http\Controllers\CreateEvidenceController::class, 'create'])->middleware('auth');
+Route::get('/evidence-create', [App\Http\Controllers\CreateEvidenceController::class, 'create']);
 
 Route::get('/evidences', [App\Http\Controllers\IndexEvidenceController::class, 'index'])->middleware('auth');
 

@@ -99,7 +99,8 @@ class BookController extends Controller
     public function edit(Book $book)
     {
         $books = Book::all();
-        return view('books.edit',compact('book'));
+        $region = Region::all();
+        return view('books.edit',compact('book', 'region'));
     }
 
     /**
@@ -109,9 +110,10 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Book $book)
+    public function update(Request $request, Book $book, Region $region)
     {
         $book->update($request->all());
+        $region->update($request->all());
 
         
 

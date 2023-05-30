@@ -17,17 +17,17 @@ class CreateBooksTable extends Migration
             $table->id();
             $table->unsignedBigInteger('region_id');
             $table->foreign('region_id')->references('id')->on('regions');
-            $table->string('front_page');
-            $table->string('name');
-            $table->string('circle_audio');
-            $table->string('triangle_text');
-            $table->string('triangle_audio');
-            $table->string('start_media_1');
-            $table->string('start_media_2');
-            $table->string('square_media_1');
-            $table->string('square_media_2');
-            $table->string('rectangle_text');
-            $table->string('rectangle_audio');
+            $table->text('front_page');
+            $table->text('name');
+            $table->text('circle_audio');
+            $table->text('triangle_text');
+            $table->text('triangle_audio');
+            $table->text('start_media_1');
+            $table->text('start_media_2');
+            $table->text('square_media_1');
+            $table->text('square_media_2');
+            $table->text('rectangle_text');
+            $table->text('rectangle_audio');
             $table->timestamps();
         });
     }
