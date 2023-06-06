@@ -66,6 +66,7 @@ Route::get('/evidences/{id}', [EvidencesController::class, 'show'])->name('evide
 Route::get('/evidences', [evidenceController::class, 'index'])->name('evidences.index')->middleware('auth');
 Route::get('/evidences/create', [App\Http\Controllers\CreateEvidenceController::class, 'create'])->name('evidences.create');
 Route::get('/evidences/region/{regionID}', [evidenceController::class, 'evidencesByRegionID'])->middleware('auth');
+Route::get('/evidences-create/book/{bookID}', [EvidenceController::class, 'evidencesByBookID'])->middleware('auth');
 
 
 Route::post('/evidences-store', [App\Http\Controllers\StoreEvidenceController::class, 'store'])->name('evidences.store')->middleware('auth');

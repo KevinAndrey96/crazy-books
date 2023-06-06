@@ -105,7 +105,7 @@
     </div>
     
   </div>
-  <a href="https://crazybooks.com.co/evidence-create" class="btn btn-primary m-2">Evidencia</a>
+  <a href="/evidence-create" class="btn btn-primary m-2">Evidencia</a>
   </div>
 
 
