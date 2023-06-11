@@ -188,8 +188,10 @@
                       </div>
                       <div class="modal-body image-container" >
                         <img class="img-fluid py-4" src="{{$book->message_image}}" alt="">
+                        <div style="overflow-y: auto; max-height: 200px;">
                         <p>
                           {{$book->message_tex}}
+                        </div>
                         </p>
                       </div>
             
