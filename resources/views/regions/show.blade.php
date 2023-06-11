@@ -48,10 +48,7 @@
           <div class="modal-body">
             <iframe style="border-radius:12px" src="{{$book->circle_audio}}" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            
-          </div>
+
         </div>
       </div>
     </div>
@@ -89,10 +86,7 @@
       <div class="modal-body">
         <iframe style="border-radius:12px" src="{{$book->circle_audio}}" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        
-      </div>
+
     </div>
   </div>
 </div>
@@ -136,10 +130,7 @@
       <div class="modal-body image-container" >
         <img class="img-fluid py-4" height="aito" src="{{$book->eye_image}}" alt="Descripci贸n de la imagen">
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        
-      </div>
+
     </div>
   </div>
 </div>
