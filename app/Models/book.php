@@ -9,12 +9,12 @@ class Book extends Model
 {
     use HasFactory;
 
+
     public function regions(){
          
         return $this->belongsTo(Region::class, 'region_id');
 
     }
-
     public function experiences(){
 
         

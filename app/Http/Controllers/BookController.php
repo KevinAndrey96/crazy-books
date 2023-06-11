@@ -17,6 +17,7 @@ class BookController extends Controller
      */
     public function index()
     {
+       
         $regions = Region::all();
         $books = Book::all();
         return view('books.index',compact('books','regions'));
@@ -69,8 +70,6 @@ class BookController extends Controller
         // Redirecciona a la página de visualización del libro recién creado
         return redirect()->route('books.index', $book->id);
     }
-
-    
 
     public function show(Book $book)
     {
