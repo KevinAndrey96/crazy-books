@@ -46,7 +46,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <iframe style="border-radius:12px" src="{{$book->circle_audio}}" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe style="border-radius:12px" src="{{$book->circle_audio}}" width="100%" height="auto" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
           </div>
 
         </div>
@@ -69,6 +69,7 @@
               data-toggle="modal" data-target="#examplePencil">
             </a>  
           </div>
+    
 
           
 
@@ -135,12 +136,33 @@
   </div>
 </div>
 <!-- MODAL FINAL ICONO DE OJO -->
-          <div class="start2">
+
+
+          <div data-id="{{$book->id}}" class="btn-modal3">
 
             <img style="width: auto;" height="auto" src="/img/Videomedia.png" alt="Descripci贸n de la imagen">
 
 
           </div>
+          
+          <!--MODAL  ICONO DE TV -->
+          <div class="modal" id="modaltv{{$book->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modaltv">{{$book->name}}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <iframe width="100%" height="auto" src="{{$book->tv_video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+      
+              </div>
+            </div>
+          </div>
+          <!-- MODAL FINAL ICONO DE TV -->
         </div>
       </div>
 
@@ -151,12 +173,33 @@
 
       <div class="start2" style="">
 
-        <img style="width: auto;" height="auto" src="/img/diamante.png" alt="Descripci贸n de la imagen">
+        <img data-id="{{$book->id}}" class="btn-modal4" style="width: auto;" height="auto" src="/img/diamante.png" alt="Descripci贸n de la imagen">
 
       </div>
+                <!--MODAL  ICONO DE DIAMANTE -->
+                <div class="modal" id="modaldiamond{{$book->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-dialog" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="modaldiamond">{{$book->name}}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body image-container" >
+                        <img class="img-fluid py-4" src="{{$book->message_image}}" alt="">
+                        <p>
+                          {{$book->message_tex}}
+                        </p>
+                      </div>
+            
+                    </div>
+                  </div>
+                </div>
+                <!-- MODAL FINAL ICONO DE DIAMANTE -->
 
     </div>
-    <div style="margin-left: 15%" class="start3">
+    <div style="margin-left: 15%" data-id="{{$book->id}}" class="btn-modal5">
       <img style="width: auto;" height="auto" src="/img/globo_de_texto.png" alt="Descripci贸n de la imagen">
     </div>
 
@@ -208,6 +251,20 @@
 </script>
 <script>
   $(document).ready(function() { 
+  $('.btn-modal3').on('click', function(e){
+    e.preventDefault();
+    var id = $(this).data('id');
+    $('#modaltv' + id).css('display', 'block');
+
+  });
+
+  $('.close').on('click', function() { 
+    $(this).closest('.modal').css('display', 'none');
+  });
+}); 
+</script>
+<script>
+  $(document).ready(function() { 
   $('.btn-modal2').on('click', function(e){
     e.preventDefault();
     var id = $(this).data('id');
@@ -219,6 +276,36 @@
     $(this).closest('.modal').css('display', 'none');
   });
 }); 
-</script>
+</script> 
+
+<script>
+  $(document).ready(function() { 
+  $('.btn-modal4').on('click', function(e){
+    e.preventDefault();
+    var id = $(this).data('id');
+    $('#modaldiamond' + id).css('display', 'block');
+
+  });
+
+  $('.close').on('click', function() { 
+    $(this).closest('.modal').css('display', 'none');
+  });
+}); 
+</script> 
+<script>
+  $(document).ready(function() { 
+  $('.btn-modal5').on('click', function(e){
+    e.preventDefault();
+    var id = $(this).data('id');
+    $('#modalmessage' + id).css('display', 'block');
+
+  });
+
+  $('.close').on('click', function() { 
+    $(this).closest('.modal').css('display', 'none');
+  });
+}); 
+</script> 
+
 
 </html>
