@@ -262,7 +262,7 @@
               <img class="img-fluid py-4" src="{{$book->diamond_image}}" alt="">
               <div style="overflow-y: auto; max-height: 200px;">
                 <p>
-                  {{$book->diamond_tex}}
+                  {{$book->diamond_text}}
               </div>
               </p>
             </div>
