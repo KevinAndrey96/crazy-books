@@ -59,7 +59,7 @@
             </div>
         
             <div class="form-group mt-3">
-              <label for="user_id">Selecciona un profesor:</label>
+              <label for="user_id">Selecciona un libro:</label>
               <select class="form-select" aria-label="Default select example" name="book_id" id="book_id" class="form-control">
                 <option value="">Selecciona un libro:</option>
                 @foreach($books as $book)
