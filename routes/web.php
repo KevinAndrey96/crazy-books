@@ -39,7 +39,7 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 
 Route::resource('home',HomeController::class)->names('home')->middleware('auth');
 Route::resource('users',UserController::class)->names('users')->middleware('auth');;
-Route::resource('regions',RegionController::class)->names('regions')->middleware('auth');
+Route::resource('regions',RegionController::class)->names('regions');
 Route::get('/regions', [RegionController::class, 'index'])->name('regions.index')->middleware('auth');
 Route::get('/regions/create', [RegionController::class, 'create'])->name('regions.create')->middleware('auth');
 Route::get('/regions/edit', [RegionController::class, 'edit'])->name('regions.edit2')->middleware('auth');
