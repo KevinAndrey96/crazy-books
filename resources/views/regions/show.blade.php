@@ -58,7 +58,8 @@
 
       <div class="div1">
         <div data-id="{{$book->id}}" class="btn-modal" style="width: 120px; height: auto; margin-left:30%;">
-          <img style="width: 100%; height: 100%; margin-left:-45%;" src="{{$book->front_page}}" alt="libro-infantil">
+          <img style="width: 100%; height: 100%; margin-left:-45%;" src="{{$book->front_page}}" alt="Portada del libro">
+
         </div>
       </div>
       <div class="div2">
@@ -201,9 +202,35 @@
                 <!-- MODAL FINAL ICONO DE DIAMANTE -->
 
     </div>
-    <div style="margin-left: 15%" data-id="{{$book->id}}" class="btn-modal5">
-      <img style="width: auto;" height="auto" src="/img/globo_de_texto.png" alt="Descripci贸n de la imagen">
+
+    <div class="start2" style="">
+
+      <img data-id="{{$book->id}}" class="btn-modal5" style="width: auto;" height="auto" src="/img/globo_de_texto.png" alt="Descripci贸n de la imagen">
+
     </div>
+                    <!--MODAL  ICONO DE GLOBO DE TEXTO -->
+                    <div class="modal" id="modalmessage{{$book->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-dialog" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="modalmessage">{{$book->name}}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body image-container" >
+                            <img class="img-fluid py-4" src="{{$book->diamond_image}}" alt="">
+                            <div style="overflow-y: auto; max-height: 200px;">
+                            <p>
+                              {{$book->diamond_text}}
+                            </div>
+                            </p>
+                          </div>
+                
+                        </div>
+                      </div>
+                    </div>
+                    <!-- MODAL FINAL ICONO DE GLOBO DE TEXTO -->
 
   </div>
   <a href="/evidence-create" class="btn btn-primary m-2">Evidencia</a>

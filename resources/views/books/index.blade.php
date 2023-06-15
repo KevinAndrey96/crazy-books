@@ -60,7 +60,7 @@
                                             
                                             </form>
                                             <a type="submit" class="btn btn-primary mx-2" value="editar" href="{{route('books.edit',$book)}}">Editar</a>
-                                            <a href="{{ route('experiences.show', $book->region_id) }}" class="btn btn-primary">Foro</a>
+                                            <a href="{{ route('experiences.show', $book->id) }}" class="btn btn-primary">Foro</a>
                                             <a href="/books/evidences/{{$book->id}}  style="font-size: 16px; padding: 5px 25px;" class="btn btn-warning mx-2" value="editar" href="">Evidencias</a>                                       
                                         </div>
                                     </div>

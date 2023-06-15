@@ -17,12 +17,12 @@ class BookController extends Controller
      */
     public function index()
     {
-       
+
         $regions = Region::all();
         $books = Book::all();
-        return view('books.index',compact('books','regions'));
-        
-        return view('books.index',compact('books'));
+        return view('books.index', compact('books', 'regions'));
+
+        return view('books.index', compact('books'));
     }
 
     /**
@@ -35,7 +35,6 @@ class BookController extends Controller
         $books = Book::all();
         $regions = Region::all();
         return view('books.create', compact('regions'));
-
     }
 
     /**
@@ -44,31 +43,47 @@ class BookController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
-        $data = $request->validate([
-
+        // Validar los datos del formulario si es necesario
+        $validatedData = $request->validate([
             'region_id' => 'required',
-            'front_page' => 'required',
+            'front_page' => 'required|image',
             'name' => 'required',
+            'pencil_audio' => 'required',
+            'eye_image' => 'required|image',
+            'face_video' => 'required',
+            'tv_video' => 'required',
+            'diamond_image' => 'required|image',
+            'diamond_text' => 'required',
+            'message_image' => 'required',
+            'message_tex' => 'required|image',
             'circle_audio' => 'required',
-            'triangle_text' => 'required',
-            'triangle_audio' => 'required',
-            'start_media_1' => 'required',
-            'start_media_2' => 'required',
-            'square_media_1' => 'required',
-            'square_media_2' => 'required',
-            'rectangle_text' => 'required',
-            'rectangle_audio' => 'required',
-
-            
         ]);
 
-        // Crea un nuevo libro con los datos del formulario
-        $book = Book::create($data);
+        // Obtener la ruta de almacenamiento para las imágenes
+        $imagePath = 'path/to/save/images';
 
-        // Redirecciona a la página de visualización del libro recién creado
-        return redirect()->route('books.index', $book->id);
+        // Guardar la imagen de portada
+        $frontPageImage = $request->file('front_page');
+        $frontPageImageName = $frontPageImage->getClientOriginalName();
+        $frontPageImage->move($imagePath, $frontPageImageName);
+
+        // Guardar otras imágenes y archivos necesarios de la misma manera
+
+        // Crear una nueva instancia del modelo Book y asignar los datos
+        $book = new Book();
+        $book->region_id = $request->region_id;
+        $book->front_page = $frontPageImageName;
+        $book->name = $request->name;
+        $book->pencil_audio = $request->pencil_audio;
+        // Asignar otros datos necesarios
+
+        // Guardar el libro en la base de datos
+        $book->save();
+
+        // Redireccionar o hacer cualquier otra acción necesaria
     }
 
     public function show(Book $book)
@@ -85,7 +100,7 @@ class BookController extends Controller
 
     public function evidencesByBookID($bookID)
     {
-        $evidences = Evidence::where([["book_id", $bookID],["user_id", Auth::id()]])->get();
+        $evidences = Evidence::where([["book_id", $bookID], ["user_id", Auth::id()]])->get();
         return view('evidences.byBooks', compact('evidences'));
     }
 
@@ -98,8 +113,8 @@ class BookController extends Controller
     public function edit(Book $book)
     {
         $books = Book::all();
-        $region = Region::all();
-        return view('books.edit',compact('book', 'region'));
+        $regions = Region::all();
+        return view('books.edit', compact('book', 'regions'));
     }
 
     /**
@@ -109,16 +124,46 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Book $book, Region $region)
+    public function update(Request $request, Book $book)
     {
-        $book->update($request->all());
-        $region->update($request->all());
-
-        
-
+        // Validar los datos del formulario si es necesario
+        $validatedData = $request->validate([
+            'region_id' => 'required',
+            'front_page' => 'image',
+            'name' => 'required',
+            'pencil_audio' => 'required',
+            'eye_image' => 'image',
+            'face_video' => 'required',
+            'tv_video' => 'required',
+            'diamond_image' => 'image',
+            'diamond_text' => 'required',
+            'message_image' => 'required',
+            'message_tex' => 'image',
+            'circle_audio' => 'required',
+        ]);
+    
+        // Actualizar los campos del libro con los nuevos datos
+        $book->region_id = $request->region_id;
+        $book->front_page = $request->file('front_page') ? $request->file('front_page')->getClientOriginalName() : $book->front_page;
+        $book->name = $request->name;
+        $book->pencil_audio = $request->pencil_audio;
+        $book->eye_image = $request->file('eye_image') ? $request->file('eye_image')->getClientOriginalName() : $book->eye_image;
+        $book->face_video = $request->face_video;
+        $book->tv_video = $request->tv_video;
+        $book->diamond_image = $request->file('diamond_image') ? $request->file('diamond_image')->getClientOriginalName() : $book->diamond_image;
+        $book->diamond_text = $request->diamond_text;
+        $book->message_image = $request->file('message_image') ? $request->file('message_image')->getClientOriginalName() : $book->message_image;
+        $book->message_tex = $request->file('message_tex') ? $request->file('message_tex')->getClientOriginalName() : $book->message_tex;
+        $book->circle_audio = $request->circle_audio;
+    
+        $book->save();
+    
+        // Redireccionar o hacer cualquier otra acción necesaria
         return redirect()->route('books.index');
     }
-
+    
+    
+    
 
     /**
      * Remove the specified resource from storage.

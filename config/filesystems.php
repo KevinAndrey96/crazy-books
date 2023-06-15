@@ -35,10 +35,17 @@ return [
             'root' => storage_path('app'),
         ],
 
-        'public' => [
+        /*'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
             'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],*/
+
+        'public' => [
+            'driver' => 'local',
+            'root' => public_path('images'), // Ruta de la carpeta de destino
+            'url' => env('APP_URL').'/images', // URL base para acceder a los archivos almacenados
             'visibility' => 'public',
         ],
 
