@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -24,29 +24,33 @@
   <a href="">
     <div style="text-align: center;">
       <h1 style="color: aliceblue;"> {{ $region->name }} </h1>
+
     </div>
   </a>
 
   @foreach ($books as $book)
   <div class="p-3 m-4">
-    <div style="width: 50px; margin-left:30%; " data-id="{{$book->id}}" class="btn-modal">
+    <div style="width: 50px; margin-left:30%; " data-id="{{$book->id}}" class="btn-modal9">
 
-      <img style="width: 100%; height: 100%;" src="/img/multimedia.png" data-toggle="modal" data-target="#exampleverde">
+      <img style="width: 100%; height: 100%;" src="/img/multimedia.png" data-toggle="modal">
 
     </div>
 
     <!-- MODAL ICONO MULTIMEDIA VERDE -->
-    <div class="modal" id="modalPencil{{$book->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal" id="modalgreen{{$book->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">{{$book->name}}</h5>
+            <h5 class="modal-title" id="modalgreen">{{$book->name}}</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <iframe style="border-radius:12px" src="{{$book->circle_audio}}" width="100%" height="auto" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe style="border-radius:12px" src="{{$book->circle_audio}}" width="100%" height="auto" frameBorder="0"
+              allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
           </div>
 
         </div>
@@ -62,57 +66,118 @@
 
         </div>
       </div>
+
       <div class="div2">
         <div class="starts">
           <div class="start">
             <a data-id="{{$book->id}}" class="btn-modal" style="color: brown">
-            <img style="width: 40px" height="40px" src="/img/pencil.png" alt="Descripci贸n de la imagen"
-              data-toggle="modal" data-target="#examplePencil">
-            </a>  
+              <img style="width: 40px" height="40px" src="/img/pencil.png" alt="Descripci贸n de la imagen"
+                data-toggle="modal" data-target="#examplePencil">
+            </a>
           </div>
-    
-
-          
-
-
-<!--MODAL  ICONO DE LAPIZ -->
-<div class="modal" id="modalPencil{{$book->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{$book->name}}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <iframe style="border-radius:12px" src="{{$book->circle_audio}}" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      </div>
-
-    </div>
-  </div>
-</div>
-<!-- MODAL FINAL ICONO DE LAPIZ -->
 
 
 
 
-          <div  class="start">
-            <img style="width: 40px" height="40px" src="/img/map.png" alt="Descripci贸n de la imagen" >
+
+          <!--MODAL  ICONO DE LAPIZ -->
+          <div class="modal" id="modalPencil{{$book->id}}" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">{{$book->name}}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body image-container">
+                  <img class="img-fluid py-4" src="{{$book->pencil_audio}}" alt="">
+                  <div style="overflow-y: auto; max-height: 200px;">
+                  </div>
+                  </p>
+                </div>
+
+              </div>
+            </div>
           </div>
+          <!-- MODAL FINAL ICONO DE LAPIZ -->
+
 
 
 
           <div class="start">
-            <img style="width: 40px" height="40px" src="/img/happy.png" alt="Descripci贸n de la imagen"
-              >
+            <a data-id="{{$book->id}}" class="btn-modal17" style="color: brown">
+              <img style="width: 40px" height="40px" src="/img/map.png" alt="Descripci贸n de la imagen"
+                data-toggle="modal" data-target="#examplePencil">
+            </a>
           </div>
+
+          <!--MODAL  ICONO DE MAPA -->
+          <div class="modal" id="modalmap{{$book->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-dialog"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalmap">{{$book->name}}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body image-container">
+
+                  <div style="overflow-y: auto; max-height: 200px;">
+
+                    <div class="modal-body">
+                      <iframe style="border-radius:12px" src="{{$book->planet_image}}" width="100%" height="auto"
+                        frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy"></iframe>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- MODAL FINAL ICONO DE MAPA -->
+
+          <div class="start">
+            <a data-id="{{$book->id}}" class="btn-modal19" style="color: brown">
+              <img style="width: 40px" height="40px" src="/img/happy.png" alt="Descripci贸n de la imagen"
+                data-toggle="modal" data-target="#examplePencil">
+            </a>
+          </div>
+          <!--MODAL  ICONO DE CARA FELIZ -->
+          <div class="modal" id="modalface{{$book->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-dialog"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalface">{{$book->name}}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <iframe width="100%" height="250px" src="{{$book->face_video}}" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
 
 
         </div>
         <div class="starts">
 
-          <div data-id="{{$book->id}}" class="btn-modal2" >
+          <div data-id="{{$book->id}}" class="btn-modal2">
 
 
             <img style="width: auto;" height="aito" src="/img/Eye.png" alt="Descripci贸n de la imagen">
@@ -120,23 +185,23 @@
 
           </div>
           <!--MODAL  ICONO DE OJO -->
-<div class="modal" id="modaleye{{$book->id}}" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modaleye">{{$book->name}}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body image-container" >
-        <img class="img-fluid py-4" height="aito" src="{{$book->eye_image}}" alt="Descripci贸n de la imagen">
-      </div>
+          <div class="modal" id="modaleye{{$book->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modaleye">{{$book->name}}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body image-container">
+                  <img class="img-fluid py-4" height="aito" src="{{$book->eye_image}}" alt="Descripci贸n de la imagen">
+                </div>
 
-    </div>
-  </div>
-</div>
-<!-- MODAL FINAL ICONO DE OJO -->
+              </div>
+            </div>
+          </div>
+          <!-- MODAL FINAL ICONO DE OJO -->
 
 
           <div data-id="{{$book->id}}" class="btn-modal3">
@@ -145,9 +210,10 @@
 
 
           </div>
-          
+
           <!--MODAL  ICONO DE TV -->
-          <div class="modal" id="modaltv{{$book->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-dialog" aria-hidden="true">
+          <div class="modal" id="modaltv{{$book->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-dialog"
+            aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -157,9 +223,12 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <iframe width="100%" height="250px" src="{{$book->tv_video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <iframe width="100%" height="250px" src="{{$book->tv_video}}" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
                 </div>
-      
+
               </div>
             </div>
           </div>
@@ -174,63 +243,67 @@
 
       <div class="start2" style="">
 
-        <img data-id="{{$book->id}}" class="btn-modal4" style="width: auto;" height="auto" src="/img/diamante.png" alt="Descripci贸n de la imagen">
+        <img data-id="{{$book->id}}" class="btn-modal4" style="width: auto;" height="auto" src="/img/diamante.png"
+          alt="Descripci贸n de la imagen">
 
       </div>
-                <!--MODAL  ICONO DE DIAMANTE -->
-                <div class="modal" id="modaldiamond{{$book->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-dialog" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="modaldiamond">{{$book->name}}</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body image-container" >
-                        <img class="img-fluid py-4" src="{{$book->message_image}}" alt="">
-                        <div style="overflow-y: auto; max-height: 200px;">
-                        <p>
-                          {{$book->message_tex}}
-                        </div>
-                        </p>
-                      </div>
-            
-                    </div>
-                  </div>
-                </div>
-                <!-- MODAL FINAL ICONO DE DIAMANTE -->
+      <!--MODAL  ICONO DE DIAMANTE -->
+      <div class="modal" id="modaldiamond{{$book->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-dialog"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modaldiamond">{{$book->name}}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body image-container">
+              <img class="img-fluid py-4" src="{{$book->message_image}}" alt="">
+              <div style="overflow-y: auto; max-height: 200px;">
+                <p>
+                  {{$book->message_tex}}
+              </div>
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- MODAL FINAL ICONO DE DIAMANTE -->
 
     </div>
 
     <div class="start2" style="">
 
-      <img data-id="{{$book->id}}" class="btn-modal5" style="width: auto;" height="auto" src="/img/globo_de_texto.png" alt="Descripci贸n de la imagen">
+      <img data-id="{{$book->id}}" class="btn-modal5" style="width: auto;" height="auto" src="/img/globo_de_texto.png"
+        alt="Descripci贸n de la imagen">
 
     </div>
-                    <!--MODAL  ICONO DE GLOBO DE TEXTO -->
-                    <div class="modal" id="modalmessage{{$book->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-dialog" aria-hidden="true">
-                      <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="modalmessage">{{$book->name}}</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                          </div>
-                          <div class="modal-body image-container" >
-                            <img class="img-fluid py-4" src="{{$book->diamond_image}}" alt="">
-                            <div style="overflow-y: auto; max-height: 200px;">
-                            <p>
-                              {{$book->diamond_text}}
-                            </div>
-                            </p>
-                          </div>
-                
-                        </div>
-                      </div>
-                    </div>
-                    <!-- MODAL FINAL ICONO DE GLOBO DE TEXTO -->
+    <!--MODAL  ICONO DE GLOBO DE TEXTO -->
+    <div class="modal" id="modalmessage{{$book->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-dialog"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalmessage">{{$book->name}}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body image-container">
+            <img class="img-fluid py-4" src="{{$book->diamond_image}}" alt="">
+            <div style="overflow-y: auto; max-height: 200px;">
+              <p>
+                {{$book->diamond_text}}
+            </div>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- MODAL FINAL ICONO DE GLOBO DE TEXTO -->
 
   </div>
   <a href="/evidence-create" class="btn btn-primary m-2">Evidencia</a>
@@ -256,13 +329,12 @@
 
 
 
-  
+
   @endforeach
 </body>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-
   $(document).ready(function() { 
   $('.btn-modal').on('click', function(e){
     e.preventDefault();
@@ -305,7 +377,7 @@
     $(this).closest('.modal').css('display', 'none');
   });
 }); 
-</script> 
+</script>
 
 <script>
   $(document).ready(function() { 
@@ -320,7 +392,7 @@
     $(this).closest('.modal').css('display', 'none');
   });
 }); 
-</script> 
+</script>
 <script>
   $(document).ready(function() { 
   $('.btn-modal5').on('click', function(e){
@@ -334,7 +406,50 @@
     $(this).closest('.modal').css('display', 'none');
   });
 }); 
-</script> 
+</script>
 
+
+<script>
+  $(document).ready(function() { 
+  $('.btn-modal9').on('click', function(e){
+    e.preventDefault();
+    var id = $(this).data('id');
+    $('#modalgreen' + id).css('display', 'block');
+
+  });
+
+  $('.close').on('click', function() { 
+    $(this).closest('.modal').css('display', 'none');
+  });
+}); 
+</script>
+<script>
+  $(document).ready(function() { 
+  $('.btn-modal17').on('click', function(e){
+    e.preventDefault();
+    var id = $(this).data('id');
+    $('#modalmap' + id).css('display', 'block');
+
+  });
+
+  $('.close').on('click', function() { 
+    $(this).closest('.modal').css('display', 'none');
+  });
+}); 
+</script>
+<script>
+  $(document).ready(function() { 
+  $('.btn-modal19').on('click', function(e){
+    e.preventDefault();
+    var id = $(this).data('id');
+    $('#modalface' + id).css('display', 'block');
+
+  });
+
+  $('.close').on('click', function() { 
+    $(this).closest('.modal').css('display', 'none');
+  });
+}); 
+</script>
 
 </html>
