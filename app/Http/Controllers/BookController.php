@@ -52,13 +52,14 @@ class BookController extends Controller
             'front_page' => 'required|image',
             'name' => 'required',
             'pencil_audio' => 'required',
+            'planet_image' => 'required',
             'eye_image' => 'required|image',
             'face_video' => 'required',
             'tv_video' => 'required',
             'diamond_image' => 'required|image',
             'diamond_text' => 'required',
-            'message_image' => 'required',
-            'message_tex' => 'required|image',
+            'message_image' => 'required|image',
+            'message_tex' => 'required',
             'circle_audio' => 'required',
         ]);
 
@@ -70,20 +71,48 @@ class BookController extends Controller
         $frontPageImageName = $frontPageImage->getClientOriginalName();
         $frontPageImage->move($imagePath, $frontPageImageName);
 
+        $eyeImage = $request->file('eye_image');
+        $eyeImageName = $eyeImage->getClientOriginalName();
+        $eyeImage->move($imagePath, $eyeImageName);
+        
+
+        $diamondImageImage = $request->file('diamond_image');
+        $diamondImageImageName = $diamondImageImage->getClientOriginalName();
+        $diamondImageImage->move($imagePath, $diamondImageImageName);
+
+        $messageImageImage = $request->file('message_image');
+        $messageImageImageName = $messageImageImage->getClientOriginalName();
+        $messageImageImage->move($imagePath, $messageImageImageName);
+        
+
+
+        
+       
         // Guardar otras imágenes y archivos necesarios de la misma manera
 
         // Crear una nueva instancia del modelo Book y asignar los datos
         $book = new Book();
         $book->region_id = $request->region_id;
         $book->front_page = $frontPageImageName;
+        $book->eye_image = $eyeImageName;
+        $book->diamond_image = $diamondImageImageName;
+        $book->message_image = $messageImageImage;
+        $book->planet_image = $request->planet_image;
         $book->name = $request->name;
         $book->pencil_audio = $request->pencil_audio;
+        $book->message_tex = $request->message_tex;
+        $book->diamond_text = $request->diamond_text;
+        $book->circle_audio = $request->circle_audio;
+        $book->tv_video = $request->tv_video;
+        $book->face_video = $request->face_video;
+        
         // Asignar otros datos necesarios
 
         // Guardar el libro en la base de datos
         $book->save();
 
         // Redireccionar o hacer cualquier otra acción necesaria
+        return redirect()->route('books.index');
     }
 
     public function show(Book $book)
@@ -132,13 +161,14 @@ class BookController extends Controller
             'front_page' => 'image',
             'name' => 'required',
             'pencil_audio' => 'required',
+            'planet_image' => 'required',
             'eye_image' => 'image',
             'face_video' => 'required',
             'tv_video' => 'required',
             'diamond_image' => 'image',
             'diamond_text' => 'required',
-            'message_image' => 'required',
-            'message_tex' => 'image',
+            'message_image' => 'image',
+            'message_tex' => 'required',
             'circle_audio' => 'required',
         ]);
     
@@ -150,10 +180,11 @@ class BookController extends Controller
         $book->eye_image = $request->file('eye_image') ? $request->file('eye_image')->getClientOriginalName() : $book->eye_image;
         $book->face_video = $request->face_video;
         $book->tv_video = $request->tv_video;
+        $book->planet_image = $request->planet_image;
         $book->diamond_image = $request->file('diamond_image') ? $request->file('diamond_image')->getClientOriginalName() : $book->diamond_image;
         $book->diamond_text = $request->diamond_text;
         $book->message_image = $request->file('message_image') ? $request->file('message_image')->getClientOriginalName() : $book->message_image;
-        $book->message_tex = $request->file('message_tex') ? $request->file('message_tex')->getClientOriginalName() : $book->message_tex;
+        $book->message_tex = $request->message_tex;
         $book->circle_audio = $request->circle_audio;
     
         $book->save();

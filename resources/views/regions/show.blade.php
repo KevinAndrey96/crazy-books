@@ -63,6 +63,9 @@
       <div class="div1">
         <div data-id="{{$book->id}}" class="btn-modal" style="width: 120px; height: auto; margin-left:30%;">
           <img style="width: 100%; height: 100%; margin-left:-45%;" src="{{$book->front_page}}" alt="Portada del libro">
+          <div>
+            
+          </div>
 
         </div>
       </div>
@@ -241,12 +244,14 @@
   <div class="" style="display: flex;  ">
     <div class="start3" style="margin-left: 20%">
 
+      
       <div class="start2" style="">
 
         <img data-id="{{$book->id}}" class="btn-modal4" style="width: auto;" height="auto" src="/img/diamante.png"
           alt="Descripci贸n de la imagen">
 
       </div>
+      
       <!--MODAL  ICONO DE DIAMANTE -->
       <div class="modal" id="modaldiamond{{$book->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-dialog"
         aria-hidden="true">
@@ -273,6 +278,12 @@
       <!-- MODAL FINAL ICONO DE DIAMANTE -->
 
     </div>
+    <a href="/evidence-create" class="mx-7">   
+      <div class="start2" style="">
+ 
+     <img style="width: 50px;" height="auto" src="/img/estrella.png"
+       alt="Descripci贸n de la imagen">
+   </div></a>
 
     <div class="start2" style="">
 
@@ -306,7 +317,7 @@
     <!-- MODAL FINAL ICONO DE GLOBO DE TEXTO -->
 
   </div>
-  <a href="/evidence-create" class="btn btn-primary m-2">Evidencia</a>
+
   </div>
 
 
