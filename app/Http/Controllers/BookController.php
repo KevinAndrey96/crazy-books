@@ -64,7 +64,8 @@ class BookController extends Controller
         ]);
 
         // Obtener la ruta de almacenamiento para las imágenes
-        $imagePath = 'path/to/save/images';
+       // $imagePath = 'path/to/save/images';
+        $imagePath = 'path';
 
         // Guardar la imagen de portada
         $frontPageImage = $request->file('front_page');
@@ -205,6 +206,7 @@ class BookController extends Controller
     public function destroy($id)
     {
         $book = Book::findOrFail($id);
+        $region = Region::findOrFail($id);
 
         // Eliminar las experiencias relacionadas
         $book->experiences()->delete();
@@ -212,6 +214,6 @@ class BookController extends Controller
         // Eliminar el libro
         $book->delete();
 
-        return redirect()->route('books.index');
+        return redirect()->route('books.region', ['region' => $region->id]);
     }
 }
