@@ -30,7 +30,7 @@
 
   @foreach ($books as $book)
   <div class="p-3 m-4">
-    <div style="width: 50px; margin-left:30%; " data-id="{{$book->id}}" class="btn-modal9">
+    <div style="width: 70px; margin-left:30%; " data-id="{{$book->id}}" class="btn-modal9">
 
       <img style="width: 100%; height: 100%;" src="/img/multimedia.png" data-toggle="modal">
 
@@ -62,7 +62,7 @@
 
       <div class="div1">
         <div data-id="{{$book->id}}" class="btn-modal" style="width: 120px; height: auto; margin-left:30%;">
-          <img style="width: 100%; height: 100%; margin-left:-45%;" src="{{$book->front_page}}" alt="Portada del libro">
+          <img style="width: 100%; height: 100%; margin-left:-60%;" src="{{$book->front_page}}" alt="Portada del libro">
           <div>
             
           </div>
@@ -70,11 +70,11 @@
         </div>
       </div>
 
-      <div class="div2">
+      <div class="div2 m-3">
         <div class="starts">
           <div class="start">
             <a data-id="{{$book->id}}" class="btn-modal" style="color: brown">
-              <img style="width: 40px" height="40px" src="/img/pencil.png" alt="Descripci贸n de la imagen"
+              <img style="width: 70px" height="70px" src="/img/pencil.png" alt="Descripci贸n de la imagen"
                 data-toggle="modal" data-target="#examplePencil">
             </a>
           </div>
@@ -109,9 +109,9 @@
 
 
 
-          <div class="start">
+          <div class="start m-3">
             <a data-id="{{$book->id}}" class="btn-modal17" style="color: brown">
-              <img style="width: 40px" height="40px" src="/img/map.png" alt="Descripci贸n de la imagen"
+              <img style="width: 70px" height="70px" src="/img/map.png" alt="Descripci贸n de la imagen"
                 data-toggle="modal" data-target="#examplePencil">
             </a>
           </div>
@@ -148,8 +148,8 @@
           <!-- MODAL FINAL ICONO DE MAPA -->
 
           <div class="start">
-            <a data-id="{{$book->id}}" class="btn-modal19" style="color: brown">
-              <img style="width: 40px" height="40px" src="/img/happy.png" alt="Descripci贸n de la imagen"
+            <a data-id="{{$book->id}}" class="btn-modal19 m-3" style="color: brown">
+              <img style="width: 70px" height="70px" src="/img/happy.png" alt="Descripci贸n de la imagen"
                 data-toggle="modal" data-target="#examplePencil">
             </a>
           </div>
@@ -180,10 +180,10 @@
         </div>
         <div class="starts">
 
-          <div data-id="{{$book->id}}" class="btn-modal2">
+          <div data-id="{{$book->id}}" class="btn-modal2 " style="margin-left: 30%">
 
 
-            <img style="width: auto;" height="aito" src="/img/Eye.png" alt="Descripci贸n de la imagen">
+            <img style="width: 140px;" height="aito" src="/img/Eye.png" alt="Descripci贸n de la imagen">
 
 
           </div>
@@ -209,7 +209,7 @@
 
           <div data-id="{{$book->id}}" class="btn-modal3">
 
-            <img style="width: auto;" height="auto" src="/img/Videomedia.png" alt="Descripci贸n de la imagen">
+            <img style="width: 140PX;" height="auto" src="/img/Videomedia.png" alt="Descripci贸n de la imagen">
 
 
           </div>
@@ -247,7 +247,7 @@
       
       <div class="start2" style="">
 
-        <img data-id="{{$book->id}}" class="btn-modal4" style="width: auto;" height="auto" src="/img/diamante.png"
+        <img data-id="{{$book->id}}" class="btn-modal4" style="width: 90px;" height="auto" src="/img/diamante.png"
           alt="Descripci贸n de la imagen">
 
       </div>
@@ -280,14 +280,14 @@
     </div>
     <a href="/evidence-create" class="mx-7">   
       <div class="start2" style="">
- 
-     <img style="width: 50px;" height="auto" src="/img/estrella.png"
+    
+     <img style="width: 90px; margin-left: -45%;" height="auto" src="/img/estrella.png"
        alt="Descripci贸n de la imagen">
    </div></a>
 
     <div class="start2" style="">
 
-      <img data-id="{{$book->id}}" class="btn-modal5" style="width: auto;" height="auto" src="/img/globo_de_texto.png"
+      <img data-id="{{$book->id}}" class="btn-modal5" style="width: 90px;" height="auto" src="/img/globo_de_texto.png"
         alt="Descripci贸n de la imagen">
 
     </div>
