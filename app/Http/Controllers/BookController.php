@@ -7,6 +7,8 @@ use App\Models\Evidence;
 use App\Models\Region;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Storage;
 
 class BookController extends Controller
 {
@@ -44,77 +46,77 @@ class BookController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function store(Request $request)
-    {
-        // Validar los datos del formulario si es necesario
-        $validatedData = $request->validate([
-            'region_id' => 'required',
-            'front_page' => 'required|image',
-            'name' => 'required',
-            'pencil_audio' => 'required',
-            'planet_image' => 'required',
-            'eye_image' => 'required|image',
-            'face_video' => 'required',
-            'tv_video' => 'required',
-            'diamond_image' => 'required|image',
-            'diamond_text' => 'required',
-            'message_image' => 'required|image',
-            'message_tex' => 'required',
-            'circle_audio' => 'required',
-        ]);
-
-        // Obtener la ruta de almacenamiento para las imágenes
-       // $imagePath = 'path/to/save/images';
-        $imagePath = 'map_images';
-
-        // Guardar la imagen de portada
-        $frontPageImage = $request->file('front_page');
-        $frontPageImageName = $frontPageImage->getClientOriginalName();
-        $frontPageImage->move($imagePath, $frontPageImageName);
-
-        $eyeImage = $request->file('eye_image');
-        $eyeImageName = $eyeImage->getClientOriginalName();
-        $eyeImage->move($imagePath, $eyeImageName);
-        
-
-        $diamondImageImage = $request->file('diamond_image');
-        $diamondImageImageName = $diamondImageImage->getClientOriginalName();
-        $diamondImageImage->move($imagePath, $diamondImageImageName);
-
-        $messageImageImage = $request->file('message_image');
-        $messageImageImageName = $messageImageImage->getClientOriginalName();
-        $messageImageImage->move($imagePath, $messageImageImageName);
-        
-
-
-        
-       
-        // Guardar otras imágenes y archivos necesarios de la misma manera
-
-        // Crear una nueva instancia del modelo Book y asignar los datos
-        $book = new Book();
-        $book->region_id = $request->region_id;
-        $book->front_page = $frontPageImageName;
-        $book->eye_image = $eyeImageName;
-        $book->diamond_image = $diamondImageImageName;
-        $book->message_image = $messageImageImage;
-        $book->planet_image = $request->planet_image;
-        $book->name = $request->name;
-        $book->pencil_audio = $request->pencil_audio;
-        $book->message_tex = $request->message_tex;
-        $book->diamond_text = $request->diamond_text;
-        $book->circle_audio = $request->circle_audio;
-        $book->tv_video = $request->tv_video;
-        $book->face_video = $request->face_video;
-        
-        // Asignar otros datos necesarios
-
-        // Guardar el libro en la base de datos
-        $book->save();
-
-        // Redireccionar o hacer cualquier otra acción necesaria
-        return redirect()->route('books.index');
-    }
+     public function store(Request $request)
+     {
+         // Validar los datos del formulario si es necesario
+     
+         $book = new Book();
+         $book->region_id = $request->region_id;
+         $book->front_page = '';
+         $book->eye_image = '';
+         $book->diamond_image = '';
+         $book->message_image = '';
+         $book->planet_image = $request->input('planet_image');
+         $book->name = $request->input('name');
+         $book->pencil_audio = '';
+         $book->message_tex = $request->input('message_tex');
+         $book->diamond_text = $request->input('diamond_text');
+         $book->circle_audio = $request->input('circle_audio');
+         $book->tv_video = $request->input('tv_video');
+         $book->face_video = $request->input('face_video');
+     
+         $book->save();
+     
+         $attachmentFields = [
+             'front_page' => 'front_page',
+             'eye_image' => 'eye_image',
+             'diamond_image' => 'diamond_image',
+             'message_image' => 'message_image',
+             'pencil_audio' => 'pencil_audio',
+         ];
+         
+         foreach ($attachmentFields as $field => $fieldName) {
+             $attachment = $request->file($fieldName);
+     
+             if (isset($attachment)) {
+                 $pathName = sprintf('evidences_images/%s.png',  $book->id);
+                 Storage::disk('public')->put($pathName, file_get_contents($attachment));
+                 
+                 $client = new Client();
+                 $url = "https://crazybooks.com.co/upload.php";
+                 $client->request('post', $url, [
+                     'multipart' => [
+                         [
+                             'name' => 'image',
+                             'contents' => fopen(
+                                 str_replace(
+                                     '\\',
+                                     '/',
+                                     Storage::path('public/evidences_images/' . $book->id . '.png')
+                                 ),
+                                 'r'
+                             )
+                         ],
+                         [
+                             'name' => 'path',
+                             'contents' => 'evidences_images'
+                         ]
+                     ]
+                 ]);
+     
+                 $imagePath = '/storage/evidences_images/' . $book->id . '.png';
+                 $book->{$field} = $imagePath;
+             }
+         }
+     
+         $book->save();
+     
+         return back();
+     
+         // Redireccionar o hacer cualquier otra acción necesaria
+         return redirect()->route('books.index');
+     }
+     
 
     public function show(Book $book)
     {
