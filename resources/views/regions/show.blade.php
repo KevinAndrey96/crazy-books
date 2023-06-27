@@ -6,7 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="{{asset('css/style2.css')}}">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><link rel="stylesheet" href="{{asset('css/style3.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('css/style3.css')}}">
   <link rel="icon" type="image/png" href="{{asset('img/LOGO.png')}}">
+  
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -20,7 +23,20 @@
   <title>Crazy Books</title>
 </head>
 
-<body>
+<body class="hiden">
+
+      <!-- partial:index.partial.html -->
+      <div class="center" id="onload" >
+      <div class="book">
+        <div class="book__pg-shadow"></div>
+        <div class="book__pg"></div>
+        <div class="book__pg book__pg--2"></div>
+        <div class="book__pg book__pg--3"></div>
+        <div class="book__pg book__pg--4"></div>
+        <div class="book__pg book__pg--5"></div>
+      </div>
+    </div>
+      <!-- partial -->
   <a href="">
     <div style="text-align: center;">
       <h1 style="color: aliceblue;"> {{ $region->name }} </h1>
@@ -281,7 +297,7 @@
     <a href="/evidence-create" class="mx-7">   
       <div class="start2" style="">
     
-     <img style="width: 90px; margin-left: -45%;" height="auto" src="/img/estrella.png"
+     <img style="width: 90px; " height="auto" src="/img/estrella.png"
        alt="Descripci贸n de la imagen">
    </div></a>
 
@@ -341,8 +357,15 @@
 
 
 
+
+
   @endforeach
+
+
+
 </body>
+
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -461,6 +484,14 @@
     $(this).closest('.modal').css('display', 'none');
   });
 }); 
+</script>
+
+<script>
+
+window.onload = function() {
+    $('#onload').fadeOut(); // Corrección: fadeOut() en lugar de fadOut()
+    $('body').removeClass('hidden'); // Corrección: 'hidden' en lugar de 'hiden'
+};
 </script>
 
 </html>
