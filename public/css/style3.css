@@ -23,7 +23,7 @@ body {
 	display: grid;
 	place-items: center;
 }
-.hiden{
+.hidden{
     overflow: hidden;
 }
 .center{

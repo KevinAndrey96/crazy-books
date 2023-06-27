@@ -23,10 +23,10 @@
   <title>Crazy Books</title>
 </head>
 
-<body class="hiden">
+<body class="hidden"  >
 
       <!-- partial:index.partial.html -->
-      <div class="center" id="onload" >
+      <div class="center" id="onload">
       <div class="book">
         <div class="book__pg-shadow"></div>
         <div class="book__pg"></div>
