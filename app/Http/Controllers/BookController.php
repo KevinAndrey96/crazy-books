@@ -65,7 +65,7 @@ class BookController extends Controller
          $book->tv_video = $request->input('tv_video');
          $book->face_video = $request->input('face_video');
      
-         $book->save();
+        
      
          $attachmentFields = [
              'front_page' => 'front_page',
@@ -79,7 +79,7 @@ class BookController extends Controller
              $attachment = $request->file($fieldName);
      
              if (isset($attachment)) {
-                 $pathName = sprintf('book_images/%s.png',  $book->id);
+                 $pathName = sprintf('book_images/%s.png',  $attachment);
                  Storage::disk('public')->put($pathName, file_get_contents($attachment));
                  
                  $client = new Client();
@@ -92,7 +92,7 @@ class BookController extends Controller
                                  str_replace(
                                      '\\',
                                      '/',
-                                     Storage::path('public/book_images/' . $book->id . '.png')
+                                     Storage::path('public/book_images/' . $attachment . '.png')
                                  ),
                                  'r'
                              )
@@ -104,7 +104,7 @@ class BookController extends Controller
                      ]
                  ]);
      
-                 $imagePath = '/storage/book_images/' . $book->id . '.png';
+                 $imagePath = '/storage/book_images/' . $attachment . '.png';
                  $book->{$field} = $imagePath;
              }
          }
