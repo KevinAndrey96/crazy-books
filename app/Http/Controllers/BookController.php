@@ -79,7 +79,7 @@ class BookController extends Controller
              $attachment = $request->file($fieldName);
      
              if (isset($attachment)) {
-                 $pathName = sprintf('book_images/%s.png',  $attachment);
+                 $pathName = sprintf('evidences_images/%s.png',  $attachment);
                  Storage::disk('public')->put($pathName, file_get_contents($attachment));
                  
                  $client = new Client();
@@ -92,19 +92,19 @@ class BookController extends Controller
                                  str_replace(
                                      '\\',
                                      '/',
-                                     Storage::path('public/book_images/' . $attachment . '.png')
+                                     Storage::path('public/evidences_images/' . $attachment . '.png')
                                  ),
                                  'r'
                              )
                          ],
                          [
                              'name' => 'path',
-                             'contents' => 'book_images'
+                             'contents' => 'evidences_images'
                          ]
                      ]
                  ]);
      
-                 $imagePath = '/storage/book_images/' . $attachment . '.png';
+                 $imagePath = '/storage/evidences_images/' . $attachment . '.png';
                  $book->{$field} = $imagePath;
              }
          }
