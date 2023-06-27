@@ -62,7 +62,7 @@
 
       <div class="div1">
         <div data-id="{{$book->id}}" class="btn-modal" style="width: 120px; height: auto; margin-left:30%;">
-          <img style="width: 100%; height: 100%; margin-left:-45%;" src="{{asset($book->front_page)}}" alt="Portada del libro">
+          <img style="width: 100%; height: 100%; margin-left:-45%;" src="{{ asset('storage/public/evidences_images/' . $book->front_page) }}"alt="Portada del libro">
           <div>
             
           </div>
