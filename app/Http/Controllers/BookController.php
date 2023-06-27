@@ -65,7 +65,7 @@ class BookController extends Controller
 
         // Obtener la ruta de almacenamiento para las imágenes
        // $imagePath = 'path/to/save/images';
-        $imagePath = 'path';
+        $imagePath = 'map_images';
 
         // Guardar la imagen de portada
         $frontPageImage = $request->file('front_page');
