@@ -98,8 +98,8 @@ class BookController extends Controller
                              )
                          ],
                          [
-                             'name' => 'path',
-                             'contents' => 'evidences_images'
+                            'name' => 'path',
+                            'contents' => 'evidences_images'
                          ]
                      ]
                  ]);
