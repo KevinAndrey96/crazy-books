@@ -92,7 +92,7 @@ class BookController extends Controller
                                  str_replace(
                                      '\\',
                                      '/',
-                                     Storage::path('public/evidences_images/' . $book -> id . '.png')
+                                     Storage::path('public\evidences_images\\' . $book -> id . '.png')
                                  ),
                                  'r'
                              )
