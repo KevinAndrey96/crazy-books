@@ -23,7 +23,7 @@
   <title>Crazy Books</title>
 </head>
 
-<body class="hidden"  >
+<body class="hidden"  id="onload">
 
       <!-- partial:index.partial.html -->
       <div class="center" id="onload">
