@@ -77,7 +77,7 @@
             </select>
 
             <div class="form-group mt-3">
-              <label for="student_name">Nombre del estudiante:</label>
+              <label for="student_name">Nombre del estudiante :</label>
               <div class="input-group input-group-outline my-3">
                 <input type="text" class="form-control" id="student_name" name="student_name" required>
               </div>
