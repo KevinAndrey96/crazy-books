@@ -6,8 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="{{asset('css/style2.css')}}">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <link rel="stylesheet" type="text/css" href="{{asset('css/style3.css')}}">
+
   <link rel="icon" type="image/png" href="{{asset('img/LOGO.png')}}">
   
 
@@ -25,18 +24,7 @@
 
 <body class="hidden"  >
 
-      <!-- partial:index.partial.html -->
-      <div class="center" id="onload">
-      <div class="book">
-        <div class="book__pg-shadow"></div>
-        <div class="book__pg"></div>
-        <div class="book__pg book__pg--2"></div>
-        <div class="book__pg book__pg--3"></div>
-        <div class="book__pg book__pg--4"></div>
-        <div class="book__pg book__pg--5"></div>
-      </div>
-    </div>
-      <!-- partial -->
+
   <a href="">
     <div style="text-align: center;">
       <h1 style="color: aliceblue;"> {{ $region->name }} </h1>
@@ -367,7 +355,7 @@
 
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <script>
   $(document).ready(function() { 
   $('.btn-modal').on('click', function(e){
@@ -488,10 +476,6 @@
 
 <script>
 
-window.onload = function() {
-    $('#onload').fadeOut(); // Corrección: fadeOut() en lugar de fadOut()
-    $('body').removeClass('hidden'); // Corrección: 'hidden' en lugar de 'hiden'
-};
-</script>
+
 
 </html>

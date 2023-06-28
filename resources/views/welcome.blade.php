@@ -21,14 +21,28 @@
     <!-- Nepcha Analytics (nepcha.com) -->
     <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
     <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/style3.css')}}">
 </head>
 
-<body class="antialiased">
+<body class="antialiased hidden">
 
+    
+    <div>
+    <!-- partial:index.partial.html -->
 
-    <div
-        class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-
+    <div class="center" id="onload">
+    <div class="book">
+      <div class="book__pg-shadow"></div>
+      <div class="book__pg"></div>
+      <div class="book__pg book__pg--2"></div>
+      <div class="book__pg book__pg--3"></div>
+      <div class="book__pg book__pg--4"></div>
+      <div class="book__pg book__pg--5"></div>
+    </div>
+  </div>
+    <!-- partial -->
+       
         <div class="hidden fixed top-0 right-0 px-8 py-4 sm:block">
 
         </div>
@@ -54,5 +68,12 @@
 </div>
 
     </body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
 
+        window.onload = function() {
+            $('#onload').fadeOut(); // Corrección: fadeOut() en lugar de fadOut()
+            $('body').removeClass('hidden'); // Corrección: 'hidden' en lugar de 'hiden'
+        };
+        </script>
     </html>
