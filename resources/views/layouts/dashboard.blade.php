@@ -61,13 +61,27 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/regions">Regiones</a>
+
                     </li>
+
                     <li class="nav-item">
+                        <div class="dropdown " >
+                            <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            Foros
+                            </button>
+                            <ul class="dropdown-menu overflow-auto" style="max-height: 90px;" aria-labelledby="dropdownMenuButton1">
+                                <li class="nav-item">
+                                    @foreach($books as $book) 
+                                         <a class="nav-link" href="{{ route('experiences.show', $book->id) }}"> FORO {{$book->name}} </a>
+                                    @endforeach
+                                </li>
+                            </ul>
+                          </div>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST">
                             @csrf
                             <a class="nav-link" href="{{ route('logout') }}">
                                 <i class="material-icons opacity-10">login</i>
-                                <button type="submit" class="btn mt-3">Salir</button>
+                                <button type="submit" class="btn">Salir</button>
                             </a>
                         </form>
                     </li>
