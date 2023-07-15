@@ -49,7 +49,6 @@ class BookController extends Controller
      public function store(Request $request)
      {
          // Validar los datos del formulario si es necesario
-     
          $book = new Book();
          $book->region_id = $request->region_id;
          $book->front_page = '';
@@ -64,9 +63,10 @@ class BookController extends Controller
          $book->circle_audio = $request->input('circle_audio');
          $book->tv_video = $request->input('tv_video');
          $book->face_video = $request->input('face_video');
+         $book->save();
      
         
-     
+        /*
          $attachmentFields = [
              'front_page' => 'front_page',
              'eye_image' => 'eye_image',
@@ -74,13 +74,12 @@ class BookController extends Controller
              'message_image' => 'message_image',
              'pencil_audio' => 'pencil_audio',
          ];
+         */
+        
          
-         foreach ($attachmentFields as $field => $fieldName) {
-             $attachment = $request->file($fieldName);
-     
-             if (isset($attachment)) {
-                 $pathName = sprintf('evidences_images/%s.png',   $attachment);
-                 Storage::disk('public')->put($pathName, file_get_contents($attachment));
+             if ($request->hasFile('front_page')) {
+                 $pathName = sprintf('front_page/%s.png',   $book->id);
+                 Storage::disk('public')->put($pathName, file_get_contents($request->file('front_page')));
                  
                  $client = new Client();
                  $url = "https://crazybooks.com.co/upload.php";
@@ -92,26 +91,56 @@ class BookController extends Controller
                                  str_replace(
                                      '\\',
                                      '/',
-                                     Storage::path('public\evidences_images\\' . $attachment . '.png')
+                                     Storage::path('public\front_page\\' . $book->id . '.png')
                                  ),
                                  'r'
                              )
                          ],
                          [
                             'name' => 'path',
-                            'contents' => 'evidences_images'
+                            'contents' => 'front_page'
                          ]
                      ]
                  ]);
      
-                 $imagePath = '/storage/evidences_images/' .  $attachment . '.png';
-                 $book->{$field} = $imagePath;
-             }
-         }
+                 $book->front_page = '/storage/front_page/' .  $book->id . '.png';
+                 //$book->{$field} = $imagePath;
+                 $book->save();
+                }
+             
+                if ($request->hasFile('eye_image')) {
+                    $pathName = sprintf('eye_image/%s.png', $book->id);
+                    Storage::disk('public')->put($pathName, file_get_contents($request->file('eye_image')));
+                    
+                    $client = new Client();
+                    $url = "https://crazybooks.com.co/upload.php";
+                    $client->request('post', $url, [
+                        'multipart' => [
+                            [
+                                'name' => 'image',
+                                'contents' => fopen(
+                                    str_replace(
+                                        '\\',
+                                        '/',
+                                        Storage::path('public\eye_image\\' . $book->id . '.png')
+                                    ),
+                                    'r'
+                                )
+                            ],
+                            [
+                               'name' => 'path',
+                               'contents' => 'eye_image'
+                            ]
+                        ]
+                    ]);
+        
+                    $book->eye_image = '/storage/eye_image/' .  $book->id . '.png';
+                    //$book->{$field} = $imagePath;
+                    $book->save();
+                   }
+        
      
-         $book->save();
-     
-         return back();
+         //return back();
      
          // Redireccionar o hacer cualquier otra acción necesaria
          return redirect()->route('books.index');
@@ -142,10 +171,11 @@ class BookController extends Controller
      * @param  \App\Models\book  $book
      * @return \Illuminate\Http\Response
      */
-    public function edit(Book $book)
+    public function edit($id)
     {
-        $books = Book::all();
-        $regions = Region::all();
+        $book = Book::findOrFail($id);
+        $regions = Region::all(); // Obtener todas las regiones disponibles
+        
         return view('books.edit', compact('book', 'regions'));
     }
 
@@ -156,45 +186,86 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Book $book)
-    {
-        // Validar los datos del formulario si es necesario
-        $validatedData = $request->validate([
-            'region_id' => 'required',
-            'front_page' => 'image',
-            'name' => 'required',
-            'pencil_audio' => 'required',
-            'planet_image' => 'required',
-            'eye_image' => 'image',
-            'face_video' => 'required',
-            'tv_video' => 'required',
-            'diamond_image' => 'image',
-            'diamond_text' => 'required',
-            'message_image' => 'image',
-            'message_tex' => 'required',
-            'circle_audio' => 'required',
+
+     public function update(Request $request, $id)
+{
+    // Validar los datos del formulario si es necesario
+    $book = Book::findOrFail($id);
+    $book->region_id = $request->region_id;
+    $book->planet_image = $request->input('planet_image');
+    $book->name = $request->input('name');
+    $book->message_tex = $request->input('message_tex');
+    $book->diamond_text = $request->input('diamond_text');
+    $book->circle_audio = $request->input('circle_audio');
+    $book->tv_video = $request->input('tv_video');
+    $book->face_video = $request->input('face_video');
+
+    if ($request->hasFile('front_page')) {
+        $pathName = sprintf('front_page/%s.png', $book->id);
+        Storage::disk('public')->put($pathName, file_get_contents($request->file('front_page')));
+
+        $client = new Client();
+        $url = "https://crazybooks.com.co/upload.php";
+        $client->request('post', $url, [
+            'multipart' => [
+                [
+                    'name' => 'image',
+                    'contents' => fopen(
+                        str_replace(
+                            '\\',
+                            '/',
+                            Storage::path('public\front_page\\' . $book->id . '.png')
+                        ),
+                        'r'
+                    )
+                ],
+                [
+                    'name' => 'path',
+                    'contents' => 'front_page'
+                ]
+            ]
         ]);
-    
-        // Actualizar los campos del libro con los nuevos datos
-        $book->region_id = $request->region_id;
-        $book->front_page = $request->file('front_page') ? $request->file('front_page')->getClientOriginalName() : $book->front_page;
-        $book->name = $request->name;
-        $book->pencil_audio = $request->pencil_audio;
-        $book->eye_image = $request->file('eye_image') ? $request->file('eye_image')->getClientOriginalName() : $book->eye_image;
-        $book->face_video = $request->face_video;
-        $book->tv_video = $request->tv_video;
-        $book->planet_image = $request->planet_image;
-        $book->diamond_image = $request->file('diamond_image') ? $request->file('diamond_image')->getClientOriginalName() : $book->diamond_image;
-        $book->diamond_text = $request->diamond_text;
-        $book->message_image = $request->file('message_image') ? $request->file('message_image')->getClientOriginalName() : $book->message_image;
-        $book->message_tex = $request->message_tex;
-        $book->circle_audio = $request->circle_audio;
-    
-        $book->save();
-    
-        // Redireccionar o hacer cualquier otra acción necesaria
-        return redirect()->route('books.index');
+
+        $book->front_page = '/storage/front_page/' .  $book->id . '.png';
     }
+
+    if ($request->hasFile('eye_image')) {
+        $pathName = sprintf('eye_image/%s.png', $book->id);
+        Storage::disk('public')->put($pathName, file_get_contents($request->file('eye_image')));
+
+        $client = new Client();
+        $url = "https://crazybooks.com.co/upload.php";
+        $client->request('post', $url, [
+            'multipart' => [
+                [
+                    'name' => 'image',
+                    'contents' => fopen(
+                        str_replace(
+                            '\\',
+                            '/',
+                            Storage::path('public\eye_image\\' . $book->id . '.png')
+                        ),
+                        'r'
+                    )
+                ],
+                [
+                    'name' => 'path',
+                    'contents' => 'eye_image'
+                ]
+            ]
+        ]);
+
+        $book->eye_image = '/storage/eye_image/' .  $book->id . '.png';
+    }
+
+    // Guardar los cambios en la base de datos
+    $book->save();
+
+    // Redireccionar o hacer cualquier otra acción necesaria
+    return redirect()->route('books.index');
+}
+
+
     
     
     

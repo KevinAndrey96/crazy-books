@@ -66,7 +66,7 @@
 
       <div class="div1">
         <div data-id="{{$book->id}}" class="btn-modal" style="width: 120px; height: auto; margin-left:30%;">
-          <img style="width: 100%; height: 100%; margin-left:-60%;" src="{{$book->front_page}}" alt="Portada del libro">
+          <img style="width: 100%; height: 100%; margin-left:-60%;" src="https://crazybooks.com.co{{$book->front_page}}" alt="Portada del libro">
           <div>
             
           </div>
@@ -99,7 +99,7 @@
                   </button>
                 </div>
                 <div class="modal-body image-container">
-                  <img class="img-fluid py-4" src="{{$book->pencil_audio}}" alt="">
+                  <img class="img-fluid py-4" src="https://crazybooks.com.co{{$book->pencil_audio}}" alt="">
                   <div style="overflow-y: auto; max-height: 200px;">
                   </div>
                   </p>
@@ -202,7 +202,7 @@
                   </button>
                 </div>
                 <div class="modal-body image-container">
-                  <img class="img-fluid py-4" height="aito" src="{{$book->eye_image}}" alt="Descripci贸n de la imagen">
+                  <img class="img-fluid py-4" height="aito" src="https://crazybooks.com.co{{$book->eye_image}}" alt="Descripci贸n de la imagen">
                 </div>
 
               </div>

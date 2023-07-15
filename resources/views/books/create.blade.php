@@ -23,7 +23,7 @@
 
     <label>Lápiz:</label>
     <div class="input-group input-group-outline my-1">
-        <input type="text" class="form-control" name="pencil_audio" id="pencil_audio" required>
+        <input type="file" class="form-control" name="pencil_audio" id="pencil_audio" required>
     </div>
 
     <label>Ojo:</label>
@@ -58,12 +58,12 @@
 
     <label>Globo de texto:</label>
     <div class="input-group input-group-outline my-1">
-        <input type="file" class="form-control" name="message_image" id="message_image" required>
+        <input type="text" class="form-control" name="message_tex" id="message_image" required>
     </div>
 
     <label>Globo de texto imagen:</label>
     <div class="input-group input-group-outline my-1" required>
-        <input type="tex" class="form-control" name="message_tex" id="message_tex" >
+        <input type="file" class="form-control" name="message_image" id="message_tex" >
     </div>
 
     <label>Audio del rectángulo:</label>

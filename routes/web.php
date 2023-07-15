@@ -42,7 +42,7 @@ Route::resource('users',UserController::class)->names('users')->middleware('auth
 Route::resource('regions',RegionController::class)->names('regions');
 Route::get('/regions', [RegionController::class, 'index'])->name('regions.index')->middleware('auth');
 Route::get('/regions/create', [RegionController::class, 'create'])->name('regions.create')->middleware('auth');
-Route::get('/regions/edit', [RegionController::class, 'edit'])->name('regions.edit2')->middleware('auth');
+Route::get('/regions/edit', [RegionController::class,   'edit'])->name('regions.edit2')->middleware('auth');
 
 Route::get('/regions/show/{regionID}', [RegionController::class, 'show'])->name('regions.show1');
 
@@ -54,7 +54,8 @@ Route::get('/books/create', [BookController::class, 'create'])->name('books.crea
 Route::post('/books', [BookController::class, 'store'])->name('books.store')->middleware('auth');
 
 Route::get('/books/{book}/edit', [BookController::class, 'edit'])->name('books.edit')->middleware('auth');
-Route::put('/books/{book}', [BookController::class, 'update'])->name('books.update')->middleware('auth');
+Route::put('books/{id}', [BookController::class, 'update'])->name('books.update');
+//Route::put('/books/{book}', [BookController::class, 'update'])->name('books.update')->middleware('auth');
 Route::delete('/books/{book}', [BookController::class, 'destroy'])->name('books.destroy')->middleware('auth');
 
 
