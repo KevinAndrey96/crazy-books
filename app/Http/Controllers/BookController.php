@@ -25,7 +25,10 @@ class BookController extends Controller
         return view('books.index', compact('books', 'regions'));
 
         return view('books.index', compact('books'));
+        
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -135,6 +138,99 @@ class BookController extends Controller
                     ]);
         
                     $book->eye_image = '/storage/eye_image/' .  $book->id . '.png';
+                    //$book->{$field} = $imagePath;
+                    $book->save();
+                   }
+
+                   if ($request->hasFile('diamond_image')) {
+                    $pathName = sprintf('diamond_image/%s.png', $book->id);
+                    Storage::disk('public')->put($pathName, file_get_contents($request->file('diamond_image')));
+                    
+                    $client = new Client();
+                    $url = "https://crazybooks.com.co/upload.php";
+                    $client->request('post', $url, [
+                        'multipart' => [
+                            [
+                                'name' => 'image',
+                                'contents' => fopen(
+                                    str_replace(
+                                        '\\',
+                                        '/',
+                                        Storage::path('public\diamond_image\\' . $book->id . '.png')
+                                    ),
+                                    'r'
+                                )
+                            ],
+                            [
+                               'name' => 'path',
+                               'contents' => 'diamond_image'
+                            ]
+                        ]
+                    ]);
+        
+                    $book->diamond_image = '/storage/diamond_image/' .  $book->id . '.png';
+                    //$book->{$field} = $imagePath;
+                    $book->save();
+                   }
+
+                   if ($request->hasFile('message_image')) {
+                    $pathName = sprintf('message_image/%s.png', $book->id);
+                    Storage::disk('public')->put($pathName, file_get_contents($request->file('message_image')));
+                    
+                    $client = new Client();
+                    $url = "https://crazybooks.com.co/upload.php";
+                    $client->request('post', $url, [
+                        'multipart' => [
+                            [
+                                'name' => 'image',
+                                'contents' => fopen(
+                                    str_replace(
+                                        '\\',
+                                        '/',
+                                        Storage::path('public\message_image\\' . $book->id . '.png')
+                                    ),
+                                    'r'
+                                )
+                            ],
+                            [
+                               'name' => 'path',
+                               'contents' => 'message_image'
+                            ]
+                        ]
+                    ]);
+        
+                    $book->message_image = '/storage/message_image/' .  $book->id . '.png';
+                    //$book->{$field} = $imagePath;
+                    $book->save();
+                   }
+
+                   if ($request->hasFile('pencil_audio')) {
+                    $pathName = sprintf('pencil_audio/%s.png', $book->id);
+                    Storage::disk('public')->put($pathName, file_get_contents($request->file('pencil_audio')));
+                    
+                    $client = new Client();
+                    $url = "https://crazybooks.com.co/upload.php";
+                    $client->request('post', $url, [
+                        'multipart' => [
+                            [
+                                'name' => 'image',
+                                'contents' => fopen(
+                                    str_replace(
+                                        '\\',
+                                        '/',
+                                        Storage::path('public\pencil_audio\\' . $book->id . '.png')
+                                    ),
+                                    'r'
+                                )
+                            ],
+                            [
+                               'name' => 'path',
+                               'contents' => 'pencil_audio'
+                            ]
+                        ]
+                    ]);
+        
+                    $book->pencil_audio = '/storage/pencil_audio/' .  $book->id . '.png';
                     //$book->{$field} = $imagePath;
                     $book->save();
                    }
@@ -256,6 +352,93 @@ class BookController extends Controller
         ]);
 
         $book->eye_image = '/storage/eye_image/' .  $book->id . '.png';
+    }
+
+    if ($request->hasFile('pencil_audio')) {
+        $pathName = sprintf('pencil_audio/%s.png', $book->id);
+        Storage::disk('public')->put($pathName, file_get_contents($request->file('pencil_audio')));
+
+        $client = new Client();
+        $url = "https://crazybooks.com.co/upload.php";
+        $client->request('post', $url, [
+            'multipart' => [
+                [
+                    'name' => 'image',
+                    'contents' => fopen(
+                        str_replace(
+                            '\\',
+                            '/',
+                            Storage::path('public\pencil_audio\\' . $book->id . '.png')
+                        ),
+                        'r'
+                    )
+                ],
+                [
+                    'name' => 'path',
+                    'contents' => 'pencil_audio'
+                ]
+            ]
+        ]);
+
+        $book->pencil_audio = '/storage/pencil_audio/' .  $book->id . '.png';
+    }
+
+    if ($request->hasFile('diamond_image')) {
+        $pathName = sprintf('diamond_image/%s.png', $book->id);
+        Storage::disk('public')->put($pathName, file_get_contents($request->file('diamond_image')));
+
+        $client = new Client();
+        $url = "https://crazybooks.com.co/upload.php";
+        $client->request('post', $url, [
+            'multipart' => [
+                [
+                    'name' => 'image',
+                    'contents' => fopen(
+                        str_replace(
+                            '\\',
+                            '/',
+                            Storage::path('public\diamond_image\\' . $book->id . '.png')
+                        ),
+                        'r'
+                    )
+                ],
+                [
+                    'name' => 'path',
+                    'contents' => 'diamond_image'
+                ]
+            ]
+        ]);
+
+        $book->diamond_image = '/storage/diamond_image/' .  $book->id . '.png';
+    }
+
+    if ($request->hasFile('message_image')) {
+        $pathName = sprintf('message_image/%s.png', $book->id);
+        Storage::disk('public')->put($pathName, file_get_contents($request->file('message_image')));
+
+        $client = new Client();
+        $url = "https://crazybooks.com.co/upload.php";
+        $client->request('post', $url, [
+            'multipart' => [
+                [
+                    'name' => 'image',
+                    'contents' => fopen(
+                        str_replace(
+                            '\\',
+                            '/',
+                            Storage::path('public\message_image\\' . $book->id . '.png')
+                        ),
+                        'r'
+                    )
+                ],
+                [
+                    'name' => 'path',
+                    'contents' => 'message_image'
+                ]
+            ]
+        ]);
+
+        $book->message_image = '/storage/message_image/' .  $book->id . '.png';
     }
 
     // Guardar los cambios en la base de datos
