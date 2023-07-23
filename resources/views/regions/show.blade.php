@@ -99,11 +99,13 @@
                   </button>
                 </div>
                 <div class="modal-body image-container">
-                  <div style="overflow-y: auto; max-height: 200px;">
+                  <div style="overflow-y: auto; max-height: 250px;">
                   @if ($book->pencil_audio ?? false)
-                      <img src="{{ $book->pencil_audio }}" alt="Imagen del producto">
+                      <img src="{{ $book->pencil_audio }}" alt="Imagen">
                   @else
-                      <img width="350" src="https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png" alt="Imagen predeterminada">
+
+                  <img width="250" src="https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png">
+                      
                   @endif
                   
                  
