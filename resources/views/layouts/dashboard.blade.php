@@ -39,7 +39,7 @@
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <img width="80px" src="{{asset('img/menu.png')}}" class="navbar-brand-img h-100" alt="main_logo">
+                <img width="80px" src="{{asset('img/LOGO2.png')}}" class="navbar-brand-img h-100" alt="main_logo">
 
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">

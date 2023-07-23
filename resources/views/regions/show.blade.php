@@ -99,14 +99,14 @@
                   </button>
                 </div>
                 <div class="modal-body image-container">
-
+                  <div style="overflow-y: auto; max-height: 200px;">
                   @if ($book->pencil_audio ?? false)
                       <img src="{{ $book->pencil_audio }}" alt="Imagen del producto">
                   @else
-                      <img width="350" src="http://pago.iensccsa.edu.sv/assets/camaleon_cms/image-not-found-26112ee47503d45cff89e808e1d1a5f7.png" alt="Imagen predeterminada">
+                      <img width="350" src="https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png" alt="Imagen predeterminada">
                   @endif
                   
-                  <div style="overflow-y: auto; max-height: 200px;">
+                 
                   </div>
                   </p>
                 </div>
