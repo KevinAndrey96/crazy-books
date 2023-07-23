@@ -99,7 +99,13 @@
                   </button>
                 </div>
                 <div class="modal-body image-container">
-                  <img class="img-fluid py-4" src="{{$book->pencil_audio}}" alt="">
+
+                  @if ($book->pencil_audio ?? false)
+                      <img src="{{ $book->pencil_audio }}" alt="Imagen del producto">
+                  @else
+                      <img width="350" src="http://pago.iensccsa.edu.sv/assets/camaleon_cms/image-not-found-26112ee47503d45cff89e808e1d1a5f7.png" alt="Imagen predeterminada">
+                  @endif
+                  
                   <div style="overflow-y: auto; max-height: 200px;">
                   </div>
                   </p>
@@ -133,14 +139,21 @@
                 </div>
                 <div class="modal-body image-container">
 
-                  <div style="overflow-y: auto; max-height: 200px;">
+                  <div style="overflow-y: auto; max-height: 250px;">
 
+
+                  @if ($book->planet_image ?? false)
                     <div class="modal-body">
                       <iframe style="border-radius:12px" src="{{$book->planet_image}}" width="100%" height="auto"
                         frameBorder="0" allowfullscreen=""
                         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                         loading="lazy"></iframe>
                     </div>
+                  @else
+                    <img width="250" src="https://img.freepik.com/iconos-gratis/sonido_318-890516.jpg?size=626&ext=jpg&ga=GA1.2.1839583291.1690064982&semt=ais">
+                  @endif
+
+
 
                   </div>
 
@@ -169,10 +182,18 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <iframe width="100%" height="250px" src="{{$book->face_video}}" title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
+
+                @if ($book->face_video ?? false)
+                  <div class="modal-body">
+                    <iframe width="100%" height="250px" src="{{$book->face_video}}" title="YouTube video player"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen></iframe>
+                  </div>
+                @else
+                  <img width="250" src="https://www.publicdomainpictures.net/pictures/280000/t2/not-found-image-15383864787lu.jpg">
+                @endif
+
                 </div>
 
               </div>

@@ -34,12 +34,12 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light d-lg-none d-flex align-items-start justify-content-start"">
         
         <a class=" navbar-brand col-7" href="/">
-
-            <span class="ms-1 font-weight-bold ">Crazy Books</span>
+            
+            <h1 class="ms-1 font-weight-bold my-3 ">Crazy Books</h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <img width="80px" src="{{asset('img/LOGO.png')}}" class="navbar-brand-img h-100" alt="main_logo">
+                <img width="80px" src="{{asset('img/menu.png')}}" class="navbar-brand-img h-100" alt="main_logo">
 
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -55,9 +55,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/users">Profesores</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Mapa Interactivo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/regions">Regiones</a>
@@ -118,15 +115,6 @@
                         <span class="nav-link-text ms-1">Profesores</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white " href="/">
-                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">view_in_ar</i>
-                        </div>
-                        <span class="nav-link-text ms-1">Mapa Interactivo</span>
-                    </a>
-                </li>
-
                 <li class="nav-item">
                     <a class="nav-link text-white " href="/regions">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">

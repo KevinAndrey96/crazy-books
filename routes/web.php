@@ -47,6 +47,9 @@ Route::get('/regions/edit', [RegionController::class,   'edit'])->name('regions.
 Route::get('/regions/show/{regionID}', [RegionController::class, 'show'])->name('regions.show1');
 
 Route::get('/books', [BookController::class, 'index'])->name('books.index')->middleware('auth');
+
+
+
 Route::get('/books/region/{regionID}', [BookController::class, 'booksByRegionID'])->middleware('auth');// foro
 Route::get('/books/evidences/{bookID}', [BookController::class, 'evidencesByBookID'])->middleware('auth');// evidencias
 //tablas compuestas en laravel (llaves foraneas de una  muchos)

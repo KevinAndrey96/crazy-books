@@ -81,9 +81,7 @@
                     @endforeach
                     </table>
 
-                    <table class="table align-items-center justify-content-center mb-0">
 
-                    </table>
                 </div>
             </div>
         </div>

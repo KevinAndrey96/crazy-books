@@ -462,14 +462,16 @@ class BookController extends Controller
     public function destroy($id)
     {
         $book = Book::findOrFail($id);
-        $region = Region::findOrFail($id);
-
+        $regionId = $book->region ? $book->region->id : null;
+    
         // Eliminar las experiencias relacionadas
         $book->experiences()->delete();
-
+    
         // Eliminar el libro
         $book->delete();
-
-        return redirect()->route('books.region', ['region' => $region->id]);
+    
+        //retorna pagina anterior
+        return back();
     }
+    
 }
