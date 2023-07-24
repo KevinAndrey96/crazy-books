@@ -73,8 +73,8 @@
 
         </div>
       </div>
-
-      <div class="div2 m-3">
+<div>
+      <div class="div2 m-3" style="margin-left: 20%">
         <div class="starts">
           <div class="start">
             <a data-id="{{$book->id}}" class="btn-modal" style="color: brown">
@@ -205,9 +205,10 @@
 
 
         </div>
+      </div>
         <div class="starts">
 
-          <div data-id="{{$book->id}}" class="btn-modal2 " style="margin-left: 30%">
+          <div data-id="{{$book->id}}" class="btn-modal2 " >
 
 
             <img style="width: 140px;" height="aito" src="/img/Eye.png" alt="Descripci贸n de la imagen">
