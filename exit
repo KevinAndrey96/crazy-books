@@ -1,0 +1,115 @@
+[33m7eef5ecb[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m HEAD@{0}: commit: cambio pendientes de vista movil
+[33ma43d4539[m HEAD@{1}: commit: fixe: responsive pc icons
+[33m5de698a2[m HEAD@{2}: commit: fixe: img predeterminada
+[33m323608cf[m HEAD@{3}: commit: fixe: if add null2
+[33m1fbee771[m HEAD@{4}: commit: fixe: if add null
+[33ma7e78c11[m HEAD@{5}: commit: fixe: create edit4
+[33ma3899c69[m HEAD@{6}: commit: fixe: create edit3
+[33mbb5f5e5a[m HEAD@{7}: commit: fixe: create edit2
+[33me6911944[m HEAD@{8}: commit: fixe: create edit
+[33med67fd04[m HEAD@{9}: commit: fixe: menu
+[33mc27e21e5[m HEAD@{10}: commit: fixe: autoload 2.3
+[33m3a459a74[m HEAD@{11}: commit: fixe: autoload 2.2
+[33m3e6d975b[m HEAD@{12}: commit: fixe: autoload 2.1
+[33m46a6c667[m HEAD@{13}: commit: fixet intento preloader
+[33me110fa4f[m HEAD@{14}: pull origin master: Fast-forward
+[33m6ae5ddc2[m[33m ([m[1;32mbackup[m[33m)[m HEAD@{15}: reset: moving to 6ae5ddc263afefd5ce494543cacadfb1452881fa
+[33m96c6cc3f[m HEAD@{16}: reset: moving to 96c6cc3f9e08564fed72666c8591ce621da1531c
+[33m4de19f04[m HEAD@{17}: reset: moving to 4de19f0407907e2d11c92652fdcad77974324c79
+[33mf2e7801c[m HEAD@{18}: reset: moving to HEAD~
+[33me110fa4f[m HEAD@{19}: commit: fix: next preloader 1.3
+[33mf2e7801c[m HEAD@{20}: commit: fix: next preloader 1.1
+[33mba368758[m HEAD@{21}: commit: fix: next preloader
+[33m4de19f04[m HEAD@{22}: commit: fix: next create 1.7.7.10
+[33m9c913573[m HEAD@{23}: commit: fix: next create 1.7.7.7
+[33m491f4c63[m HEAD@{24}: commit: fix: next create 1.7.10
+[33m1451d9a1[m HEAD@{25}: commit: fix: next create 1.7.8
+[33m97eb231c[m HEAD@{26}: commit: fix: next create 1.7.8
+[33m857942ff[m HEAD@{27}: commit: fix: next create 1.7.7
+[33m96c6cc3f[m HEAD@{28}: commit: fix: next create 1.7.6
+[33mc107ba4b[m HEAD@{29}: commit: fix: next create 1.7.5
+[33m1a3104d4[m HEAD@{30}: commit: fix: next create 1.7.4
+[33m979693a2[m HEAD@{31}: commit: fix: next create 1.7.3
+[33m0af827fb[m HEAD@{32}: commit: fix: next create 1.7.2
+[33m47f0bc11[m HEAD@{33}: commit: fix: next create 1.7.1
+[33m77bf42dd[m HEAD@{34}: commit: fix: next create 1.7
+[33mb58f7c5e[m HEAD@{35}: commit: fix: next create 1.6
+[33mfef19f94[m HEAD@{36}: commit: fix: next create 1.5
+[33m6ae5ddc2[m[33m ([m[1;32mbackup[m[33m)[m HEAD@{37}: commit: fix: next create 1.4
+[33m311d8063[m HEAD@{38}: reset: moving to HEAD
+[33m311d8063[m HEAD@{39}: commit: fix: next create 1.3
+[33m1dd22755[m HEAD@{40}: commit: fix: next create 1.2
+[33m5967e51a[m HEAD@{41}: commit: fix: next create 1.1
+[33m46bc1c7c[m HEAD@{42}: commit: fix: next create
+[33m946a214b[m HEAD@{43}: commit: fix: cration dinamic modal 1.7
+[33mba85b64f[m HEAD@{44}: commit: fix: cration dinamic modal 1.6
+[33m078991da[m HEAD@{45}: commit: fix: cration dinamic modal 1.5
+[33mb9289391[m HEAD@{46}: commit: fix: cration dinamic modal 1.4
+[33m79c89afb[m HEAD@{47}: commit: fix: cration dinamic modal 1.3
+[33m390bdb4a[m HEAD@{48}: commit: fix: cration dinamic modal 1.2
+[33m15c23501[m HEAD@{49}: commit: fix: cration dinamic modal 1.1
+[33m5c90138c[m HEAD@{50}: commit: fix: cration dinamic modal
+[33md8f2a0ee[m HEAD@{51}: commit: fix: create books3
+[33m4e04918e[m HEAD@{52}: commit: create_delete_table_books3
+[33m0f948244[m HEAD@{53}: commit: create_delete_table_books
+[33mf167d305[m HEAD@{54}: commit: Terminal 1.8
+[33m6aca69b7[m HEAD@{55}: commit: Terminal 1.7
+[33m6eba1ca1[m HEAD@{56}: commit: Terminal 1.5
+[33mf058a095[m HEAD@{57}: commit: Terminal 1.4
+[33mc4972493[m HEAD@{58}: commit: Terminal 1.3
+[33m49434d83[m HEAD@{59}: commit: Terminal 1.2
+[33m7936220d[m HEAD@{60}: commit: Terminal 1.1
+[33m003a34d6[m HEAD@{61}: commit: Terminal 1
+[33m11d2c1ef[m HEAD@{62}: commit: EXPO 7.3
+[33mb6dfc188[m HEAD@{63}: commit: EXPO 7.2
+[33m5765d49b[m HEAD@{64}: commit: EXPO 7.1
+[33m3bf9b453[m HEAD@{65}: commit: EXPO 7
+[33m24bd44c7[m HEAD@{66}: commit: EXPO 6
+[33m6e7da841[m HEAD@{67}: commit: EXPO 5
+[33m554a001d[m HEAD@{68}: commit: EXPO 4
+[33me8fe546f[m HEAD@{69}: commit: EXPO 2
+[33mb509da95[m HEAD@{70}: commit: EXPO 1
+[33mdb5d30de[m HEAD@{71}: reset: moving to HEAD
+[33mdb5d30de[m HEAD@{72}: commit: feat: modification front experiences regions, books. 11
+[33m574fdd0c[m HEAD@{73}: commit: feat: modification front experiences regions, books. 10
+[33m414d8744[m HEAD@{74}: commit: feat: modification front experiences regions, books. 9
+[33m15aa77d2[m HEAD@{75}: commit: feat: modification front experiences regions, books. 8
+[33mc95a59b0[m HEAD@{76}: reset: moving to HEAD
+[33mc95a59b0[m HEAD@{77}: reset: moving to HEAD
+[33mc95a59b0[m HEAD@{78}: reset: moving to HEAD
+[33mc95a59b0[m HEAD@{79}: commit: feat: modification front experiences regions, books. 7
+[33m7f8d2fdf[m HEAD@{80}: commit: feat: modification front experiences regions, books. 5
+[33m175a5951[m HEAD@{81}: commit: feat: modification front experiences regions, books. 3
+[33m12896dd5[m HEAD@{82}: commit: feat: modification front experiences regions, books. 2
+[33m7ff23a78[m HEAD@{83}: commit: feat: modification front experiences regions, books. 1
+[33mefa2eae9[m HEAD@{84}: commit: feat: modification front11 books controller modification777 17 module of comments
+[33mb141d2e3[m HEAD@{85}: commit: feat: modification front11 books controller modification777 7 module of comments
+[33mccefd875[m HEAD@{86}: commit: feat: modification front11 books controller modification777 3
+[33mbe4e5c53[m HEAD@{87}: commit: feat: modification front11 books controller modification777 2
+[33m09173b88[m HEAD@{88}: commit: feat: modification front11 books controller modification777
+[33m55278091[m HEAD@{89}: commit: feat: modification front11 books controller modification17
+[33mafd03fe8[m HEAD@{90}: commit: feat: modification front11 books controller modification11
+[33mb45740a7[m HEAD@{91}: commit: feat: modification front11 books controller modification10
+[33ma10c276b[m HEAD@{92}: commit: feat: modification front11 books controller modification9
+[33meaea9fa1[m HEAD@{93}: commit: feat: modification front11 books controller modification8
+[33m677da352[m HEAD@{94}: commit: feat: modification front11 books controller modification7
+[33mb8b36317[m HEAD@{95}: commit: feat: modification front11 books controller modification4
+[33mee907222[m HEAD@{96}: commit: feat: modification front11 books controller modification4
+[33ma1bb0581[m HEAD@{97}: commit: feat: modification front11 books controller modification3
+[33m837effd2[m HEAD@{98}: commit: feat: modification front11 books controller modification2
+[33m3cd9e416[m HEAD@{99}: commit: feat: modification front11 books controller modification
+[33m4eadc9db[m HEAD@{100}: commit: feat: modification front11 books
+[33mbdbda4a4[m HEAD@{101}: commit: feat: modification front9 layouts back crud proble with edit for users in parameter role no edit
+[33m969f89e8[m HEAD@{102}: commit: feat: modification front9 layouts back crud proble with edit for users in parameter role no edit
+[33m5d6f28b2[m HEAD@{103}: commit: feat: modification front8 layouts back crud regions addmigratios
+[33m46da6bc5[m HEAD@{104}: reset: moving to HEAD
+[33m46da6bc5[m HEAD@{105}: reset: moving to HEAD
+[33m46da6bc5[m HEAD@{106}: commit: feat: modification front7 layouts back crud edit
+[33m01a8b8a9[m HEAD@{107}: reset: moving to HEAD
+[33m01a8b8a9[m HEAD@{108}: commit: feat: modification front5 back crud edit
+[33me31f6408[m HEAD@{109}: commit: feat: modification front4
+[33m19bc4a17[m HEAD@{110}: commit: feat: modification front3
+[33mab2aec09[m HEAD@{111}: commit: feat: modification front2
+[33m3af8ab39[m HEAD@{112}: commit: feat: modification front
+[33m72b2a7a3[m HEAD@{113}: commit: feat: modification .env
+[33mc426fc45[m HEAD@{114}: commit (initial): feat: cration of users crud
