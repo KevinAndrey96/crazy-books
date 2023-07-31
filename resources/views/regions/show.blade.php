@@ -5,6 +5,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       <meta name="description" content="" />
       <meta name="author" content="" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
       <title>Crazybooks</title>
       <!-- Favicon-->
       <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -19,7 +21,7 @@
    <body id="page-top">
       <!-- Navigation-->
       <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-         <div class="container">
+         <div class="container-fluid">
             <a class="navbar-brand" href="#page-top"><img src="https://crazybooks.com.co/img/LOGO.png" alt="..." /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menú
@@ -42,13 +44,8 @@
             </div>
          </div>
       </nav>
-       <nav class="navbar navbar-dark bg-dark">
-         <div class="container-fluid">
-           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-             <span class="navbar-toggler-icon"></span>
-           </button>
-         </div>
-       </nav>
+      
+      
       <style>
          .masthead-heading {
          color: #5a3fc0;
@@ -57,7 +54,7 @@
       </style>
       <!-- Masthead-->
       <header class="masthead" style="background-image: url('https://i.pinimg.com/originals/d6/0e/c1/d60ec1a1b6b8b6e17dc2d014c3e1cc09.jpg')">
-         <div class="container">
+         <div class="container-fluid">
             <div class="masthead-heading text-uppercase" style="color: #800080; text-shadow: 2px 2px 4px #000000;">{{ $region->name }}</div>
             <a class="btn btn-primary btn-xl text-uppercase" href="https://crazybooks.com.co" style="background-color: #5a3fc0; color: #fff;">Volver al mapa interactivo</a>
          </div>
@@ -401,7 +398,7 @@
       </script>
       <!-- Footer-->
       <footer class="footer py-4">
-         <div class="container">
+         <div class="container-fluid">
             <div class="row align-items-center">
                <div class="col-lg-4 text-lg-start">Crazybooks &copy; 2023</div>
             </div>
