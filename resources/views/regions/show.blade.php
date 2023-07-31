@@ -42,6 +42,13 @@
             </div>
          </div>
       </nav>
+       <nav class="navbar navbar-dark bg-dark">
+         <div class="container-fluid">
+           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"></span>
+           </button>
+         </div>
+       </nav>
       <style>
          .masthead-heading {
          color: #5a3fc0;
@@ -56,8 +63,8 @@
          </div>
       </header>
       <!-- Team-->
-      <section class="page-section bg-light" id="team" style="background: url('https://i.pinimg.com/564x/6d/af/a0/6dafa08555ee450d9d61061c7bc23cb5.jpg') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
-         <div class="container">
+      <section class="page-section bg-light img-fluid"" id="team" style="background: url('https://i.pinimg.com/564x/6d/af/a0/6dafa08555ee450d9d61061c7bc23cb5.jpg') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+         <div class="container-fluid">
             <style>
                .social-icon {
                max-height: 50px;

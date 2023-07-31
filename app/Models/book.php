@@ -9,31 +9,40 @@ class Book extends Model
 {
     use HasFactory;
 
+    public function regions(){
+         
+        return $this->belongsTo(Region::class, 'region_id');
+
+    }
+
+    public function experiences(){
+
+        
+    return $this->hasMany(Experience::class);
+
+
+    }
+
+
     protected $fillable = [
+        
         'region_id',
-        'name',
         'front_page',
+        'name',
         'circle_audio',
-        'pencil_audio',
-        'planet_image',
-        'face_video',
-        'eye_image',
-        'tv_video',
-        'message_image',
-        'message_tex',
-        'diamond_text',
-        'diamond_image',
+        'triangle_text',
+        'triangle_audio',
+        'blog_url',
+        'start_media_1',
+        'start_media_2',
+        'square_media_1',
+        'square_media_2',
+        'rectangle_text',
+        'rectangle_audio',
+        
+
+        
     ];
 
-    public function regions()
-    {
 
-        return $this->belongsTo(Region::class, 'region_id');
-    }
-    public function experiences()
-    {
-
-
-        return $this->hasMany(Experience::class);
-    }
 }
