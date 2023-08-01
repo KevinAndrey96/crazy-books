@@ -18,7 +18,7 @@
       <!-- Core theme CSS (includes Bootstrap)-->
       <link href="/cssB/styles.css" rel="stylesheet" />
    </head>
-   <body id="page-top">
+   <body class="w-100" id="page-top">
       <!-- Navigation-->
       <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
          <div class="container-fluid">
@@ -53,19 +53,19 @@
          }
       </style>
       <!-- Masthead-->
-      <header class="masthead" style="background-image: url('https://i.pinimg.com/originals/d6/0e/c1/d60ec1a1b6b8b6e17dc2d014c3e1cc09.jpg')">
+      <header class="masthead" style="background-image: url('https://i.pinimg.com/originals/d6/0e/c1/d60ec1a1b6b8b6e17dc2d014c3e1cc09.jpg'); width:130%;">
          <div class="container-fluid">
-            <div class="container-fluid masthead-heading text-uppercase" style="color: #800080; text-shadow: 2px 2px 2px #000000;">{{ $region->name }}</div>
+            <div class="w-100 container-fluid masthead-heading text-uppercase" style="color: #800080; text-shadow: 2px 2px 2px #000000;">{{ $region->name }}</div>
             <a class="btn btn-primary btn-xl text-uppercase" href="https://crazybooks.com.co" style="background-color: #5a3fc0; color: #fff;">Volver al mapa interactivo</a>
          </div>
       </header>
       <!-- Team-->
-      <section class="page-section bg-light img-fluid"" id="team" style="background: url('https://i.pinimg.com/564x/6d/af/a0/6dafa08555ee450d9d61061c7bc23cb5.jpg') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+      <section class="masthead" id="team" style="width:130%; background: url('https://i.pinimg.com/564x/6d/af/a0/6dafa08555ee450d9d61061c7bc23cb5.jpg');no-repeat center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
          <div class="container-fluid">
             <style>
                .social-icon {
-               max-height: 50px;
-               min-height: 90px; /* aumentado para hacer las imágenes un poco más altas */
+               max-height: 70px;
+               min-height: 120px; /* aumentado para hacer las imágenes un poco más altas */
                min-width: 50px;
                display: block;
                object-fit: cover;
@@ -75,7 +75,7 @@
                background-color: transparent;
                border-color: #fff; /* Cambia el color según tus necesidades */
                color: #fff; /* Cambia el color según tus necesidades */
-               margin: 10px; /* Espacio entre los botones */
+               margin: 40px; /* Espacio entre los botones */
                }
                .btn-dark:hover {
                background-color: rgba(255, 255, 255, 0.1); /* Cambia el color según tus necesidades */
