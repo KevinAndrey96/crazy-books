@@ -53,14 +53,14 @@
          }
       </style>
       <!-- Masthead-->
-      <header class="masthead" style="background-image: url('https://i.pinimg.com/originals/d6/0e/c1/d60ec1a1b6b8b6e17dc2d014c3e1cc09.jpg'); width:130%;">
-         <div class="container-fluid">
-            <div class="w-100 container-fluid masthead-heading text-uppercase" style="color: #800080; text-shadow: 2px 2px 2px #000000;">{{ $region->name }}</div>
-            <a class="btn btn-primary btn-xl text-uppercase" href="https://crazybooks.com.co" style="background-color: #5a3fc0; color: #fff;">Volver al mapa interactivo</a>
-         </div>
-      </header>
+      <header class="masthead" style="background-image: url('https://i.pinimg.com/originals/d6/0e/c1/d60ec1a1b6b8b6e17dc2d014c3e1cc09.jpg');">
+            <div class="container-fluid">
+                <div class="w-100 container-fluid masthead-heading text-uppercase" style="font-size: calc(1em + 1vw); color: #800080; text-shadow: 2px 2px 2px #000000;">{{ $region->name }}</div>
+                <a class="btn btn-primary btn-xl text-uppercase" href="https://crazybooks.com.co" style="background-color: #5a3fc0; color: #fff;">Volver al mapa interactivo</a>
+            </div>
+        </header>
       <!-- Team-->
-      <section class="masthead" id="team" style="width:130%; background: url('https://i.pinimg.com/564x/6d/af/a0/6dafa08555ee450d9d61061c7bc23cb5.jpg');no-repeat center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+      <section class="masthead" id="team" style="background: url('https://i.pinimg.com/564x/6d/af/a0/6dafa08555ee450d9d61061c7bc23cb5.jpg');no-repeat center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
          <div class="container-fluid">
             <style>
             
@@ -90,7 +90,7 @@
                }
             </style>
             <div class="row">
-               <div class="col-lg-4">
+               <div class="">
                   @foreach ($books as $book)
                   <!--MODAL  ICONO DE LAPIZ -->
                   <div class="modal fade" id="modalPencil{{$book->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -104,7 +104,7 @@
                                  @if ($book->pencil_audio ?? false)
                                  <img class="img-fluid mx-auto d-block" src="{{ $book->pencil_audio }}" alt="Pencil audio image">
                                  @else
-                                 <img class="img-fluid mx-auto d-block" width="250" src="https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png" alt="Placeholder image">
+                                 <img class="img-fluid mx-auto d-block" width="250" src="https://crazybooks.com.co/img/LOGO.png" alt="Placeholder image">
                                  @endif
                               </div>
                            </div>
@@ -143,7 +143,7 @@
                                     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                                     loading="lazy"></iframe>
                                  @else
-                                 <img class="img-fluid mx-auto d-block" width="250" src="https://www.pngkey.com/png/detail/350-3500680_placeholder-open-book-silhouette-vector.png" alt="Placeholder image">
+                                 <img class="img-fluid mx-auto d-block" width="250" src="https://crazybooks.com.co/img/LOGO.png" alt="Placeholder image">
                                  @endif
                               </div>
                            </div>
@@ -165,7 +165,7 @@
                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                  allowfullscreen></iframe>
                               @else
-                              <img class="img-fluid mx-auto d-block" width="250" src="https://www.pngkey.com/png/detail/350-3500680_placeholder-open-book-silhouette-vector.png" alt="Placeholder image">
+                              <img class="img-fluid mx-auto d-block" width="250" src="https://crazybooks.com.co/img/LOGO.png" alt="Placeholder image">
                               @endif
                            </div>
                         </div>
@@ -288,120 +288,71 @@
             </div>
          </div>
       </section>
-      <script>
-         $(document).ready(function() { 
-         $('.btn-modal').on('click', function(e){
-           e.preventDefault();
-           var id = $(this).data('id');
-           $('#modalPencil' + id).css('display', 'block');
-         
-         });
-         
-         $('.close').on('click', function() { 
-           $(this).closest('.modal').css('display', 'none');
-         });
-         }); 
-         
-         
-      </script>
-      <script>
-         $(document).ready(function() { 
-         $('.btn-modal3').on('click', function(e){
-           e.preventDefault();
-           var id = $(this).data('id');
-           $('#modaltv' + id).css('display', 'block');
-         
-         });
-         
-         $('.close').on('click', function() { 
-           $(this).closest('.modal').css('display', 'none');
-         });
-         }); 
-      </script>
-      <script>
-         $(document).ready(function() { 
-         $('.btn-modal2').on('click', function(e){
-           e.preventDefault();
-           var id = $(this).data('id');
-           $('#modaleye' + id).css('display', 'block');
-         
-         });
-         
-         $('.close').on('click', function() { 
-           $(this).closest('.modal').css('display', 'none');
-         });
-         }); 
-      </script>
-      <script>
-         $(document).ready(function() { 
-         $('.btn-modal4').on('click', function(e){
-           e.preventDefault();
-           var id = $(this).data('id');
-           $('#modaldiamond' + id).css('display', 'block');
-         
-         });
-         
-         $('.close').on('click', function() { 
-           $(this).closest('.modal').css('display', 'none');
-         });
-         }); 
-      </script>
-      <script>
-         $(document).ready(function() { 
-         $('.btn-modal5').on('click', function(e){
-           e.preventDefault();
-           var id = $(this).data('id');
-           $('#modalmessage' + id).css('display', 'block');
-         
-         });
-         
-         $('.close').on('click', function() { 
-           $(this).closest('.modal').css('display', 'none');
-         });
-         }); 
-      </script>
-      <script>
-         $(document).ready(function() { 
-         $('.btn-modal9').on('click', function(e){
-           e.preventDefault();
-           var id = $(this).data('id');
-           $('#modalgreen' + id).css('display', 'block');
-         
-         });
-         
-         $('.close').on('click', function() { 
-           $(this).closest('.modal').css('display', 'none');
-         });
-         }); 
-      </script>
-      <script>
-         $(document).ready(function() { 
-         $('.btn-modal17').on('click', function(e){
-           e.preventDefault();
-           var id = $(this).data('id');
-           $('#modalmap' + id).css('display', 'block');
-         
-         });
-         
-         $('.close').on('click', function() { 
-           $(this).closest('.modal').css('display', 'none');
-         });
-         }); 
-      </script>
-      <script>
-         $(document).ready(function() { 
-         $('.btn-modal19').on('click', function(e){
-           e.preventDefault();
-           var id = $(this).data('id');
-           $('#modalface' + id).css('display', 'block');
-         
-         });
-         
-         $('.close').on('click', function() { 
-           $(this).closest('.modal').css('display', 'none');
-         });
-         }); 
-      </script>
+ <script>
+    $(document).ready(function() { 
+        // Para btn-modal
+        $('.btn-modal').on('click', function(e){
+            e.preventDefault();
+            var id = $(this).data('id');
+            $('#modalPencil' + id).css('display', 'block');
+        });
+
+        // Para btn-modal3
+        $('.btn-modal3').on('click', function(e){
+            e.preventDefault();
+            var id = $(this).data('id');
+            $('#modaltv' + id).css('display', 'block');
+        });
+
+        // Para btn-modal2
+        $('.btn-modal2').on('click', function(e){
+            e.preventDefault();
+            var id = $(this).data('id');
+            $('#modaleye' + id).css('display', 'block');
+        });
+
+        // Para btn-modal4
+        $('.btn-modal4').on('click', function(e){
+            e.preventDefault();
+            var id = $(this).data('id');
+            $('#modaldiamond' + id).css('display', 'block');
+        });
+
+        // Para btn-modal5
+        $('.btn-modal5').on('click', function(e){
+            e.preventDefault();
+            var id = $(this).data('id');
+            $('#modalmessage' + id).css('display', 'block');
+        });
+
+        // Para btn-modal9
+        $('.btn-modal9').on('click', function(e){
+            e.preventDefault();
+            var id = $(this).data('id');
+            $('#modalgreen' + id).css('display', 'block');
+        });
+
+        // Para btn-modal17
+        $('.btn-modal17').on('click', function(e){
+            e.preventDefault();
+            var id = $(this).data('id');
+            $('#modalmap' + id).css('display', 'block');
+        });
+
+        // Para btn-modal19
+        $('.btn-modal19').on('click', function(e){
+            e.preventDefault();
+            var id = $(this).data('id');
+            $('#modalface' + id).css('display', 'block');
+        });
+
+        // Para todos los botones de cierre
+        $('.close').on('click', function() { 
+            $(this).closest('.modal').css('display', 'none');
+        });
+    }); 
+</script>
+
       <!-- Footer-->
       <footer class="footer py-4">
          <div class="container-fluid">
