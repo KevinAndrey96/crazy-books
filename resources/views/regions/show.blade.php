@@ -63,10 +63,16 @@
       <section class="masthead" id="team" style="width:130%; background: url('https://i.pinimg.com/564x/6d/af/a0/6dafa08555ee450d9d61061c7bc23cb5.jpg');no-repeat center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
          <div class="container-fluid">
             <style>
+            
+            *{
+               margin: 0;
+               padding: 0;
+            }
                .social-icon {
-               max-height: 70px;
+               max-height: 120px;
                min-height: 120px; /* aumentado para hacer las imágenes un poco más altas */
-               min-width: 50px;
+               min-width: 130px;
+               max-width: 120px;
                display: block;
                object-fit: cover;
                border-radius: 50%;  /* Esto hace que las imágenes sean redondas */
@@ -75,7 +81,7 @@
                background-color: transparent;
                border-color: #fff; /* Cambia el color según tus necesidades */
                color: #fff; /* Cambia el color según tus necesidades */
-               margin: 40px; /* Espacio entre los botones */
+               margin: 80px; /* Espacio entre los botones */
                }
                .btn-dark:hover {
                background-color: rgba(255, 255, 255, 0.1); /* Cambia el color según tus necesidades */
