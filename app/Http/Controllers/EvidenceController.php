@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Evidence;
+use App\Models\Book;
+use App\Models\User;
 use Illuminate\Http\Request;
+
 
 class EvidenceController extends Controller
 {
@@ -43,9 +46,14 @@ class EvidenceController extends Controller
         return redirect()->route('evidences.index')->with('success', 'Evidence created successfully.');
     }
 
-    public function show(Evidence $evidence)
+    public function show($id)
     {
-        return view('evidences.show', compact('evidence'));
+        $users = User::all();
+        $books = Book::all(); 
+        $book = Book::findOrFail($id);
+        $evidences = $book->evidences;
+    
+        return view('evidences.show', compact('book', 'users', 'evidences', 'id'));
     }
 
     public function edit(Evidence $evidence)

@@ -8,6 +8,7 @@ use App\Http\Controllers\RegionController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\EvidenceController;
 use App\Http\Controllers\CreateEvidenceController;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Auth;
@@ -66,7 +67,9 @@ Route::resource('experiences',ExperienceController::class)->names('experiences')
 //Route::get('/regions/{id}', 'RegionController@show')->name('regions.show');
 Route::post('/evidence-store', [StoreEvidenceController::class, 'store'])->name('evidence.store')->middleware('auth');
 
-Route::get('/evidences/{id}', [EvidencesController::class, 'show'])->name('evidences.show');
+Route::get('/evidences/{id}', [EvidenceController::class, 'show'])->name('evidences.show');
+//Route::get('/evidences/{id}', [EvidencesController::class, 'show'])->name('evidences.show');
+
 Route::get('/evidences', [evidenceController::class, 'index'])->name('evidences.index')->middleware('auth');
 Route::get('/evidences/create', [App\Http\Controllers\CreateEvidenceController::class, 'create'])->name('evidences.create');
 Route::get('/evidences/region/{regionID}', [evidenceController::class, 'evidencesByRegionID'])->middleware('auth');

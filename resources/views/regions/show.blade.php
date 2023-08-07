@@ -91,7 +91,13 @@
             </style>
             <div class="row">
                <div class="">
+                  
+                 
+
+
                   @foreach ($books as $book)
+
+                  
                   <!--MODAL  ICONO DE LAPIZ -->
                   <div class="modal fade" id="modalPencil{{$book->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                      <div class="modal-dialog modal-dialog-centered" role="document">
@@ -275,9 +281,14 @@
                         <a class="btn btn-dark btn-social mx-4 flex-grow-1" href="#!" data-bs-toggle="modal" data-bs-target="#modaldiamond{{$book->id}}" aria-label="Abrir modal de diamante para {{$book->name}}">
                         <img class="social-icon" src="https://crazybooks.com.co/img/diamante.png" alt="Icono de diamante">
                         </a>
-                        <a class="btn btn-dark btn-social mx-4 flex-grow-1" href="/evidence-create" aria-label="Ir a crear evidencia para {{$book->name}}">
+
+                        <a class="btn btn-dark btn-social mx-4 flex-grow-1" href="{{ route('evidences.show', ['id' => $book->id]) }}" aria-label="Ir a crear evidencia para {{$book->name}}">
                         <img class="social-icon" src="https://crazybooks.com.co/img/estrella.png" alt="Icono de estrella">
                         </a>
+                        
+                        
+                        
+                        
                         <a class="btn btn-dark btn-social mx-4 flex-grow-1" href="#!" data-bs-toggle="modal" data-bs-target="#modalmessage{{$book->id}}" aria-label="Abrir modal de mensaje para {{$book->name}}">
                         <img class="social-icon" src="https://crazybooks.com.co/img/globo_de_texto.png" alt="Icono de globo de texto">
                         </a>

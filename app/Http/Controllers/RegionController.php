@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use App\Models\Region;
+use App\Models\Evidence;
 use Illuminate\Http\Request;
 
 class RegionController extends Controller
@@ -66,12 +67,13 @@ class RegionController extends Controller
     }*/
     public function show($regionID)
     {
-        $books = Book::where("region_id", $regionID)->get();
         $region = Region::find($regionID);
-        return view('regions.show', compact('books', 'region'));
+        $books = Book::with('evidences')->where("region_id", $regionID)->get();
+        
+        return view('regions.show', compact('region', 'books'));
     }
-
-
+    
+    
     /**
      * Show the form for editing the specified resource.
      *
