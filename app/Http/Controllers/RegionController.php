@@ -68,7 +68,7 @@ class RegionController extends Controller
     public function show($regionID)
     {
         $region = Region::find($regionID);
-        $books = Book::with('evidences')->where("region_id", $regionID)->get();
+        $books = Book::all(); 
         
         return view('regions.show', compact('region', 'books'));
     }

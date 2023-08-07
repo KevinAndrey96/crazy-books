@@ -23,12 +23,6 @@ class Book extends Model
 
     }
 
-    public function evidences()
-    {
-        return $this->hasMany(Evidence::class);
-    }
-
-
     protected $fillable = [
         
         'region_id',
