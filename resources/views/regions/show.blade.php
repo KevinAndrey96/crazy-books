@@ -156,7 +156,7 @@
                         </div>
                      </div>
                   </div>
-                  <!-- MODAL FINAL ICONO DE MAPA -->
+                  <!-- MODAL FINAL ICONO DE MAPAñññ-->
                   <!--MODAL  ICONO DE CARA FELIZ -->
                   <div class="modal fade" id="modalface{{$book->id}}" tabindex="-1" role="dialog" aria-labelledby="modalface" aria-hidden="true">
                      <div class="modal-dialog modal-dialog-centered" role="document">
