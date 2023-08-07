@@ -76,7 +76,7 @@ Route::get('/evidences/region/{regionID}', [evidenceController::class, 'evidence
 Route::get('/evidences-create/book/{bookID}', [EvidenceController::class, 'evidencesByBookID'])->middleware('auth');
 
 
-Route::post('/evidences-store', [App\Http\Controllers\StoreEvidenceController::class, 'store'])->name('evidences.store')->middleware('auth');
+Route::post('/evidences-store', [App\Http\Controllers\StoreEvidenceController::class, 'store'])->name('evidences.store');
 Route::get('/evidences/{evidence}/edit', [evidenceController::class, 'edit'])->name('evidences.edit')->middleware('auth');
 
 Route::delete('/evidences/{evidence}', [evidenceController::class, 'destroy'])->name('evidences.destroy')->middleware('auth');

@@ -54,6 +54,7 @@ class EvidenceController extends Controller
         $evidences = $book->evidences;
     
         return view('evidences.show', compact('book', 'users', 'evidences', 'id'));
+        
     }
 
     public function edit(Evidence $evidence)
