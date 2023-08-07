@@ -60,7 +60,7 @@
             </div>
         </header>
       <!-- Team-->
-      <section class="masthead" id="team" style="background: url('https://img2.wallspic.com/crops/8/2/3/5/25328/25328-el_espacio_exterior-ambiente-universo-objeto_astronomico-espacio-7680x4320.jpg');no-repeat center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+      <section class="masthead" id="team" style="background: url('https://www.todofondos.net/wp-content/uploads/2880x1800-Universo-Espacial-Digital-4K-8K-Fondo-de-Pantalla-scaled.jpg');no-repeat center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
          <div class="container-fluid">
             <style>
             
