@@ -67,12 +67,10 @@ class RegionController extends Controller
     }*/
     public function show($regionID)
     {
+        $books = Book::where("region_id", $regionID)->get();
         $region = Region::find($regionID);
-        $books = Book::all(); 
-        
-        return view('regions.show', compact('region', 'books'));
+        return view('regions.show', compact('books', 'region'));
     }
-    
     
     /**
      * Show the form for editing the specified resource.
