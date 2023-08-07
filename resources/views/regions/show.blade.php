@@ -60,7 +60,7 @@
             </div>
         </header>
       <!-- Team-->
-      <section class="masthead" id="team" style="background: url('https://i.pinimg.com/564x/6d/af/a0/6dafa08555ee450d9d61061c7bc23cb5.jpg');no-repeat center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+      <section class="masthead" id="team" style="background: url('https://img2.wallspic.com/crops/8/2/3/5/25328/25328-el_espacio_exterior-ambiente-universo-objeto_astronomico-espacio-7680x4320.jpg');no-repeat center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
          <div class="container-fluid">
             <style>
             
@@ -257,7 +257,7 @@
                      <p class="text-muted"></p>
                      <div class="d-flex justify-content-between flex-grow-1 mt-3">
                         <a class="btn btn-dark btn-social mx-4 flex-grow-1" href="#!" data-bs-toggle="modal" data-bs-target="#modalPencil{{$book->id}}" aria-label="Abrir modal de lápiz para {{$book->name}}">
-                        <img class="social-icon" src="https://crazybooks.com.co/img/pencil.png" alt="Icono de lápiz">
+                        <img class="social-icon"  src="https://crazybooks.com.co/img/pencil.png" alt="Icono de lápiz">
                         </a>
                         <a class="btn btn-dark btn-social mx-4 flex-grow-1" href="#!" data-bs-toggle="modal" data-bs-target="#modalmap{{$book->id}}" aria-label="Abrir modal de mapa para {{$book->name}}">
                         <img class="social-icon" src="https://crazybooks.com.co/img/map.png" alt="Icono de mapa">
