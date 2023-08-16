@@ -54,11 +54,11 @@
       </style>
       <!-- Masthead-->
       <header class="masthead" style="background-image: url('https://i.pinimg.com/originals/d6/0e/c1/d60ec1a1b6b8b6e17dc2d014c3e1cc09.jpg');">
-            <div class="container-fluid">
-                <div class="w-100 container-fluid masthead-heading text-uppercase" style="font-size: calc(2em + 1vw); color: #F8DF00; text-shadow: 7px 20px 20px #3600F8;">{{ $region->name }}</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="https://crazybooks.com.co" style="background-color: #5a3fc0; color: #fff;">Volver al mapa interactivo</a>
-            </div>
-        </header>
+        <div class="container-fluid">
+            <div class="w-100 container-fluid masthead-heading text-uppercase" style="font-size: calc(1.5em + 0.8vw); color: #F8DF00; text-shadow: 7px 20px 20px #3600F8;">{{ $region->name }}</div>
+            <a class="btn btn-primary btn-xl text-uppercase" href="https://crazybooks.com.co" style="background-color: #5a3fc0; color: #fff;">Volver al mapa interactivo</a>
+        </div>
+      </header>
       <!-- Team-->
       <section class="masthead" id="team" style="background: url('https://www.todofondos.net/wp-content/uploads/2880x1800-Universo-Espacial-Digital-4K-8K-Fondo-de-Pantalla-scaled.jpg');no-repeat center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
          <div class="container-fluid">
