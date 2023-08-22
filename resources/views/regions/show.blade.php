@@ -243,7 +243,7 @@
                               </div>
                               <div style="overflow-y: auto; max-height: 200px;">
                                  <p class="text-center">
-                                    {{$book->message_text}}
+                                    {{$book->message_tex}}
                                  </p>
                               </div>
                            </div>

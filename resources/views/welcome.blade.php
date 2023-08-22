@@ -52,7 +52,7 @@
 
 
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <title>Country Map Example</title>
+        <title>Crazy books</title>
         <script src="mapdata.js"></script>
         <script src="countrymap.js"></script>
 
