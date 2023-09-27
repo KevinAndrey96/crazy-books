@@ -69,13 +69,15 @@
                padding: 0;
             }
                .social-icon {
-               max-height: 120px;
-               min-height: 120px; /* aumentado para hacer las imágenes un poco más altas */
-               min-width: 130px;
-               max-width: 120px;
+               max-height: 70px;
+               min-height: 70px; /* aumentado para hacer las imágenes un poco más altas */
+               min-width: 70px;
+               max-width: 70px;
                display: block;
                object-fit: cover;
-               border-radius: 50%;  /* Esto hace que las imágenes sean redondas */
+               
+               border-radius: 40%;
+               /*border-radius: 50%;   Esto hace que las imágenes sean redondas */
                }
                .btn-dark {
                background-color: transparent;
@@ -85,7 +87,7 @@
                }
                .btn-dark:hover {
                background-color: rgba(255, 255, 255, 0.1); /* Cambia el color según tus necesidades */
-               border-color: #fff; /* Cambia el color según tus necesidades */
+               border-color: #FFFFFF; /* Cambia el color según tus necesidades */
                color: #fff; /* Cambia el color según tus necesidades */
                }
             </style>
@@ -260,7 +262,7 @@
                         <img class="social-icon"  src="https://crazybooks.com.co/img/pencil.png" alt="Icono de lápiz">
                         </a>
                         <a class="btn btn-dark btn-social mx-4 flex-grow-1" href="#!" data-bs-toggle="modal" data-bs-target="#modalmap{{$book->id}}" aria-label="Abrir modal de mapa para {{$book->name}}">
-                        <img class="social-icon" src="https://crazybooks.com.co/img/map.png" alt="Icono de mapa">
+                        <img class="social-icon " src="https://crazybooks.com.co/img/map.png" alt="Icono de mapa">
                         </a>
                         <a class="btn btn-dark btn-social mx-4 flex-grow-1" href="#!" data-bs-toggle="modal" data-bs-target="#modalface{{$book->id}}" aria-label="Abrir modal de cara feliz para {{$book->name}}">
                         <img class="social-icon" src="https://crazybooks.com.co/img/happy.png" alt="Icono de cara feliz">
